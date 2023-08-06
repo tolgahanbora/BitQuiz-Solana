@@ -2,11 +2,11 @@ import 'react-native-url-polyfill/auto'
 import { createClient } from '@supabase/supabase-js'
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import {SUPABASE_URI,SUPABASE_PUBLIC_API_KEY } from "@env"
+import {EXPO_PUBLIC_SUPABASE_URI,EXPO_SUPABASE_PUBLIC_API_KEY } from "@env"
 
-const supabase_uri = SUPABASE_URI
+const supabase_uri = EXPO_PUBLIC_SUPABASE_URI
 
-const supabase_public_key = SUPABASE_PUBLIC_API_KEY 
+const supabase_public_key = EXPO_SUPABASE_PUBLIC_API_KEY
 
 const supabase = createClient(supabase_uri, supabase_public_key, {
   auth: {
