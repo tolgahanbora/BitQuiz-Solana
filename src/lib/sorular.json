@@ -1,0 +1,3484 @@
+[
+    {
+        "id": 0,
+        "soru": "Kimyada 'H2O' formülü hangi bileşiği ifade eder?",
+        "secenekler": [
+            "Su",
+            "Tuz",
+            "Şeker",
+            "Oksijen"
+        ],
+        "dogru_cevap": "Su"
+    },
+    {
+        "id": 1,
+        "soru": "Hangi gezegenin uydusu 'Ay' olarak bilinir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Dünya"
+        ],
+        "dogru_cevap": "Dünya"
+    },
+    {
+        "id": 2,
+        "soru": "Ünlü yazar Jules Verne'in hangi kitabında denizaltı Nemo Kaptanı'nı tanırız?",
+        "secenekler": [
+            "Denizler Altında Yirmi Bin Fersah",
+            "Yedi Gün Yedi Gece",
+            "Robinson Crusoe",
+            "Alice Harikalar Diyarında"
+        ],
+        "dogru_cevap": "Denizler Altında Yirmi Bin Fersah"
+    },
+    {
+        "id": 3,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 4,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en küçük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Merkür",
+            "Plüton"
+        ],
+        "dogru_cevap": "Merkür"
+    },
+    {
+        "id": 5,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 6,
+        "soru": "İlk insanlı uzay uçuşunu gerçekleştiren Sovyet kozmonotun adı nedir?",
+        "secenekler": [
+            "Neil Armstrong",
+            "Yuri Gagarin",
+            "Buzz Aldrin",
+            "John Glenn"
+        ],
+        "dogru_cevap": "Yuri Gagarin"
+    },
+    {
+        "id": 7,
+        "soru": "Hangi gezegenin en büyük halkası vardır?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Satürn",
+            "Uranüs"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 8,
+        "soru": "Mona Lisa tablosunun kim tarafından yapıldığı bilinmektedir?",
+        "secenekler": [
+            "Pablo Picasso",
+            "Vincent van Gogh",
+            "Leonardo da Vinci",
+            "Michelangelo"
+        ],
+        "dogru_cevap": "Leonardo da Vinci"
+    },
+    {
+        "id": 9,
+        "soru": "Osmanlı İmparatorluğu'nun başkenti hangi şehirdir?",
+        "secenekler": [
+            "Ankara",
+            "İstanbul",
+            "İzmir",
+            "Bursa"
+        ],
+        "dogru_cevap": "İstanbul"
+    },
+    {
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 10,
+        "soru": "İnsan vücudundaki en büyük organ hangisidir?",
+        "secenekler": [
+            "Karaciğer",
+            "Beyin",
+            "Kalp",
+            "Cilt"
+        ],
+        "dogru_cevap": "Cilt"
+    },
+    {
+        "id": 11,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 12,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 13,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 14,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 15,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 16,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 17,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 18,
+        "soru": "Bir yılda kaç mevsim değişir?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 19,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 20,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 21,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 22,
+        "soru": "Hangi gezegenin en büyük halkası vardır?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Satürn",
+            "Uranüs"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 23,
+        "soru": "Mona Lisa tablosunun kim tarafından yapıldığı bilinmektedir?",
+        "secenekler": [
+            "Pablo Picasso",
+            "Vincent van Gogh",
+            "Leonardo da Vinci",
+            "Michelangelo"
+        ],
+        "dogru_cevap": "Leonardo da Vinci"
+    },
+    {
+        "id": 24,
+        "soru": "Osmanlı İmparatorluğu'nun başkenti hangi şehirdir?",
+        "secenekler": [
+            "Ankara",
+            "İstanbul",
+            "İzmir",
+            "Bursa"
+        ],
+        "dogru_cevap": "İstanbul"
+    },
+    {
+        "id": 25,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 26,
+        "soru": "İnsan vücudundaki en büyük organ hangisidir?",
+        "secenekler": [
+            "Karaciğer",
+            "Beyin",
+            "Kalp",
+            "Cilt"
+        ],
+        "dogru_cevap": "Cilt"
+    },
+    {
+        "id": 27,
+        "soru": "Kimyada 'H2O' formülü hangi bileşiği ifade eder?",
+        "secenekler": [
+            "Su",
+            "Tuz",
+            "Şeker",
+            "Oksijen"
+        ],
+        "dogru_cevap": "Su"
+    },
+    {
+        "id": 28,
+        "soru": "Hangi gezegenin uydusu 'Ay' olarak bilinir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Dünya"
+        ],
+        "dogru_cevap": "Dünya"
+    },
+    {
+        "id": 29,
+        "soru": "Ünlü yazar Jules Verne'in hangi kitabında denizaltı Nemo Kaptanı'nı tanırız?",
+        "secenekler": [
+            "Denizler Altında Yirmi Bin Fersah",
+            "Yedi Gün Yedi Gece",
+            "Robinson Crusoe",
+            "Alice Harikalar Diyarında"
+        ],
+        "dogru_cevap": "Denizler Altında Yirmi Bin Fersah"
+    },
+    {
+        "id": 30,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 31,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 32,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 33,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 34,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 35,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 36,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 37,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 38,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 39,
+        "soru": "Bir insanın beş duyusundan biri hangisidir?",
+        "secenekler": [
+            "Göz",
+            "Dil",
+            "Beyin",
+            "Kalp"
+        ],
+        "dogru_cevap": "Göz"
+    },
+    {
+        "id": 40,
+        "soru": "Sfenks heykeli hangi ülkede bulunur?",
+        "secenekler": [
+            "Mısır",
+            "Yunanistan",
+            "İtalya",
+            "Hindistan"
+        ],
+        "dogru_cevap": "Mısır"
+    },
+    {
+        "id": 41,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 42,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 43,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 44,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 45,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 46,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 47,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 48,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 49,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 50,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 51,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 52,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 53,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 54,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 55,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 56,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 57,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 58,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 59,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 60,
+        "soru": "Bir insanın beş duyusundan biri hangisidir?",
+        "secenekler": [
+            "Göz",
+            "Dil",
+            "Beyin",
+            "Kalp"
+        ],
+        "dogru_cevap": "Göz"
+    },
+    {
+        "id": 61,
+        "soru": "Sfenks heykeli hangi ülkede bulunur?",
+        "secenekler": [
+            "Mısır",
+            "Yunanistan",
+            "İtalya",
+            "Hindistan"
+        ],
+        "dogru_cevap": "Mısır"
+    },
+    {
+        "id": 62,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 63,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 64,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 65,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 66,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 67,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 68,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 69,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 70,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 71,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 72,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 73,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 74,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 75,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 76,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 77,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 78,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 79,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 80,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 81,
+        "soru": "Bir insanın beş duyusundan biri hangisidir?",
+        "secenekler": [
+            "Göz",
+            "Dil",
+            "Beyin",
+            "Kalp"
+        ],
+        "dogru_cevap": "Göz"
+    },
+    {
+        "id": 82,
+        "soru": "Sfenks heykeli hangi ülkede bulunur?",
+        "secenekler": [
+            "Mısır",
+            "Yunanistan",
+            "İtalya",
+            "Hindistan"
+        ],
+        "dogru_cevap": "Mısır"
+    },
+    {
+        "id": 83,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 84,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 85,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 86,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 87,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 88,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 89,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 90,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 91,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 92,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 93,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 94,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 95,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 96,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 97,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 98,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 99,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 100,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 101,
+        "soru": "Bir insanın beş duyusundan biri hangisidir?",
+        "secenekler": [
+            "Göz",
+            "Dil",
+            "Beyin",
+            "Kalp"
+        ],
+        "dogru_cevap": "Göz"
+    },
+    {
+        "id": 102,
+        "soru": "Sfenks heykeli hangi ülkede bulunur?",
+        "secenekler": [
+            "Mısır",
+            "Yunanistan",
+            "İtalya",
+            "Hindistan"
+        ],
+        "dogru_cevap": "Mısır"
+    },
+    {
+        "id": 103,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 104,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 105,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 106,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 107,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 108,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 109,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 110,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 111,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 112,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 113,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 114,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 115,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 116,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 117,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 118,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 119,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 120,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 121,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 122,
+        "soru": "Bir insanın beş duyusundan biri hangisidir?",
+        "secenekler": [
+            "Göz",
+            "Dil",
+            "Beyin",
+            "Kalp"
+        ],
+        "dogru_cevap": "Göz"
+    },
+    {
+        "id": 123,
+        "soru": "Sfenks heykeli hangi ülkede bulunur?",
+        "secenekler": [
+            "Mısır",
+            "Yunanistan",
+            "İtalya",
+            "Hindistan"
+        ],
+        "dogru_cevap": "Mısır"
+    },
+    {
+        "id": 124,
+        "soru": "Renk körlüğü en yaygın hangi cinsiyette görülür?",
+        "secenekler": [
+            "Erkekler",
+            "Kadınlar",
+            "Her iki cinsiyette de eşit",
+            "Renk körlüğü yoktur"
+        ],
+        "dogru_cevap": "Erkekler"
+    },
+    {
+        "id": 125,
+        "soru": "Hangi gezegenin uydusu 'Titan' olarak bilinir?",
+        "secenekler": [
+            "Neptün",
+            "Jüpiter",
+            "Satürn",
+            "Mars"
+        ],
+        "dogru_cevap": "Satürn"
+    },
+    {
+        "id": 126,
+        "soru": "Ünlü ressam Michelangelo'nun Sistine Şapeli'ndeki tavan süslemesi neyin hikayesini anlatır?",
+        "secenekler": [
+            "Yaratılış",
+            "Son Akşam Yemeği",
+            "İsa'nın Doğuşu",
+            "Son Yargı"
+        ],
+        "dogru_cevap": "Yaratılış"
+    },
+    {
+        "id": 127,
+        "soru": "Bir oktav kaç nota aralığındadır?",
+        "secenekler": [
+            "5",
+            "7",
+            "8",
+            "12"
+        ],
+        "dogru_cevap": "8"
+    },
+    {
+        "id": 128,
+        "soru": "Ünlü bilim insanı Albert Einstein hangi alanda çalışmıştır?",
+        "secenekler": [
+            "Biyo Kimya",
+            "Fizik",
+            "Astronomi",
+            "Tıp"
+        ],
+        "dogru_cevap": "Fizik"
+    },
+    {
+        "id": 129,
+        "soru": "Hangi gezegenin uydusu 'Phobos' ve 'Deimos' olarak bilinir?",
+        "secenekler": [
+            "Dünya",
+            "Jüpiter",
+            "Mars",
+            "Venüs"
+        ],
+        "dogru_cevap": "Mars"
+    },
+    {
+        "id": 130,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin hangi eserinde 'Son Akşam Yemeği' sahnesi tasvir edilmiştir?",
+        "secenekler": [
+            "Mona Lisa",
+            "Sistine Şapeli",
+            "Son Akşam Yemeği",
+            "İnci Kolye"
+        ],
+        "dogru_cevap": "Son Akşam Yemeği"
+    },
+    {
+        "id": 131,
+        "soru": "Bir yıl kaç mevsime bölünmüştür?",
+        "secenekler": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "dogru_cevap": "4"
+    },
+    {
+        "id": 132,
+        "soru": "Hangi gezegen, Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 133,
+        "soru": "Bir üçgenin iç açıları toplamı kaç derecedir?",
+        "secenekler": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+        ],
+        "dogru_cevap": "180°"
+    },
+    {
+        "id": 134,
+        "soru": "Pi sayısı kaç ondalık basamağa kadar bilinmektedir?",
+        "secenekler": [
+            "100",
+            "1.000",
+            "10.000",
+            "1.000.000"
+        ],
+        "dogru_cevap": "1.000"
+    },
+    {
+        "id": 135,
+        "soru": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+        "secenekler": [
+            "Mars",
+            "Venüs",
+            "Jüpiter",
+            "Satürn"
+        ],
+        "dogru_cevap": "Jüpiter"
+    },
+    {
+        "id": 136,
+        "soru": "Hangi mevsimde yapraklar ağaçlardan dökülür?",
+        "secenekler": [
+            "İlkbahar",
+            "Yaz",
+            "Sonbahar",
+            "Kış"
+        ],
+        "dogru_cevap": "Sonbahar"
+    },
+    {
+        "id": 137,
+        "soru": "Kur'an-ı Kerim kaç cüzden oluşur?",
+        "secenekler": [
+            "30",
+            "50",
+            "60",
+            "114"
+        ],
+        "dogru_cevap": "114"
+    },
+    {
+        "id": 138,
+        "soru": "İngiliz yazar William Shakespeare'in hangi oyununda 'Romeo ve Juliet' hikayesi anlatılır?",
+        "secenekler": [
+            "Hamlet",
+            "Othello",
+            "Macbeth",
+            "Romeo ve Juliet"
+        ],
+        "dogru_cevap": "Romeo ve Juliet"
+    },
+    {
+        "id": 139,
+        "soru": "1917 yılında Rusya'da gerçekleşen devrim sonucunda hangi lider iktidara gelmiştir?",
+        "secenekler": [
+            "Vladimir Lenin",
+            "Joseph Stalin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        "dogru_cevap": "Vladimir Lenin"
+    },
+    {
+        "id": 140,
+        "soru": "Ünlü ressam Leonardo da Vinci'nin eseri Mona Lisa, hangi müzede sergilenmektedir?",
+        "secenekler": [
+            "The Louvre (Louvre Müzesi)",
+            "The British Museum",
+            "The Metropolitan Museum of Art",
+            "Uffizi Galerisi"
+        ],
+        "dogru_cevap": "The Louvre (Louvre Müzesi)"
+    },
+    {
+        "id": 141,
+        "soru": "Hangi ülke, futbolun doğduğu yer olarak kabul edilir?",
+        "secenekler": [
+            "İtalya",
+            "Brezilya",
+            "Arjantin",
+            "İngiltere"
+        ],
+        "dogru_cevap": "İngiltere"
+    },
+    {
+        "id": 142,
+        "soru": "Kaç element periyodik tabloda bulunmaktadır?",
+        "secenekler": [
+            "92",
+            "104",
+            "118",
+            "120"
+        ],
+        "dogru_cevap": "118"
+    },
+    {
+        "id": 143,
+        "soru": "Osmanlı Devleti'nin kurucusu kimdir?",
+        "secenekler": [
+            "Orhan Gazi",
+            "I. Murad",
+            "Osman Gazi",
+            "I. Mehmed"
+        ],
+        "dogru_cevap": "Osman Gazi"
+    },
+    {
+        "id": 144,
+        "soru": "Osmanlı Devleti hangi yüzyılda kurulmuştur?",
+        "secenekler": [
+            "11. yüzyıl",
+            "12. yüzyıl",
+            "13. yüzyıl",
+            "14. yüzyıl"
+        ],
+        "dogru_cevap": "13. yüzyıl"
+    },
+    {
+        "id": 145,
+        "soru": "Osmanlı Devleti hangi yüzyılda sona ermiştir?",
+        "secenekler": [
+            "16. yüzyıl",
+            "17. yüzyıl",
+            "18. yüzyıl",
+            "19. yüzyıl"
+        ],
+        "dogru_cevap": "20. yüzyıl"
+    },
+    {
+        "id": 146,
+        "soru": "Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı kimdir?",
+        "secenekler": [
+            "İsmet İnönü",
+            "Mustafa Kemal Atatürk",
+            "Celal Bayar",
+            "Cemal Gürsel"
+        ],
+        "dogru_cevap": "Mustafa Kemal Atatürk"
+    },
+    {
+        "id": 147,
+        "soru": "Kurtuluş Savaşı ne zaman başlamıştır?",
+        "secenekler": [
+            "1915",
+            "1918",
+            "1919",
+            "1923"
+        ],
+        "dogru_cevap": "1919"
+    },
+    {
+        "id": 148,
+        "soru": "Türkiye Cumhuriyeti'nin başkenti neresidir?",
+        "secenekler": [
+            "Ankara",
+            "İstanbul",
+            "İzmir",
+            "Bursa"
+        ],
+        "dogru_cevap": "Ankara"
+    },
+    {
+        "id": 149,
+        "soru": "Türkiye Cumhuriyeti'nin ilk kadın milletvekili kimdir?",
+        "secenekler": [
+            "Halide Edip Adıvar",
+            "Sabahattin Ali",
+            "Nâzım Hikmet",
+            "Meclis'te kadın milletvekili yoktu"
+        ],
+        "dogru_cevap": "Meclis'te kadın milletvekili yoktu"
+    },
+    {
+        "id": 150,
+        "soru": "Türkiye'nin en büyük doğal gölü hangisidir?",
+        "secenekler": [
+            "Van Gölü",
+            "Beyşehir Gölü",
+            "Tuz Gölü",
+            "Eğirdir Gölü"
+        ],
+        "dogru_cevap": "Van Gölü"
+    },
+    {
+        "id": 151,
+        "soru": "Anadolu Medeniyetleri'nden Hititler hangi bölgede kurulmuştur?",
+        "secenekler": [
+            "Marmara Bölgesi",
+            "Karadeniz Bölgesi",
+            "İç Anadolu Bölgesi",
+            "Akdeniz Bölgesi"
+        ],
+        "dogru_cevap": "İç Anadolu Bölgesi"
+    },
+    {
+        "id": 152,
+        "soru": "Türk hükümdarı Alp Arslan hangi zaferle tanınmıştır?",
+        "secenekler": [
+            "Manzikert Meydan Muharebesi",
+            "Malazgirt Meydan Muharebesi",
+            "Dandanakan Meydan Muharebesi",
+            "Mercidabık Meydan Muharebesi"
+        ],
+        "dogru_cevap": "Malazgirt Meydan Muharebesi"
+    },
+    {
+        "id": 153,
+        "soru": "Anadolu'nun Türkleşmesi ve İslamlaşması sürecinde önemli rol oynayan Türk beyliklerinden biri hangisidir?",
+        "secenekler": [
+            "Osmanlı Beyliği",
+            "Karamanoğulları Beyliği",
+            "Saruhanoğulları Beyliği",
+            "Eretna Beyliği"
+        ],
+        "dogru_cevap": "Osmanlı Beyliği"
+    },
+    {
+        "id": 154,
+        "soru": "I. Mehmed'in İstanbul'u fethi hangi yıl gerçekleştirmiştir?",
+        "secenekler": [
+            "1453",
+            "1478",
+            "1492",
+            "1520"
+        ],
+        "dogru_cevap": "1453"
+    },
+    {
+        "id": 155,
+        "soru": "Anadolu Selçuklu Devleti'nin başkenti neresidir?",
+        "secenekler": [
+            "Ankara",
+            "Konya",
+            "Sivas",
+            "Kayseri"
+        ],
+        "dogru_cevap": "Konya"
+    },
+    {
+        "id": 156,
+        "soru": "Birinci Dünya Savaşı hangi yıllar arasında gerçekleşmiştir?",
+        "secenekler": [
+            "1912-1913",
+            "1914-1918",
+            "1916-1918",
+            "1917-1920"
+        ],
+        "dogru_cevap": "1914-1918"
+    },
+    {
+        "id": 157,
+        "soru": "Osmanlı İmparatorluğu'nun Balkan Savaşları sonucunda hangi toprakları kaybettiği antlaşmayla belirlenmiştir?",
+        "secenekler": [
+            "Ayastefanos Antlaşması",
+            "Bükreş Antlaşması",
+            "Londra Antlaşması",
+            "Sevr Antlaşması"
+        ],
+        "dogru_cevap": "Londra Antlaşması"
+    },
+    {
+        "id": 158,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası hangi yıl kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1924"
+    },
+    {
+        "id": 159,
+        "soru": "Atatürk, Türkiye Cumhuriyeti'nin kurucusu ve ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 160,
+        "soru": "Osmanlı Devleti'nin son padişahı kimdir?",
+        "secenekler": [
+            "I. Mehmed",
+            "II. Abdülhamid",
+            "V. Mehmed",
+            "Vahdettin"
+        ],
+        "dogru_cevap": "Vahdettin"
+    },
+    {
+        "id": 161,
+        "soru": "Osmanlı İmparatorluğu'nun son topraklarını kaybettiği antlaşma hangisidir?",
+        "secenekler": [
+            "Ayastefanos Antlaşması",
+            "Bükreş Antlaşması",
+            "Mondros Ateşkes Antlaşması",
+            "Sevr Antlaşması"
+        ],
+        "dogru_cevap": "Sevr Antlaşması"
+    },
+    {
+        "id": 162,
+        "soru": "Osmanlı İmparatorluğu'nun I. Dünya Savaşı'ndan çekildiği ateşkes antlaşması hangisidir?",
+        "secenekler": [
+            "Ayastefanos Antlaşması",
+            "Bükreş Antlaşması",
+            "Mondros Ateşkes Antlaşması",
+            "Sevr Antlaşması"
+        ],
+        "dogru_cevap": "Mondros Ateşkes Antlaşması"
+    },
+    {
+        "id": 163,
+        "soru": "Osmanlı İmparatorluğu'nun I. Dünya Savaşı'ndan çekildiği yıl hangisidir?",
+        "secenekler": [
+            "1916",
+            "1917",
+            "1918",
+            "1919"
+        ],
+        "dogru_cevap": "1918"
+    },
+    {
+        "id": 164,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde gerçekleşen 'Trablusgarp Savaşı' hangi ülkeyle yapılmıştır?",
+        "secenekler": [
+            "İtalya",
+            "Rusya",
+            "Fransa",
+            "Yunanistan"
+        ],
+        "dogru_cevap": "İtalya"
+    },
+    {
+        "id": 165,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde gerçekleşen 'Balkan Savaşları' hangi yıllar arasında yapılmıştır?",
+        "secenekler": [
+            "1910-1912",
+            "1912-1913",
+            "1914-1918",
+            "1916-1918"
+        ],
+        "dogru_cevap": "1912-1913"
+    },
+    {
+        "id": 166,
+        "soru": "Osmanlı İmparatorluğu'nun ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1876"
+    },
+    {
+        "id": 167,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde hangi topraklar bağımsızlığını ilan etmiştir?",
+        "secenekler": [
+            "Yunanistan",
+            "Sırbistan",
+            "Bulgaristan",
+            "Mısır"
+        ],
+        "dogru_cevap": "Yunanistan"
+    },
+    {
+        "id": 168,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 169,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1055",
+            "1071",
+            "1100",
+            "1132"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 170,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 171,
+        "soru": "Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı kimdir?",
+        "secenekler": [
+            "İsmet İnönü",
+            "Mustafa Kemal Atatürk",
+            "Celal Bayar",
+            "Cemal Gürsel"
+        ],
+        "dogru_cevap": "Mustafa Kemal Atatürk"
+    },
+    {
+        "id": 172,
+        "soru": "Osmanlı İmparatorluğu'nun I. Dünya Savaşı'nda taraf değiştirerek itilaf devletlerine katılmasına yol açan olay hangisidir?",
+        "secenekler": [
+            "Balkan Savaşları",
+            "Trablusgarp Savaşı",
+            "Gelibolu Savaşı",
+            "Sarıkamış Harekâtı"
+        ],
+        "dogru_cevap": "Gelibolu Savaşı"
+    },
+    {
+        "id": 173,
+        "soru": "Türkiye Cumhuriyeti'nin ilk kadın milletvekili kimdir?",
+        "secenekler": [
+            "Halide Edip Adıvar",
+            "Sabahattin Ali",
+            "Nâzım Hikmet",
+            "Meclis'te kadın milletvekili yoktu"
+        ],
+        "dogru_cevap": "Halide Edip Adıvar"
+    },
+    {
+        "id": 174,
+        "soru": "Osmanlı Devleti'nin son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 175,
+        "soru": "Kurtuluş Savaşı'nda Türk milletine hitap eden ve 'Milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır' diyen kişi kimdir?",
+        "secenekler": [
+            "Mustafa Kemal Atatürk",
+            "İsmet İnönü",
+            "Fevzi Çakmak",
+            "Kazım Karabekir"
+        ],
+        "dogru_cevap": "Mustafa Kemal Atatürk"
+    },
+    {
+        "id": 176,
+        "soru": "Mustafa Kemal Atatürk, 29 Ekim 1923 tarihinde Cumhuriyet'in ilan edildiği gün hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 177,
+        "soru": "Türk tarihindeki ilk yazılı belgeler hangi medeniyete aittir?",
+        "secenekler": [
+            "Hititler",
+            "Urartular",
+            "Lidyalılar",
+            "Frigyalılar"
+        ],
+        "dogru_cevap": "Hititler"
+    },
+    {
+        "id": 178,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde hangi topraklar bağımsızlığını ilan etmiştir?",
+        "secenekler": [
+            "Sırbistan",
+            "Bulgaristan",
+            "Yunanistan",
+            "Romanya"
+        ],
+        "dogru_cevap": "Sırbistan"
+    },
+    {
+        "id": 179,
+        "soru": "Osmanlı İmparatorluğu'nun son padişahı kimdir?",
+        "secenekler": [
+            "I. Mehmed",
+            "II. Abdülhamid",
+            "V. Mehmed",
+            "Vahdettin"
+        ],
+        "dogru_cevap": "Vahdettin"
+    },
+    {
+        "id": 180,
+        "soru": "Osmanlı İmparatorluğu'nun son dönemindeki genç subaylar hangi cemiyeti kurmuş ve Jön Türk Devrimi'ni gerçekleştirmiştir?",
+        "secenekler": [
+            "İttihat ve Terakki Cemiyeti",
+            "Ahrar Cemiyeti",
+            "Hürriyet ve İtilaf Cemiyeti",
+            "Osmanlı İttihat Cemiyeti"
+        ],
+        "dogru_cevap": "İttihat ve Terakki Cemiyeti"
+    },
+    {
+        "id": 181,
+        "soru": "Türk tarihinde 'Manzikert Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1036",
+            "1055",
+            "1071",
+            "1081"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 182,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 183,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası hangi yıl kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 184,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 185,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1055",
+            "1071",
+            "1100",
+            "1132"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 186,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 187,
+        "soru": "Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı kimdir?",
+        "secenekler": [
+            "İsmet İnönü",
+            "Mustafa Kemal Atatürk",
+            "Celal Bayar",
+            "Cemal Gürsel"
+        ],
+        "dogru_cevap": "Mustafa Kemal Atatürk"
+    },
+    {
+        "id": 188,
+        "soru": "Osmanlı İmparatorluğu'nun I. Dünya Savaşı'nda taraf değiştirerek itilaf devletlerine katılmasına yol açan olay hangisidir?",
+        "secenekler": [
+            "Balkan Savaşları",
+            "Trablusgarp Savaşı",
+            "Gelibolu Savaşı",
+            "Sarıkamış Harekâtı"
+        ],
+        "dogru_cevap": "Gelibolu Savaşı"
+    },
+    {
+        "id": 189,
+        "soru": "Osmanlı İmparatorluğu hangi tarihte kurulmuştur?",
+        "secenekler": [
+            "1299",
+            "1326",
+            "1354",
+            "1389"
+        ],
+        "dogru_cevap": "1299"
+    },
+    {
+        "id": 190,
+        "soru": "Osmanlı Devleti'nin kurucusu kimdir?",
+        "secenekler": [
+            "Osman Gazi",
+            "Orhan Gazi",
+            "Murad Hüdavendigar",
+            "Mehmed Çelebi"
+        ],
+        "dogru_cevap": "Osman Gazi"
+    },
+    {
+        "id": 191,
+        "soru": "Osmanlı İmparatorluğu'nun ilk başkenti neresidir?",
+        "secenekler": [
+            "Bursa",
+            "Edirne",
+            "İstanbul",
+            "Ankara"
+        ],
+        "dogru_cevap": "Bursa"
+    },
+    {
+        "id": 192,
+        "soru": "Osmanlı İmparatorluğu'nun son padişahı kimdir?",
+        "secenekler": [
+            "I. Mehmed",
+            "II. Abdülhamid",
+            "V. Mehmed",
+            "Vahdettin"
+        ],
+        "dogru_cevap": "Vahdettin"
+    },
+    {
+        "id": 193,
+        "soru": "Osmanlı Devleti hangi savaş sonucunda Doğu Roma İmparatorluğu'nu yıkarak İstanbul'u fethetmiştir?",
+        "secenekler": [
+            "Malazgirt Meydan Muharebesi",
+            "Kösedağ Muharebesi",
+            "Ankara Muharebesi",
+            "Viyana Kuşatması"
+        ],
+        "dogru_cevap": "Ankara Muharebesi"
+    },
+    {
+        "id": 194,
+        "soru": "Türk tarihindeki ilk yazılı belgeler hangi medeniyete aittir?",
+        "secenekler": [
+            "Hititler",
+            "Urartular",
+            "Lidyalılar",
+            "Frigyalılar"
+        ],
+        "dogru_cevap": "Hititler"
+    },
+    {
+        "id": 195,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde hangi topraklar bağımsızlığını ilan etmiştir?",
+        "secenekler": [
+            "Sırbistan",
+            "Bulgaristan",
+            "Yunanistan",
+            "Romanya"
+        ],
+        "dogru_cevap": "Sırbistan"
+    },
+    {
+        "id": 196,
+        "soru": "Osmanlı İmparatorluğu'nun son dönemindeki genç subaylar hangi cemiyeti kurmuş ve Jön Türk Devrimi'ni gerçekleştirmiştir?",
+        "secenekler": [
+            "İttihat ve Terakki Cemiyeti",
+            "Ahrar Cemiyeti",
+            "Hürriyet ve İtilaf Cemiyeti",
+            "Osmanlı İttihat Cemiyeti"
+        ],
+        "dogru_cevap": "İttihat ve Terakki Cemiyeti"
+    },
+    {
+        "id": 197,
+        "soru": "Türk tarihinde 'Manzikert Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1036",
+            "1055",
+            "1071",
+            "1081"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 198,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 199,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası hangi yıl kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 200,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 201,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1055",
+            "1071",
+            "1100",
+            "1132"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 202,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 203,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 204,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 205,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1036",
+            "1055",
+            "1071",
+            "1081"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 206,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 207,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası hangi yıl kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 208,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 209,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1055",
+            "1071",
+            "1100",
+            "1132"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 210,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 211,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 212,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 213,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1036",
+            "1055",
+            "1071",
+            "1081"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 214,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 215,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası hangi yıl kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 216,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 217,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1055",
+            "1071",
+            "1100",
+            "1132"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 218,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    {
+        "id": 219,
+        "soru": "Türkiye Cumhuriyeti'nin ilk anayasası ne zaman kabul edilmiştir?",
+        "secenekler": [
+            "1920",
+            "1921",
+            "1922",
+            "1924"
+        ],
+        "dogru_cevap": "1921"
+    },
+    {
+        "id": 220,
+        "soru": "Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı olduğu yıl hangi unvanla anılmıştır?",
+        "secenekler": [
+            "Atatürk",
+            "Hakkıdır",
+            "Mareşal",
+            "Büyük Lider"
+        ],
+        "dogru_cevap": "Atatürk"
+    },
+    {
+        "id": 221,
+        "soru": "Türk tarihinde 'Malazgirt Meydan Muharebesi' hangi yıl gerçekleşmiştir?",
+        "secenekler": [
+            "1036",
+            "1055",
+            "1071",
+            "1081"
+        ],
+        "dogru_cevap": "1071"
+    },
+    {
+        "id": 222,
+        "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Meşrutiyet Dönemi' hangi yıl başlamıştır?",
+        "secenekler": [
+            "1808",
+            "1839",
+            "1876",
+            "1908"
+        ],
+        "dogru_cevap": "1908"
+    },
+    
+   {
+    "id": 223,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın milletvekili kimdir?",
+    "secenekler": ["Halide Edip Adıvar", "Sabahattin Ali", "Nâzım Hikmet", "Meclis'te kadın milletvekili yoktu"],
+    "dogru_cevap": "Halide Edip Adıvar"
+  },
+  {
+    "id": 224,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'İttihat ve Terakki Cemiyeti' hangi yıl kurulmuştur?",
+    "secenekler": ["1876", "1896", "1908", "1911"],
+    "dogru_cevap": "1896"
+  },
+  {
+    "id": 225,
+    "soru": "Türkiye'nin ilk yerli otomobili 'Devrim' hangi yıl üretilmiştir?",
+    "secenekler": ["1953", "1955", "1961", "1964"],
+    "dogru_cevap": "1961"
+  },
+  {
+    "id": 226,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın pilotu kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Hürriyet Yılmaz", "Ayşe Hatun Önal", "Nezihe Viranyalı"],
+    "dogru_cevap": "Sabiha Gökçen"
+  },
+  {
+    "id": 227,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Kuzey Afrika'daki Trablusgarp'ı kaybetmiştir?",
+    "secenekler": ["I. Balkan Savaşı", "I. Dünya Savaşı", "II. Balkan Savaşı", "Trablusgarp Savaşı"],
+    "dogru_cevap": "Trablusgarp Savaşı"
+  },
+  {
+    "id": 228,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın milletvekili kimdir?",
+    "secenekler": ["Latife Hanım", "Sabiha Gökçen", "Behiye Kemal", "Hatice Halime Hanım"],
+    "dogru_cevap": "Hatice Halime Hanım"
+  },
+  {
+    "id": 229,
+    "soru": "Türkiye Cumhuriyeti'nin ilk cumhurbaşkanı kimdir?",
+    "secenekler": ["Mustafa Kemal Atatürk", "İsmet İnönü", "Celal Bayar", "Rauf Orbay"],
+    "dogru_cevap": "Mustafa Kemal Atatürk"
+  },
+  {
+    "id": 230,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Osmanlı İttihat ve Terakki Cemiyeti' hangi yıl kurulmuştur?",
+    "secenekler": ["1867", "1889", "1902", "1911"],
+    "dogru_cevap": "1889"
+  },
+  {
+    "id": 231,
+    "soru": "Türkiye Cumhuriyeti'nin ilk hükümeti hangi yıl kurulmuştur?",
+    "secenekler": ["1920", "1921", "1922", "1923"],
+    "dogru_cevap": "1923"
+  },
+  {
+    "id": 232,
+    "soru": "Türk tarihinde 'Kütahya-Eskişehir Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1918", "1920", "1921", "1922"],
+    "dogru_cevap": "1922"
+  },
+  {
+    "id": 233,
+    "soru": "Türkiye Cumhuriyeti'nin ilk yabancı ziyaretçi devlet başkanı kimdir?",
+    "secenekler": ["Nikita Kruşçev", "Gamal Abdül Nasser", "John F. Kennedy", "Georges Pompidou"],
+    "dogru_cevap": "Nikita Kruşçev"
+  },
+  {
+    "id": 234,
+    "soru": "Türkiye Cumhuriyeti'nin ilk ve tek kadın başbakanı kimdir?",
+    "secenekler": ["Tansu Çiller", "Benazir Butto", "Golda Meir", "Margaret Thatcher"],
+    "dogru_cevap": "Tansu Çiller"
+  },
+  {
+    "id": 235,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Osmanlı Hürriyet ve İtilaf Fırkası' hangi yıl kurulmuştur?",
+    "secenekler": ["1907", "1911", "1914", "1917"],
+    "dogru_cevap": "1911"
+  },
+  {
+    "id": 236,
+    "soru": "Türkiye Cumhuriyeti'nin ilk ve tek kadın Cumhurbaşkanı kimdir?",
+    "secenekler": ["Tansu Çiller", "Sabiha Gökçen", "Hatice Halime Hanım", "Dilek İmamoğlu"],
+    "dogru_cevap": "Sabiha Gökçen"
+  },
+  {
+    "id": 237,
+    "soru": "Türk tarihinde 'Büyük Taarruz' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1919", "1920", "1921", "1922"],
+    "dogru_cevap": "1922"
+  },
+  {
+    "id": 238,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Osmanlı İslam Cemiyeti' hangi yıl kurulmuştur?",
+    "secenekler": ["1908", "1911", "1917", "1920"],
+    "dogru_cevap": "1917"
+  },
+  {
+    "id": 239,
+    "soru": "Türkiye Cumhuriyeti'nin ilk spor karşılaşması hangi yıl yapılmıştır?",
+    "secenekler": ["1911", "1920", "1923", "1930"],
+    "dogru_cevap": "1920"
+  },
+  {
+    "id": 240,
+    "soru": "Türk tarihinde 'Anafartalar Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1914", "1915", "1916", "1917"],
+    "dogru_cevap": "1915"
+  },
+  {
+    "id": 241,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Hürriyet ve İtilaf Fırkası' hangi yıl kurulmuştur?",
+    "secenekler": ["1907", "1911", "1914", "1917"],
+    "dogru_cevap": "1917"
+  },
+  {
+    "id": 242,
+    "soru": "Türkiye Cumhuriyeti'nin ilk gazetesi hangi yıl yayımlanmaya başlamıştır?",
+    "secenekler": ["1918", "1920", "1922", "1924"],
+    "dogru_cevap": "1920"
+  },
+  {
+    "id": 243,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Felâh-ı Vatan Cemiyeti' hangi yıl kurulmuştur?",
+    "secenekler": ["1908", "1911", "1914", "1917"],
+    "dogru_cevap": "1917"
+  },
+  {
+    "id": 244,
+    "soru": "Türk tarihinde 'Büyük Selçuklu Devleti' hangi yıllar arasında var olmuştur?",
+    "secenekler": ["962-1096", "1037-1194", "1037-1194", "1038-1307"],
+    "dogru_cevap": "1038-1307"
+  },
+  {
+    "id": 245,
+    "soru": "Türkiye Cumhuriyeti'nin ilk maliye bakanı kimdir?",
+    "secenekler": ["Celal Bayar", "Osman Zeki Bey", "Mehmet Cavit Bey", "Fevzi Çakmak"],
+    "dogru_cevap": "Osman Zeki Bey"
+  },
+  {
+    "id": 246,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Kırım'ı kaybetmiştir?",
+    "secenekler": ["93 Harbi", "Kırım Savaşı", "Kut'ül Amare", "I. Dünya Savaşı"],
+    "dogru_cevap": "Kırım Savaşı"
+  },
+  {
+    "id": 247,
+    "soru": "Türkiye Cumhuriyeti'nin ilk milli parkı hangi yıl açılmıştır?",
+    "secenekler": ["1935", "1945", "1955", "1965"],
+    "dogru_cevap": "1955"
+  },
+  {
+    "id": 248,
+    "soru": "Osmanlı İmparatorluğu'nun son döneminde kurulan 'Osmanlı Teali-i İslam Cemiyeti' hangi yıl kurulmuştur?",
+    "secenekler": ["1908", "1911", "1917", "1920"],
+    "dogru_cevap": "1917"
+  },
+  {
+    "id": 249,
+    "soru": "Türk tarihinde 'Gelibolu Savaşları' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1302", "1331", "1354", "1415"],
+    "dogru_cevap": "1354"
+  },
+  {
+    "id": 250,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın doktoru kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Müfide İlhan", "Cevriye Hanım", "Behiye Kemal"],
+    "dogru_cevap": "Müfide İlhan"
+  },
+  {
+    "id": 251,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Mısır'ı kaybetmiştir?",
+    "secenekler": ["Kavalalı Mehmed Ali Paşa İsyanı", "Yedi Gün Savaşları", "93 Harbi", "Kanije Savunması"],
+    "dogru_cevap": "Kavalalı Mehmed Ali Paşa İsyanı"
+  },
+  {
+    "id": 252,
+    "soru": "Türk tarihinde 'Kösedağ Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1081", "1086", "1091", "1107"],
+    "dogru_cevap": "1071"
+  },
+  {
+    "id": 253,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın ressamı kimdir?",
+    "secenekler": ["Sabahat Şakir", "Hale Asaf", "Aliye Berger", "Şükufe Nihal"],
+    "dogru_cevap": "Sabahat Şakir"
+  },
+  {
+    "id": 254,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Gürcistan'ı tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Yedi Gün Savaşları", "Kırım Savaşı", "93 Harbi"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 255,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın tiyatro sanatçısı kimdir?",
+    "secenekler": ["Bedia Muvahhit", "Behiye Kemal", "Afife Jale", "Müşfik Kenter"],
+    "dogru_cevap": "Afife Jale"
+  },
+  {
+    "id": 256,
+    "soru": "Türk tarihinde 'Ankara Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1054", "1071", "1101", "1118"],
+    "dogru_cevap": "1071"
+  },
+  {
+    "id": 257,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Arnavutluk'u kaybetmiştir?",
+    "secenekler": ["I. Balkan Savaşı", "II. Balkan Savaşı", "Kut'ül Amare", "Trablusgarp Savaşı"],
+    "dogru_cevap": "I. Balkan Savaşı"
+  },
+  {
+    "id": 258,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın hava trafik kontrolörü kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Nezihe Viranyalı", "Aylin Sözer", "Hatice Halime Hanım"],
+    "dogru_cevap": "Aylin Sözer"
+  },
+  {
+    "id": 259,
+    "soru": "Türk tarihinde 'Adrianopolis Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["712", "717", "724", "732"],
+    "dogru_cevap": "718"
+  },
+  {
+    "id": 260,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Makedonya'yı kaybetmiştir?",
+    "secenekler": ["Kut'ül Amare", "93 Harbi", "Yedi Gün Savaşları", "Balkan Savaşları"],
+    "dogru_cevap": "Balkan Savaşları"
+  },
+  {
+    "id": 261,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın havacısı kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Bedia Muvahhit", "Aylin Sözer", "Hatice Halime Hanım"],
+    "dogru_cevap": "Sabiha Gökçen"
+  },
+  {
+    "id": 262,
+    "soru": "Türk tarihinde 'Manastır Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1302", "1331", "1354", "1415"],
+    "dogru_cevap": "1371"
+  },
+  {
+    "id": 263,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Filistin'i tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "93 Harbi", "Kırım Savaşı", "Yedi Gün Savaşları"],
+    "dogru_cevap": "I. Dünya Savaşı"
+  },
+  {
+    "id": 264,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın yargıcı kimdir?",
+    "secenekler": ["Muazzez İlmiye Çığ", "Ümran İnceefe", "Canan Dağdeviren", "Ebru Baştuğ"],
+    "dogru_cevap": "Muazzez İlmiye Çığ"
+  },
+  {
+    "id": 265,
+    "soru": "Türk tarihinde 'Belgrad Kuşatması' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1389", "1453", "1521", "1683"],
+    "dogru_cevap": "1521"
+  },
+  {
+    "id": 266,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Kudüs'ü kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "93 Harbi", "Kanije Savunması"],
+    "dogru_cevap": "I. Dünya Savaşı"
+  },
+  {
+    "id": 267,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın şehir plancısı kimdir?",
+    "secenekler": ["Asuman Aykaç", "Korhan Gümüş", "Ayşe Hatun Önal", "Gönül Nuhoğlu"],
+    "dogru_cevap": "Asuman Aykaç"
+  },
+  {
+    "id": 268,
+    "soru": "Türk tarihinde 'Malta Kuşatması' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1505", "1565", "1601", "1677"],
+    "dogru_cevap": "1565"
+  },
+  {
+    "id": 269,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Girit'i kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "93 Harbi", "Yedi Gün Savaşları", "Kanije Savunması"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 270,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın astronot adayı kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Aylin Sözer", "Nezihe Viranyalı", "Hatice Halime Hanım"],
+    "dogru_cevap": "Aylin Sözer"
+  },
+  {
+    "id": 271,
+    "soru": "Türk tarihinde 'Çaldıran Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1502", "1514", "1530", "1543"],
+    "dogru_cevap": "1514"
+  },
+  {
+    "id": 272,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Yanya'yı tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Yedi Gün Savaşları", "Kut'ül Amare", "Kanije Savunması"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 273,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın spor gazetecisi kimdir?",
+    "secenekler": ["Nezihe Viranyalı", "Aylin Sözer", "Canan Dağdeviren", "Hatice Halime Hanım"],
+    "dogru_cevap": "Nezihe Viranyalı"
+  },
+  {
+    "id": 274,
+    "soru": "Türk tarihinde 'Kadırga Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1389", "1448", "1462", "1478"],
+    "dogru_cevap": "1448"
+  },
+  {
+    "id": 275,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Mora'yı kaybetmiştir?",
+    "secenekler": ["Yedi Gün Savaşları", "I. Balkan Savaşı", "Kut'ül Amare", "Trablusgarp Savaşı"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 276,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın radyo sunucusu kimdir?",
+    "secenekler": ["Asuman Aykaç", "Behiye Kemal", "Aylin Sözer", "Hatice Halime Hanım"],
+    "dogru_cevap": "Asuman Aykaç"
+  },
+  {
+    "id": 277,
+    "soru": "Türk tarihinde 'Varna Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1354", "1444", "1521", "1683"],
+    "dogru_cevap": "1444"
+  },
+  {
+    "id": 278,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Kosova'yı kaybetmiştir?",
+    "secenekler": ["Kavalalı Mehmed Ali Paşa İsyanı", "93 Harbi", "Kanije Savunması", "Kosova Muharebesi"],
+    "dogru_cevap": "Kosova Muharebesi"
+  },
+  {
+    "id": 279,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın tiyatro yönetmeni kimdir?",
+    "secenekler": ["Sabiha Gökçen", "Canan Dağdeviren", "Ayşe Hatun Önal", "Aylin Sözer"],
+    "dogru_cevap": "Canan Dağdeviren"
+  },
+  {
+    "id": 280,
+    "soru": "Türk tarihinde 'Nikopolis Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1302", "1396", "1453", "1521"],
+    "dogru_cevap": "1396"
+  },
+  {
+    "id": 281,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Karadağ'ı tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "Kanije Savunması", "Yedi Gün Savaşları"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 282,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın piyanisti kimdir?",
+    "secenekler": ["Ayşe Hatun Önal", "Nezihe Viranyalı", "Hatice Halime Hanım", "Hülya Taşçı"],
+    "dogru_cevap": "Hülya Taşçı"
+  },
+  {
+    "id": 283,
+    "soru": "Türk tarihinde 'Adrianopolis Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["712", "717", "724", "732"],
+    "dogru_cevap": "718"
+  },
+  {
+    "id": 284,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Romanya'yı tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "Kanije Savunması", "Yedi Gün Savaşları"],
+    "dogru_cevap": "I. Dünya Savaşı"
+  },
+  {
+    "id": 285,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın bestecisi kimdir?",
+    "secenekler": ["Sabahat Akkiraz", "Hatice Halime Hanım", "Ayşe Hatun Önal", "Cevriye Hanım"],
+    "dogru_cevap": "Sabahat Akkiraz"
+  },
+  {
+    "id": 286,
+    "soru": "Türk tarihinde 'Aynalıkavak Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1619", "1676", "1689", "1695"],
+    "dogru_cevap": "1695"
+  },
+  {
+    "id": 287,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Sırbistan'ı kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "93 Harbi", "Kosova Muharebesi"],
+    "dogru_cevap": "93 Harbi"
+  },
+  {
+    "id": 288,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın gazeteci kimdir?",
+    "secenekler": ["Canan Dağdeviren", "Aylin Sözer", "Hatice Halime Hanım", "Nezihe Viranyalı"],
+    "dogru_cevap": "Nezihe Viranyalı"
+  },
+  {
+    "id": 289,
+    "soru": "Türk tarihinde 'Anadolu Selçuklu Devleti' hangi yıllar arasında var olmuştur?",
+    "secenekler": ["1037-1194", "1081-1308", "1077-1307", "1038-1307"],
+    "dogru_cevap": "1077-1307"
+  },
+  {
+    "id": 290,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Tunus'u tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "93 Harbi", "Kanije Savunması"],
+    "dogru_cevap": "I. Dünya Savaşı"
+  },
+  {
+    "id": 291,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın şairi kimdir?",
+    "secenekler": ["Cevriye Hanım", "Ayşe Hatun Önal", "Aylin Sözer", "Hatice Halime Hanım"],
+    "dogru_cevap": "Cevriye Hanım"
+  },
+  {
+    "id": 292,
+    "soru": "Türk tarihinde 'Çimenyanı Muharebesi' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1352", "1416", "1422", "1478"],
+    "dogru_cevap": "1416"
+  },
+  {
+    "id": 293,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda İran'ın bazı bölgelerini kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "Kanije Savunması", "93 Harbi"],
+    "dogru_cevap": "93 Harbi"
+  },
+  {
+    "id": 294,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın romancısı kimdir?",
+    "secenekler": ["Hatice Halime Hanım", "Ayşe Hatun Önal", "Aylin Sözer", "Cevriye Hanım"],
+    "dogru_cevap": "Hatice Halime Hanım"
+  },
+  {
+    "id": 295,
+    "soru": "Türk tarihinde 'Belgrad Kuşatması' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1389", "1453", "1521", "1683"],
+    "dogru_cevap": "1683"
+  },
+  {
+    "id": 296,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Mısır'ın tamamını kaybetmiştir?",
+    "secenekler": ["Kavalalı Mehmed Ali Paşa İsyanı", "Yedi Gün Savaşları", "93 Harbi", "Trablusgarp Savaşı"],
+    "dogru_cevap": "Kavalalı Mehmed Ali Paşa İsyanı"
+  },
+  {
+    "id": 297,
+    "soru": "Türkiye Cumhuriyeti'nin ilk kadın mimarı kimdir?",
+    "secenekler": ["Ayşe Hatun Önal", "Aylin Sözer", "Canan Dağdeviren", "Hatice Halime Hanım"],
+    "dogru_cevap": "Ayşe Hatun Önal"
+  },
+  {
+    "id": 298,
+    "soru": "Türk tarihinde 'Malta Kuşatması' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1505", "1565", "1601", "1677"],
+    "dogru_cevap": "1565"
+  },
+  {
+    "id": 299,
+    "soru": "Osmanlı İmparatorluğu hangi savaş sonucunda Girit'i tamamen kaybetmiştir?",
+    "secenekler": ["I. Dünya Savaşı", "Kavalalı Mehmed Ali Paşa İsyanı", "Kanije Savunması", "Yedi Gün Savaşları"],
+    "dogru_cevap": "Yedi Gün Savaşları"
+  },
+  {
+    "id": 300,
+    "soru": "Türk tarihinde 'Maraş Katliamı' hangi yıl gerçekleşmiştir?",
+    "secenekler": ["1922", "1924", "1930", "1938"],
+    "dogru_cevap": "1922"
+  },
+  {
+    "id": 301,
+    "soru": "Futbolda bir takım kaç oyuncudan oluşur?",
+    "secenekler": ["9", "10", "11", "12"],
+    "dogru_cevap": "11"
+  },
+  {
+    "id": 302,
+    "soru": "Olimpiyat bayrağı hangi renklerden oluşur?",
+    "secenekler": ["Siyah ve Beyaz", "Kırmızı ve Beyaz", "Mavi ve Sarı", "Yeşil ve Beyaz"],
+    "dogru_cevap": "Mavi ve Sarı"
+  },
+  {
+    "id": 303,
+    "soru": "Tenis maçlarında kaç set üzerinden oynanır?",
+    "secenekler": ["3", "4", "5", "6"],
+    "dogru_cevap": "3"
+  },
+  {
+    "id": 304,
+    "soru": "Basketbolda bir takım kaç oyuncudan oluşur?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "5"
+  },
+  {
+    "id": 305,
+    "soru": "Atletizmde kaç çeşit yarışma bulunur?",
+    "secenekler": ["3", "4", "5", "6"],
+    "dogru_cevap": "4"
+  },
+  {
+    "id": 306,
+    "soru": "Bir yüzme havuzunda kaç metre yarışılır?",
+    "secenekler": ["25", "50", "75", "100"],
+    "dogru_cevap": "50"
+  },
+  {
+    "id": 307,
+    "soru": "Hangi spor dalında ip kullanılır?",
+    "secenekler": ["Güreş", "Boks", "Halat Çekme", "Artistik Jimnastik"],
+    "dogru_cevap": "Artistik Jimnastik"
+  },
+  {
+    "id": 308,
+    "soru": "Bir futbol maçında kaç devre oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 309,
+    "soru": "Hangi spor dalında 'kriket' terimi kullanılır?",
+    "secenekler": ["Beyzbol", "Ragbi", "Kriket", "Krokiler"],
+    "dogru_cevap": "Kriket"
+  },
+  {
+    "id": 310,
+    "soru": "Yelken sporunda kullanılan tahtaya ne ad verilir?",
+    "secenekler": ["Kano", "Kiteboard", "Sörf", "Paddleboard"],
+    "dogru_cevap": "Sörf"
+  },
+  {
+    "id": 311,
+    "soru": "Bir voleybol takımında kaç kişi sahada yer alır?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "6"
+  },
+  {
+    "id": 312,
+    "soru": "Hangi spor dalında 'birdie' terimi kullanılır?",
+    "secenekler": ["Badminton", "Bilardo", "Beyzbol", "Buz Pateni"],
+    "dogru_cevap": "Badminton"
+  },
+  {
+    "id": 313,
+    "soru": "Bir yarışta kaç sporcu aynı anda start alır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "1"
+  },
+  {
+    "id": 314,
+    "soru": "Hangi spor dalında 'dribbling' terimi kullanılır?",
+    "secenekler": ["Basketbol", "Futbol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 315,
+    "soru": "Bir hentbol takımında kaç oyuncu sahada yer alır?",
+    "secenekler": ["5", "6", "7", "8"],
+    "dogru_cevap": "7"
+  },
+  {
+    "id": 316,
+    "soru": "Hangi spor dalında 'parmaklık' terimi kullanılır?",
+    "secenekler": ["Güreş", "Bisiklet", "Halter", "Boks"],
+    "dogru_cevap": "Halter"
+  },
+  {
+    "id": 317,
+    "soru": "Bir yarışta kaçıncı olan sporcu madalya alır?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 318,
+    "soru": "Hangi spor dalında 'koşu bandı' kullanılır?",
+    "secenekler": ["Bisiklet", "Koşu", "Yüzme", "Fitness"],
+    "dogru_cevap": "Fitness"
+  },
+  {
+    "id": 319,
+    "soru": "Bir buz hokeyi takımında kaç kişi sahada yer alır?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "6"
+  },
+  {
+    "id": 320,
+    "soru": "Hangi spor dalında 'süper lig' terimi kullanılır?",
+    "secenekler": ["Futbol", "Basketbol", "Voleybol", "Hentbol"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 321,
+    "soru": "Bir kriket maçında kaç devre oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 322,
+    "soru": "Hangi spor dalında 'ördek dalışı' terimi kullanılır?",
+    "secenekler": ["Artistik Yüzme", "Dalış", "Yelken", "Sörf"],
+    "dogru_cevap": "Dalış"
+  },
+  {
+    "id": 323,
+    "soru": "Bir boks maçı kaç raunt üzerinden yapılır?",
+    "secenekler": ["5", "8", "10", "12"],
+    "dogru_cevap": "12"
+  },
+  {
+    "id": 324,
+    "soru": "Hangi spor dalında 'kaleci' bulunur?",
+    "secenekler": ["Hentbol", "Voleybol", "Futbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 325,
+    "soru": "Bir güreşçinin rakibini yere yatırarak kazandığı puan türü nedir?",
+    "secenekler": ["Teknik Puan", "Serbest Puan", "Üstünlük Puanı", "Tuş Puanı"],
+    "dogru_cevap": "Tuş Puanı"
+  },
+  {
+    "id": 326,
+    "soru": "Hangi spor dalında 'çift' ve 'tek' oyun türleri vardır?",
+    "secenekler": ["Voleybol", "Tenis", "Basketbol", "Hentbol"],
+    "dogru_cevap": "Tenis"
+  },
+  {
+    "id": 327,
+    "soru": "Bir bisiklet yarışında kaçıncı olan sporcu podyuma çıkar?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 328,
+    "soru": "Hangi spor dalında 'kale direği' bulunur?",
+    "secenekler": ["Futbol", "Voleybol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 329,
+    "soru": "Bir atletizm yarışında kaç kulvar bulunur?",
+    "secenekler": ["4", "6", "8", "10"],
+    "dogru_cevap": "8"
+  },
+  {
+    "id": 330,
+    "soru": "Hangi spor dalında 'karambol' terimi kullanılır?",
+    "secenekler": ["Bilardo", "Beyzbol", "Buz Pateni", "Badminton"],
+    "dogru_cevap": "Bilardo"
+  },
+  {
+    "id": 331,
+    "soru": "Bir ragbi takımında kaç kişi sahada yer alır?",
+    "secenekler": ["13", "15", "17", "19"],
+    "dogru_cevap": "15"
+  },
+  {
+    "id": 332,
+    "soru": "Hangi spor dalında 'savunma' ve 'atak' taktikleri vardır?",
+    "secenekler": ["Beyzbol", "Boks", "Güreş", "Masa Tenisi"],
+    "dogru_cevap": "Boks"
+  },
+  {
+    "id": 333,
+    "soru": "Bir hentbol maçı kaç devre üzerinden oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 334,
+    "soru": "Hangi spor dalında 'beyzbol sopası' kullanılır?",
+    "secenekler": ["Kriket", "Beyzbol", "Kano", "Koşu"],
+    "dogru_cevap": "Beyzbol"
+  },
+  {
+    "id": 335,
+    "soru": "Bir artistik jimnastik yarışında kaç disiplin bulunur?",
+    "secenekler": ["3", "4", "5", "6"],
+    "dogru_cevap": "4"
+  },
+  {
+    "id": 336,
+    "soru": "Hangi spor dalında 'spiker' görevlidir?",
+    "secenekler": ["Voleybol", "Basketbol", "Hentbol", "Tenis"],
+    "dogru_cevap": "Voleybol"
+  },
+  {
+    "id": 337,
+    "soru": "Bir yüzme stilinde kaç tane yarış türü vardır?",
+    "secenekler": ["2", "3", "4", "5"],
+    "dogru_cevap": "4"
+  },
+  {
+    "id": 338,
+    "soru": "Hangi spor dalında 'dik dörtgen alan' vardır?",
+    "secenekler": ["Hentbol", "Futbol", "Buz Hokeyi", "Voleybol"],
+    "dogru_cevap": "Hentbol"
+  },
+  {
+    "id": 339,
+    "soru": "Bir kano yarışında kaç çeşit bot kullanılır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "4"
+  },
+  {
+    "id": 340,
+    "soru": "Hangi spor dalında 'servis' yapılır?",
+    "secenekler": ["Tenis", "Voleybol", "Basketbol", "Hentbol"],
+    "dogru_cevap": "Tenis"
+  },
+  {
+    "id": 341,
+    "soru": "Bir boks maçında kaç raunt üzerinden yapılır?",
+    "secenekler": ["5", "8", "10", "12"],
+    "dogru_cevap": "12"
+  },
+  {
+    "id": 342,
+    "soru": "Hangi spor dalında 'faul' ve 'serbest atış' terimleri kullanılır?",
+    "secenekler": ["Beyzbol", "Basketbol", "Futbol", "Hentbol"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 343,
+    "soru": "Bir buz hokeyi takımında kaç kişi sahada yer alır?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "6"
+  },
+  {
+    "id": 344,
+    "soru": "Hangi spor dalında 'süper lig' terimi kullanılır?",
+    "secenekler": ["Futbol", "Basketbol", "Voleybol", "Hentbol"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 345,
+    "soru": "Bir kriket maçında kaç devre oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 346,
+    "soru": "Hangi spor dalında 'ördek dalışı' terimi kullanılır?",
+    "secenekler": ["Artistik Yüzme", "Dalış", "Yelken", "Sörf"],
+    "dogru_cevap": "Dalış"
+  },
+  {
+    "id": 347,
+    "soru": "Bir boks maçı kaç raunt üzerinden yapılır?",
+    "secenekler": ["5", "8", "10", "12"],
+    "dogru_cevap": "12"
+  },
+  {
+    "id": 348,
+    "soru": "Hangi spor dalında 'kaleci' bulunur?",
+    "secenekler": ["Hentbol", "Voleybol", "Futbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 349,
+    "soru": "Bir güreşçinin rakibini yere yatırarak kazandığı puan türü nedir?",
+    "secenekler": ["Teknik Puan", "Serbest Puan", "Üstünlük Puanı", "Tuş Puanı"],
+    "dogru_cevap": "Tuş Puanı"
+  },
+  {
+    "id": 350,
+    "soru": "Hangi spor dalında 'çift' ve 'tek' oyun türleri vardır?",
+    "secenekler": ["Voleybol", "Tenis", "Basketbol", "Hentbol"],
+    "dogru_cevap": "Tenis"
+  },
+  {
+    "id": 351,
+    "soru": "Bir yarışta kaç sporcu aynı anda start alır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "1"
+  },
+  {
+    "id": 352,
+    "soru": "Hangi spor dalında 'dribbling' terimi kullanılır?",
+    "secenekler": ["Basketbol", "Futbol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 353,
+    "soru": "Bir hentbol takımında kaç oyuncu sahada yer alır?",
+    "secenekler": ["5", "6", "7", "8"],
+    "dogru_cevap": "7"
+  },
+  {
+    "id": 354,
+    "soru": "Hangi spor dalında 'parmaklık' terimi kullanılır?",
+    "secenekler": ["Güreş", "Bisiklet", "Halter", "Boks"],
+    "dogru_cevap": "Halter"
+  },
+  {
+    "id": 355,
+    "soru": "Bir yarışta kaçıncı olan sporcu madalya alır?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 356,
+    "soru": "Hangi spor dalında 'kale direği' bulunur?",
+    "secenekler": ["Futbol", "Voleybol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 357,
+    "soru": "Bir bisiklet yarışında kaçıncı olan sporcu podyuma çıkar?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 358,
+    "soru": "Hangi spor dalında 'faul' ve 'serbest atış' terimleri kullanılır?",
+    "secenekler": ["Beyzbol", "Basketbol", "Futbol", "Hentbol"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 359,
+    "soru": "Bir buz hokeyi takımında kaç kişi sahada yer alır?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "6"
+  },
+  {
+    "id": 360,
+    "soru": "Hangi spor dalında 'süper lig' terimi kullanılır?",
+    "secenekler": ["Futbol", "Basketbol", "Voleybol", "Hentbol"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 361,
+    "soru": "Bir kriket maçında kaç devre oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 362,
+    "soru": "Hangi spor dalında 'ördek dalışı' terimi kullanılır?",
+    "secenekler": ["Artistik Yüzme", "Dalış", "Yelken", "Sörf"],
+    "dogru_cevap": "Dalış"
+  },
+  {
+    "id": 363,
+    "soru": "Bir boks maçı kaç raunt üzerinden yapılır?",
+    "secenekler": ["5", "8", "10", "12"],
+    "dogru_cevap": "12"
+  },
+  {
+    "id": 364,
+    "soru": "Hangi spor dalında 'kaleci' bulunur?",
+    "secenekler": ["Hentbol", "Voleybol", "Futbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 365,
+    "soru": "Bir güreşçinin rakibini yere yatırarak kazandığı puan türü nedir?",
+    "secenekler": ["Teknik Puan", "Serbest Puan", "Üstünlük Puanı", "Tuş Puanı"],
+    "dogru_cevap": "Tuş Puanı"
+  },
+  {
+    "id": 366,
+    "soru": "Hangi spor dalında 'çift' ve 'tek' oyun türleri vardır?",
+    "secenekler": ["Voleybol", "Tenis", "Basketbol", "Hentbol"],
+    "dogru_cevap": "Tenis"
+  },
+  {
+    "id": 367,
+    "soru": "Bir yarışta kaç sporcu aynı anda start alır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "1"
+  },
+  {
+    "id": 368,
+    "soru": "Hangi spor dalında 'dribbling' terimi kullanılır?",
+    "secenekler": ["Basketbol", "Futbol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 369,
+    "soru": "Bir hentbol takımında kaç oyuncu sahada yer alır?",
+    "secenekler": ["5", "6", "7", "8"],
+    "dogru_cevap": "7"
+  },
+  {
+    "id": 370,
+    "soru": "Hangi spor dalında 'parmaklık' terimi kullanılır?",
+    "secenekler": ["Güreş", "Bisiklet", "Halter", "Boks"],
+    "dogru_cevap": "Halter"
+  },
+  {
+    "id": 371,
+    "soru": "Bir yarışta kaçıncı olan sporcu madalya alır?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 372,
+    "soru": "Hangi spor dalında 'kale direği' bulunur?",
+    "secenekler": ["Futbol", "Voleybol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 373,
+    "soru": "Bir bisiklet yarışında kaçıncı olan sporcu podyuma çıkar?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 374,
+    "soru": "Hangi spor dalında 'faul' ve 'serbest atış' terimleri kullanılır?",
+    "secenekler": ["Beyzbol", "Basketbol", "Futbol", "Hentbol"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 375,
+    "soru": "Bir buz hokeyi takımında kaç kişi sahada yer alır?",
+    "secenekler": ["4", "5", "6", "7"],
+    "dogru_cevap": "6"
+  },
+  {
+    "id": 376,
+    "soru": "Hangi spor dalında 'süper lig' terimi kullanılır?",
+    "secenekler": ["Futbol", "Basketbol", "Voleybol", "Hentbol"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 377,
+    "soru": "Bir kriket maçında kaç devre oynanır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "2"
+  },
+  {
+    "id": 378,
+    "soru": "Hangi spor dalında 'ördek dalışı' terimi kullanılır?",
+    "secenekler": ["Artistik Yüzme", "Dalış", "Yelken", "Sörf"],
+    "dogru_cevap": "Dalış"
+  },
+  {
+    "id": 379,
+    "soru": "Bir boks maçı kaç raunt üzerinden yapılır?",
+    "secenekler": ["5", "8", "10", "12"],
+    "dogru_cevap": "12"
+  },
+  {
+    "id": 380,
+    "soru": "Hangi spor dalında 'kaleci' bulunur?",
+    "secenekler": ["Hentbol", "Voleybol", "Futbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 381,
+    "soru": "Bir güreşçinin rakibini yere yatırarak kazandığı puan türü nedir?",
+    "secenekler": ["Teknik Puan", "Serbest Puan", "Üstünlük Puanı", "Tuş Puanı"],
+    "dogru_cevap": "Tuş Puanı"
+  },
+  {
+    "id": 382,
+    "soru": "Hangi spor dalında 'çift' ve 'tek' oyun türleri vardır?",
+    "secenekler": ["Voleybol", "Tenis", "Basketbol", "Hentbol"],
+    "dogru_cevap": "Tenis"
+  },
+  {
+    "id": 383,
+    "soru": "Bir yarışta kaç sporcu aynı anda start alır?",
+    "secenekler": ["1", "2", "3", "4"],
+    "dogru_cevap": "1"
+  },
+  {
+    "id": 384,
+    "soru": "Hangi spor dalında 'dribbling' terimi kullanılır?",
+    "secenekler": ["Basketbol", "Futbol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Basketbol"
+  },
+  {
+    "id": 385,
+    "soru": "Bir hentbol takımında kaç oyuncu sahada yer alır?",
+    "secenekler": ["5", "6", "7", "8"],
+    "dogru_cevap": "7"
+  },
+  {
+    "id": 386,
+    "soru": "Hangi spor dalında 'parmaklık' terimi kullanılır?",
+    "secenekler": ["Güreş", "Bisiklet", "Halter", "Boks"],
+    "dogru_cevap": "Halter"
+  },
+  {
+    "id": 387,
+    "soru": "Bir yarışta kaçıncı olan sporcu madalya alır?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 388,
+    "soru": "Hangi spor dalında 'kale direği' bulunur?",
+    "secenekler": ["Futbol", "Voleybol", "Hentbol", "Buz Hokeyi"],
+    "dogru_cevap": "Futbol"
+  },
+  {
+    "id": 389,
+    "soru": "Bir bisiklet yarışında kaçıncı olan sporcu podyuma çıkar?",
+    "secenekler": ["Birinci", "İkinci", "Üçüncü", "Dördüncü"],
+    "dogru_cevap": "Üçüncü"
+  },
+  {
+    "id": 390,
+    "soru": "Hangi spor dalında 'faul' ve 'serbest atış' terimleri kullanılır?",
+    "secenekler": ["Beyzbol", "Basketbol", "Futbol", "Hentbol"],
+    "dogru_cevap": "Basketbol"
+  }
+]
