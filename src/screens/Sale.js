@@ -160,13 +160,7 @@ function Sale() {
                         horizontal={true}
                     />
                 </View>
-                <BannerAd
-                    unitId={adUnitId}
-                    size={BannerAdSize.FULL_BANNER}
-                    requestOptions={{
-                        requestNonPersonalizedAdsOnly: true,
-                    }}
-                />
+             
                 
                 <View >
 
