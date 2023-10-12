@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   circle: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     backgroundColor: "#FAB42B",
-    borderRadius: 60,
+    borderRadius: 70,
     alignItems: "center",
     justifyContent: "center", // Metni yatay ve dikey yönde de ortalar
   },
@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     flexDirection: "row",
-    margin: 50,
+
     marginTop: 100,
   },
   button: {
-    width: 170,
+    width: 150,
     height: 60,
     margin: 10,
     borderRadius: 13,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignItems: "center",
     padding: 16,
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: "bold",
   }
 })
@@ -147,9 +147,9 @@ function Score({navigation, route}) {
         start={[0, 0.5]}
         end={[1, 0.5]}
       >
-        <Text style={styles.cardText}>Kazandığın BTC</Text>
+        <Text style={styles.cardText}>Kazandığın SOL</Text>
         <View style={styles.circle}>
-          <Text style={styles.btcText}>{totalEarnedBTC.toFixed(7)}</Text>
+          <Text style={styles.btcText}>{totalEarnedBTC.toFixed(6)}</Text>
         </View>
       </LinearGradient>
 

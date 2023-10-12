@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tolgahanbora.BitQuiz"
     },
     "plugins": [
       [
@@ -46,5 +47,6 @@
   "react-native-google-mobile-ads": {
     "android_app_id": "ca-app-pub-2590549735225636~6253860342",
     "ios_app_id": "ca-app-pub-2590549735225636~6253860342"
+    
   }
 }

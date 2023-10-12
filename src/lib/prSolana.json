@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "soru": "What opportunities are provided for artists on the Audius platform in the Solana ecosystem?",
+        "secenekler": [
+            "Audius empowers artists, enabling fan growth, music sharing, and income generation.",
+            "Audius empowers creators, fostering fan growth, sharing music, and earning.",
+            "Audius empowers artists and fans, fostering growth, sharing, and income.",
+            "Audius empowers music creators, enabling growth, sharing, and income."
+            
+        ],
+        "dogru_cevap": "Audius empowers artists, enabling fan growth, music sharing, and income generation."
+    },
+    {
+        "id": 2,
+        "soru": "What is the Light Protocol on Solana and for which applications can developers use this technology?",
+        "secenekler": [
+            "Light is not a specialized program execution technology for Solana.",
+            "Light is only used for developing publicly accessible blockchain games. platform that offers.",
+            "Light is developed solely to support fast payments.",
+            "Light can create applications for Solana using specialized program execution technology, such as fast private payments and encrypted order books."
+        ],
+        "dogru_cevap": "Light can create applications for Solana using specialized program execution technology, such as fast private payments and encrypted order books."
+    },
+    {
+        "id": 3,
+        "soru": "What services does Helius offer to Solana developers?",
+        "secenekler": [
+            "Food recipes and restaurant recommendations.",
+            "Affordable travel reservations.",
+            "A developer experience that includes Solana RPCs, Enhanced Transaction APIs, Webhooks, and more.",
+            "Online educational courses and course materials."
+        ],
+        "dogru_cevap": "A developer experience that includes Solana RPCs, Enhanced Transaction APIs, Webhooks, and more."
+    },
+    {
+        "id": 4,
+        "soru": "What is the purpose of Coinflow in the Solana ecosystem?",
+        "secenekler": [
+            "Providing exclusive discounts for hotel reservations.",
+            "Enabling Web3 companies to accept cryptocurrency assets with traditional payment methods.",
+            "Enhancing digital marketing strategies for restaurants.",
+            "Offering free advertising services to e-commerce websites."
+        ],
+        "dogru_cevap": "Enabling Web3 companies to accept cryptocurrency assets with traditional payment methods."
+    },
+    {
+        "id": 5,
+        "soru": "On which blockchain does SonarWatch perform wallet and address tracking?",
+        "secenekler": [
+            "Ethereum",
+            "Binance Smart Chain",
+            "Solana",
+            "Cardano"
+        ],
+        "dogru_cevap": "Solana"
+    },
+    {
+        "id": 6,
+        "soru": "Which feature about Homebase, present in the Solana ecosystem, is not correct?",
+        "secenekler": [
+            "It only offers the opportunity for wealthy individuals to invest in real estate.",
+            "You don't need to follow traditional processes to invest.",
+            "You can start real estate investment with low amounts like $100.",
+            "You can earn monthly rental income from the properties you invest in."
+        ],
+        "dogru_cevap": "It only offers the opportunity for wealthy individuals to invest in real estate."
+    },
+    {
+        "id": 7,
+        "soru": "What is the name of the community in the Solana ecosystem that helps you organize and makes content creation enjoyable?",
+        "secenekler": [
+        "ProFun",
+        "Superteam",
+        "Twitter",
+        "4chain"
+        ],
+        "dogru_cevap": "Superteam"
+        },
+        {
+            "id": 8,
+            "soru": "What is Solana's consensus mechanism?",
+            "secenekler": [
+                "Proof of History (PoH)",
+                "Proof of Work (PoW)",
+                "Proof of Stake (PoS)",
+                "Proof of Concept (PoC)"
+            ],
+            "dogru_cevap": "Proof of History (PoH)"
+        },
+        {
+            "id": 9,
+            "soru": "What are the advantages of Solana over other blockchains?",
+            "secenekler": [
+                "High transaction speed, low fees",
+                "More central control, high transaction fees",
+                "Slower transaction speed, low energy consumption",
+                "More privacy, faster transaction speed"
+            ],
+            "dogru_cevap": "High transaction speed, low fees"
+        },
+        {
+            "id": 10,
+            "soru": "What types of projects can be developed within the Solana ecosystem?",
+            "secenekler": [
+                "Only gaming",
+                "Only financial projects",
+                "Various projects (finance, gaming, art, etc.)",
+                "Only art projects"
+            ],
+            "dogru_cevap": "Various projects (finance, gaming, art, etc.)"
+        }
+
+
+
+]

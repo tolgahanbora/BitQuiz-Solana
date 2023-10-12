@@ -1,110 +1,108 @@
 import React, { useState } from 'react'
-import { View, Text, SafeAreaView, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert } from 'react-native'
+import { View, Text, SafeAreaView, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Alert, Dimensions } from 'react-native'
 import Modal from 'react-native-modal';
 
 import BitQuizSvg from "../../assets/Bitquiz.png"
 
 import { supabase } from '../services';
 
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
   },
   image: {
     flex: 1,
     justifyContent: 'center',
   },
-
   textContainer: {
-    marginTop: 250,
-    alignItems: "center"
-
+    marginTop: windowHeight * 0.3,
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
   },
   text: {
-    fontSize: 35,
+    fontSize: windowWidth * 0.08,
     fontWeight: "bold",
-    color: "#fefefe"
+    color: "#fefefe",
   },
   subText: {
-    marginTop: 8,
-    fontSize: 18,
+    marginTop: windowHeight * 0.02,
+    fontSize: windowWidth * 0.04,
     fontWeight: "bold",
-    color: "#fefefe"
+    color: "#fefefe",
   },
   buttonContainer: {
-
-    alignItems: 'center', // Yatayda ortalamak için
-    marginTop: 140,
-
+    alignItems: 'center',
+    marginTop: windowHeight * 0.25,
   },
   buttonLogin: {
-    width: 310,
-    height: 60,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.09,
     borderRadius: 10,
     backgroundColor: "#6949FD",
-
+    justifyContent: "center",
   },
   buttonRegister: {
     marginTop: 20,
-    width: 310,
-    height: 60,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.09,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: "#6949FD"
-
+    borderColor: "#6949FD",
+    justifyContent: "center",
   },
-
   loginText: {
     color: "#FEFEFE",
     textAlign: "center",
-    alignItems: "center",
-    padding: 16,
-    fontSize: 20,
+    padding: windowWidth * 0.04,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
   },
   registerText: {
     color: "#FEFEFE",
     textAlign: "center",
-    alignItems: "center",
-    padding: 16,
-    fontSize: 20,
+    padding: windowWidth * 0.04,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
   },
   modal: {
     backgroundColor: '#361E70',
-    padding: 16,
+    padding: windowWidth * 0.04,
     borderRadius: 15,
   },
   input: {
     borderColor: "#FEFEFE",
     borderWidth: 1,
-    padding: 10,
+    padding: windowWidth * 0.035,
     borderRadius: 10,
-    margin: 12,
-    marginBottom: 20,
+    margin: windowWidth * 0.045,
+    marginBottom: windowHeight * 0.04,
     color: "#FEFEFE",
   },
   modalText: {
     fontWeight: "bold",
-    color: "#FEFEFE"
+    color: "#FEFEFE",
   },
   loginModalButton: {
-    margin: 12,
+    margin: windowWidth * 0.045,
     backgroundColor: "#6949FD",
     borderRadius: 10,
-    padding: 10,
+    padding: windowWidth * 0.035,
   },
   loginModalButtonText: {
     color: "#FEFEFE",
     textAlign: "center",
     fontWeight: "bold",
+    fontSize: windowWidth * 0.045,
   },
-})
+});
 
 
 
-function LoginCard({navigation}) {
+function LoginCard({ navigation }) {
 
   const [isModalVisible, setModalVisible] = useState(false);
 
@@ -174,52 +172,49 @@ function LoginCard({navigation}) {
   }
 
   //Login DB FUNC
-const onSubmitLogin = async () => {
-  try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
-    if (error) {
-      console.error("Error signing", error);
-    } else if (!error) {
-      console.log('Giriş başarılı ');
-      setModalVisible(false);
-
-      // Main stack içindeki Tab Navigator'a yönlendirme yapalım
-      navigation.navigate("Main", {
-        screen: "Profile",
-        params: {
-          email: email,
-          username: username,
-        },
+  const onSubmitLogin = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
       });
+      if (error) {
+        console.error("Error signing", error);
+      } else if (!error) {
+        console.log('Giriş başarılı ');
+        setModalVisible(false);
+
+        // Main stack içindeki Tab Navigator'a yönlendirme yapalım
+        navigation.navigate("Main", {
+          screen: "Profile",
+          params: {
+            email: email,
+            username: username,
+          },
+        });
+      }
+    } catch (e) {
+      console.error(e);
     }
-  } catch (e) {
-    console.error(e);
-  }
-};
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={BitQuizSvg} resizeMode="stretch" style={styles.image}>
         <View>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>
-              Let's Play!
-            </Text>
             <Text style={styles.subText}>
-              Play now and earn up !
+              Hemen Oyna ve Kazanmaya Başla
             </Text>
           </View>
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.buttonLogin} onPress={toggleModal}>
-              <Text style={styles.loginText}> Play Now </Text>
+              <Text style={styles.loginText}> Hemen Oyna </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.buttonRegister} onPress={toggleModalRegister}>
-              <Text style={styles.registerText}> Register </Text>
+              <Text style={styles.registerText}> Kayıt Ol </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -232,6 +227,7 @@ const onSubmitLogin = async () => {
           <Text style={styles.modalText}>Kullanıcı Adı:</Text>
 
           <TextInput
+            inputMode='email'
             style={styles.input}
             onChangeText={onHandleChangeEmail}
             value={email}
@@ -240,6 +236,7 @@ const onSubmitLogin = async () => {
           <Text style={styles.modalText}>Şifre:</Text>
 
           <TextInput
+            secureTextEntry={true}
             style={styles.input}
             onChangeText={onHandleChangePassword}
             value={password}
@@ -258,6 +255,7 @@ const onSubmitLogin = async () => {
           <Text style={styles.modalText}>Kullanıcı Adı:</Text>
 
           <TextInput
+
             style={styles.input}
             onChangeText={onHandleChangeUsername}
             value={username}
@@ -266,6 +264,7 @@ const onSubmitLogin = async () => {
           <Text style={styles.modalText}>Email:</Text>
 
           <TextInput
+            inputMode='email'
             style={styles.input}
             onChangeText={onHandleChangeEmail}
             value={email}
@@ -275,6 +274,7 @@ const onSubmitLogin = async () => {
           <Text style={styles.modalText}>Şifre:</Text>
 
           <TextInput
+            secureTextEntry={true}
             style={styles.input}
             onChangeText={onHandleChangePassword}
             value={password}

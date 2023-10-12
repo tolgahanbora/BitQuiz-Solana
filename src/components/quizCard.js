@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert } fr
 import Toast from 'react-native-toast-message';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import sorular from "../lib/sorular.json"
+import sorular from "../lib/solana.json"
 import { supabase } from '../services';
 
 
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 
         justifyContent: "center", // Ana eksen etrafında merkez hizalama
         alignItems: "center", // 
-        height: windowWidth,
+        height: windowWidth - 50,
         margin: paddingValue,
 
     },
@@ -33,9 +33,22 @@ const styles = StyleSheet.create({
         fontSize: 12,
 
     },
+    timerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        width: '100%', // Occupy the full width
+        marginBottom: 25
+
+      },
+    
+      timerText: {
+        color: 'white',
+        fontSize: 15,
+      },
     quiz: {
         color: "#FEFEFE",
-        fontSize: 31,
+        fontSize: windowHeight * 0.04,
         marginTop: 7,
         fontWeight: "normal",
         marginBottom: 20
@@ -63,22 +76,24 @@ const styles = StyleSheet.create({
     answer: {
         padding: 10,
         color: "#FEFEFE",
-        fontSize: 18,
+        fontSize: windowHeight * 0.03,
         marginTop: 7,
         fontWeight: "bold",
         letterSpacing: 1, // Harf aralığını değiştirebilirsiniz, piksel cinsinden
     },
     buttonGroup: {
         flexDirection: "row",
-        justifyContent: "center",
-        position: "absolute", // Ekranın üzerinde sabit kalsın
-        bottom: 70, // Sayfanın alt kenarına sabitlenir
-        padding: 10, // İstediğiniz kadar padding verebilirsiniz
+        marginTop: 20,
+        justifyContent: "flex-start", // Align buttons to the right
+        alignItems: "center", // Center the buttons vertically
+        paddingHorizontal: paddingValue, // Add horizontal padding
+        paddingBottom: 20, // Add some bottom padding for space
         backgroundColor: "#1F1147", // Opsiyonel: Buton grubunun arkaplan rengini ayarlayabilirsiniz
     },
     jokerButton: {
-        margin: 20,
-        width: 140,
+        margin: 10,
+
+        width: 150,
         height: 50,
         paddingHorizontal: 20, // Sığması için yatay padding ekleyin
         justifyContent: "center", // Text ve icon içeriğini yatayda merkezle
@@ -87,10 +102,10 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: "white",
-        fontSize: 15,
+        fontSize: 13,
         marginLeft: 5, // Icon ve text arasında boşluk bırakmak için
-      },
-    });
+    },
+});
 
 function QuizCard({ navigation }) {
     const [totalEarnedBTC, setTotalEarnedBTC] = useState(0); // Toplam BTC tutarını tutacak state
@@ -111,7 +126,8 @@ function QuizCard({ navigation }) {
     const [extendedTimer, setExtendedTimer] = useState(0);
     const [timingJoker, setTimingJoker] = useState()
 
-    const [jokerCount, setJokerCount] = useState(3); // Assuming the user starts with 3 jokers
+    const [jokerCount, setJokerCount] = useState(); // Assuming the user starts with 3 jokers
+    const [jokerUsed, setJokerUsed] = useState(false);
     const [correctAnswerIndex, setCorrectAnswerIndex] = useState()
 
 
@@ -134,6 +150,29 @@ function QuizCard({ navigation }) {
         if (timingJoker > 0) {
             setTimer((prev) => prev + 10);
             setExtendedTimer((prev) => prev + 1);
+
+            const newTimingJoker = timingJoker - 1
+            const addTicket = async () => {
+                try {
+                  const { data, error } = await supabase.auth.updateUser({
+                    data: { timingJoker: newTimingJoker }
+                  })
+      
+                  if (error) {
+                    console.error('Error updating user metadata:', error);
+                  } else {
+                    // Update state to reflect the new value
+      
+                    console.log('User metadata updated successfully');
+                  }
+                } catch (error) {
+                  console.error('Error updating user metadata:', error);
+                }
+              }
+      
+
+            setTimingJoker(timingJoker - 1)
+            addTicket()
         }
         else {
             Alert.alert("Zaman Jokeri", "Zaman jokeriniz yok, reklam izleyerek ya da satın alarak Zaman Jokeri elde edebilirsiniz.", [
@@ -157,7 +196,7 @@ function QuizCard({ navigation }) {
     };
 
     const generateRandomNumber = () => {
-        const randomNumber = Math.random() * (0.000004 - 0.0000004) + 0.0000004;
+        const randomNumber = Math.random() * (0.0009 - 0.00009) + 0.00009;
         return randomNumber.toFixed(7);
     };
 
@@ -181,6 +220,7 @@ function QuizCard({ navigation }) {
 
     useEffect(() => {
         // Reset the timer and mark the current timer as expired when a new question is displayed
+        setJokerUsed(false)
         setTimer(10)
     }, [currentQuestionIndex]);
 
@@ -192,7 +232,7 @@ function QuizCard({ navigation }) {
             type: 'error',
             position: 'top',
             text1: 'Yanlış Cevap!',
-            text2: `${randomBTC} adet BTC silindi 👋`,
+            text2: `${randomBTC} adet SOL silindi 👋`,
             visibilityTime: 2000,
         });
         setWrongAnswer(true + 1)
@@ -237,7 +277,7 @@ function QuizCard({ navigation }) {
                 type: 'success',
                 position: 'top',
                 text1: 'Doğru Cevap!',
-                text2: `${randomBTC} adet BTC eklendi 👋`,
+                text2: `${randomBTC} adet SOL eklendi 👋`,
                 visibilityTime: 2000, // Toast mesajının ekranda kalma süresi (ms cinsinden)
             });
             setTrueAnswer(trueAnswer + 1)
@@ -250,7 +290,7 @@ function QuizCard({ navigation }) {
                 type: 'error',
                 position: 'top',
                 text1: 'Yanlış Cevap!',
-                text2: `${randomBTC} adet BTC silindi 👋`,
+                text2: `${randomBTC} adet SOL silindi 👋`,
                 visibilityTime: 2000,
             });
             setWrongAnswer(true + 1)
@@ -265,7 +305,7 @@ function QuizCard({ navigation }) {
     };
 
     const handleJoker = () => {
-        if (jokerCount > 0) {
+        if (!jokerUsed && jokerCount > 0) {
             // Diğer şıklardan doğru cevabı hariç 2 şıkkı rastgele seç
             const otherOptions = currentQuestion.secenekler.filter((_, index) => index !== correctAnswerIndex);
             const randomIndices = [];
@@ -290,14 +330,35 @@ function QuizCard({ navigation }) {
             updatedShuffledQuestions[currentQuestionIndex] = updatedQuestion;
             setShuffledQuestions(updatedShuffledQuestions);
 
+            const newFiftyPercent = jokerCount -1
+            const addTicket = async () => {
+                try {
+                  const { data, error } = await supabase.auth.updateUser({
+                    data: { fiftyPercentJoker: newFiftyPercent }
+                  })
+      
+                  if (error) {
+                    console.error('Error updating user metadata:', error);
+                  } else {
+                    // Update state to reflect the new value
+      
+                    console.log('User metadata updated successfully');
+                  }
+                } catch (error) {
+                  console.error('Error updating user metadata:', error);
+                }
+            }
+
             // Joker kullanımını bir azalt
+            setJokerUsed(true);
             setJokerCount(jokerCount - 1);
+            addTicket()
         }
-         else {
-            Alert.alert("%50 Şans Jokeri","%50 Şans Jokeriniz yok, reklam izleyerek ay da satın alarak %50 Şans Jokeri elde edebilirsiniz.", [
+        else {
+            Alert.alert("%50 Şans Jokeri", "%50 Şans Jokeriniz yok, reklam izleyerek ay da satın alarak %50 Şans Jokeri elde edebilirsiniz.", [
                 { text: 'Tamam', onPress: () => console.log('OK Pressed') },
             ]);
-         }
+        }
     };
 
     const currentQuestion = shuffledQuestions[currentQuestionIndex];
@@ -309,10 +370,8 @@ function QuizCard({ navigation }) {
             <Toast />
             <View style={styles.quizCard}>
                 {/* Timer display in the top-right corner */}
-                <View style={{ position: 'absolute', top: 10, right: 10 }}>
-                    <Text style={{ color: 'white', fontSize: 18 }}>
-                        {timer}s
-                    </Text>
+                <View style={styles.timerContainer}>
+                    <Text style={styles.timerText}>{timer}s</Text>
                 </View>
                 <Text style={styles.quantityQuestion}>
                     {questionCount}/10
@@ -337,20 +396,20 @@ function QuizCard({ navigation }) {
                     </View>
 
                 </View>
+                <View style={styles.buttonGroup}>
+                    {/* Timer extension button */}
+                    <TouchableOpacity onPress={handleExtendTimer} style={styles.jokerButton} >
+                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={13} color="white" /> Zaman Jokeri  {timingJoker} Adet</Text>
+                    </TouchableOpacity>
 
+                    {/* Button to use the 50/50 Joker */}
+                    <TouchableOpacity onPress={handleJoker} style={styles.jokerButton}>
+                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={13} color="white" /> %50 Şans  {jokerCount} Adet</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
 
-            <View style={styles.buttonGroup}>
-                {/* Timer extension button */}
-                <TouchableOpacity onPress={handleExtendTimer} style={styles.jokerButton} >
-                    <Text style={styles.buttonText}><Entypo name="back-in-time" size={20} color="white" /> Zaman Jokeri  {timingJoker} Adet</Text>
-                </TouchableOpacity>
 
-                {/* Button to use the 50/50 Joker */}
-                <TouchableOpacity onPress={handleJoker} style={styles.jokerButton}>
-                    <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={20} color="white" /> %50 Şans  {jokerCount} Adet</Text>
-                </TouchableOpacity>
-            </View>
 
         </View>
     )
