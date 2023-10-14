@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
+
 import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { supabase } from '../services';
 
 
-import web3 from '@solana/web3.js';
+import { Connection, PublicKey, Transaction, sendAndConfirmTransaction, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import bs58 from "bs58"
+import { Buffer } from "buffer";
+
 
 import avatar from "../../assets/avatar.png"
 import solana from "../../assets/solanaLogoMark.png"
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
   },
   sendButtonText: {
     fontSize: windowWidth * 0.05
-  },  
+  },
   closeButton: {
     backgroundColor: '#FF0000',
     height: 60,
@@ -153,6 +156,7 @@ function Profile() {
   const [modalVisible, setModalVisible] = useState(false);
   const [solanaAddress, setSolanaAddress] = useState('');
 
+  global.Buffer = Buffer;
 
 
   const getTicket = async () => {
@@ -170,70 +174,67 @@ function Profile() {
     getTicket()
   }, [userData])
 
+
+
+
   // Solana göndermeyi sorguluyorum
-  const sendSolanaTokens = async () => {
-    if (userData?.token > 0.1) {
+  const sendSolanaTokens = async (toAddress) => {
+    if (userData?.token >= 0.1) {
       try {
 
-        const connection = new web3.Connection("https://nd-848-731-192.p2pify.com/903990d427034c601d4a9cfa160cc450")
-
-        const privateKey = new Uint8Array(bs58.decode("28eJQjaKzY9yYAm8cTE3JEiE3Ps6x7UAXr9KP7saRJNdYnEbyAgAi5oM8Hc8oe5BATo6J9s68Uxq1cWCLZmCUAMo"))
-
-        const  adminAccount = web3.Keypair.fromSecretKey(privateKey)
-
-        const userAccount = web3.PublicKey(solanaAddress);
-
-     
-          const transaction = new web3.Transaction().add(
-            web3.SystemProgram.transfer({
-              fromPubkey: adminAccount.publicKey,
-              toPubkey: userAccount.publicKey,
-              lamports: web3.LAMPORTS_PER_SOL * 0.01,
-            }),
-          ) 
-
-          const signature =  await web3.sendAndConfirmTransaction(
-            connection,
-            transaction,
-            [adminAccount]
-          )
-        
-
-    
 
 
-          
-
+        const connection = new Connection("https://api.devnet.solana.com");
+        const privateKey = bs58.decode("sample priv key"); // Gizli anahtarı byte dizisine çevir
+  
+        const adminAccount = Keypair.fromSecretKey(privateKey); // Geçerli bir gizli anahtar kullan
+  
+        const userAccount = new PublicKey(toAddress);
+  
+        const amountInLamports = Math.floor(0.1 * web3.LAMPORTS_PER_SOL); // 0.1 SOL'u lamport cinsine çevir
+  
+        console.log("dalar:", adminAccount)
+  
+        const transaction = new Transaction().add(
+          SystemProgram.transfer({
+            fromPubkey: adminAccount.publicKey,
+            toPubkey: userAccount,
+            lamports: amountInLamports,
+          })
+        );
+  
+        const signature = await sendAndConfirmTransaction(connection, transaction, [adminAccount]);
+        console.log('Transaction Signature:', signature);
         alert('Solana token transfer işlemi başarılı!');
       } catch (error) {
         console.error('Transfer Error:', error);
         alert('Transfer işlemi sırasında bir hata oluştu.');
       }
     } else {
-      
-      const connection = new web3.Connection("https://nd-848-731-192.p2pify.com/903990d427034c601d4a9cfa160cc450")
 
-      const privateKey = new Uint8Array(bs58.decode("28eJQjaKzY9yYAm8cTE3JEiE3Ps6x7UAXr9KP7saRJNdYnEbyAgAi5oM8Hc8oe5BATo6J9s68Uxq1cWCLZmCUAMo"))
 
-      const  adminAccount = web3.Keypair.fromSecretKey(privateKey)
 
-      const userAccount = web3.Keypair.generate()
+      const connection = new Connection("https://api.devnet.solana.com");
+      const privateKey = bs58.decode("28eJQjaKzY9yYAm8cTE3JEiE3Ps6x7UAXr9KP7saRJNdYnEbyAgAi5oM8Hc8oe5BATo6J9s68Uxq1cWCLZmCUAMo"); // Gizli anahtarı byte dizisine çevir
 
-   
-        const transaction = new web3.Transaction().add(
-          web3.SystemProgram.transfer({
-            fromPubkey: adminAccount.publicKey,
-            toPubkey: userAccount.publicKey,
-            lamports: web3.LAMPORTS_PER_SOL * 0.01,
-          }),
-        ) 
+      const adminAccount = Keypair.fromSecretKey(privateKey); // Geçerli bir gizli anahtar kullan
 
-        const signature =  await web3.sendAndConfirmTransaction(
-          connection,
-          transaction,
-          [adminAccount]
-        )
-      
+      const userAccount = new PublicKey(toAddress);
+
+      const amountInLamports = Math.floor(0.1 * LAMPORTS_PER_SOL); // 0.1 SOL'u lamport cinsine çevir
+
+      console.log("dalar:", adminAccount)
+
+      const transaction = new Transaction().add(
+        SystemProgram.transfer({
+          fromPubkey: privateKey,
+          toPubkey: userAccount,
+          lamports: amountInLamports,
+        })
+      );
+
+      const signature = await sendAndConfirmTransaction(connection, transaction, [adminAccount]);
+      console.log('Transaction Signature:', signature);
     }
   };
 
@@ -298,7 +299,7 @@ function Profile() {
             />
 
 
-            <TouchableOpacity style={styles.sendButton} onPress={sendSolanaTokens}>
+            <TouchableOpacity style={styles.sendButton} onPress={() => sendSolanaTokens(solanaAddress)}>
               <Text style={styles.buttonText}>Send Solana</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.closeButton} onPress={() => setModalVisible(false)}>
