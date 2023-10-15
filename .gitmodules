@@ -1,3 +1,6 @@
 [submodule "SolanaAPI"]
 	path = SolanaAPI
 	url = https://github.com/tolgahanbora/SolanaAPI.git
+[submodule "Solana PAY API"]
+	path = Solana PAY API
+	url = https://github.com/tolgahanbora/SolanaAPI.git
