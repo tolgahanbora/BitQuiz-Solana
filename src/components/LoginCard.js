@@ -157,8 +157,8 @@ function LoginCard({ navigation }) {
         console.error(error)
       }
       else if (!error) {
-        Alert.alert('Kayıt Başarılı', 'Hesabınız oluşturuldu, giriş yapın ve hemen kazanmaya başlayın!', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Registration Successful', 'Your account has been created, log in and start earning now!', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
         setModalVisibleRegister(false)
         setUsername("")
@@ -204,17 +204,17 @@ function LoginCard({ navigation }) {
         <View>
           <View style={styles.textContainer}>
             <Text style={styles.subText}>
-              Hemen Oyna ve Kazanmaya Başla
+              Play Now and Start Earning
             </Text>
           </View>
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.buttonLogin} onPress={toggleModal}>
-              <Text style={styles.loginText}> Hemen Oyna </Text>
+              <Text style={styles.loginText}> Play Now </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.buttonRegister} onPress={toggleModalRegister}>
-              <Text style={styles.registerText}> Kayıt Ol </Text>
+              <Text style={styles.registerText}> Register </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -224,7 +224,7 @@ function LoginCard({ navigation }) {
       <Modal isVisible={isModalVisible} swipeDirection='down' onBackdropPress={toggleModal} useNativeDriver={true}>
         {/* Burada modal içeriğini oluşturabilirsiniz */}
         <View style={styles.modal}>
-          <Text style={styles.modalText}>Kullanıcı Adı:</Text>
+          <Text style={styles.modalText}>Email:</Text>
 
           <TextInput
             inputMode='email'
@@ -233,7 +233,7 @@ function LoginCard({ navigation }) {
             value={email}
           />
 
-          <Text style={styles.modalText}>Şifre:</Text>
+          <Text style={styles.modalText}>Password:</Text>
 
           <TextInput
             secureTextEntry={true}
@@ -252,7 +252,7 @@ function LoginCard({ navigation }) {
       <Modal isVisible={isModalVisibleRegister} swipeDirection='down' onBackdropPress={toggleModalRegister} useNativeDriver={true}>
         {/* Burada modal içeriğini oluşturabilirsiniz */}
         <View style={styles.modal}>
-          <Text style={styles.modalText}>Kullanıcı Adı:</Text>
+          <Text style={styles.modalText}>Username:</Text>
 
           <TextInput
 
@@ -271,7 +271,7 @@ function LoginCard({ navigation }) {
           />
 
 
-          <Text style={styles.modalText}>Şifre:</Text>
+          <Text style={styles.modalText}>Password:</Text>
 
           <TextInput
             secureTextEntry={true}
@@ -281,7 +281,7 @@ function LoginCard({ navigation }) {
           />
 
           <TouchableOpacity style={styles.loginModalButton} onPress={onSubmitRegister} >
-            <Text style={styles.loginModalButtonText}>Kayıt Ol</Text>
+            <Text style={styles.loginModalButtonText}>Register</Text>
           </TouchableOpacity>
         </View>
       </Modal>

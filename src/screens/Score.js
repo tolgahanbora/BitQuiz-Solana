@@ -137,8 +137,8 @@ function Score({navigation, route}) {
     <View style={styles.container}>
 
       <View style={styles.HeaderContainer} >
-        <Text style={styles.HeaderText}>Toplam Doğru yaptığın soru</Text>
-        <Text style={styles.HeaderText}>10 soruda {trueAnswer} doğru</Text>
+        <Text style={styles.HeaderText}>Total Question you got right</Text>
+        <Text style={styles.HeaderText}>{trueAnswer} correct in 10 questions</Text>
       </View>
 
       <LinearGradient
@@ -147,7 +147,7 @@ function Score({navigation, route}) {
         start={[0, 0.5]}
         end={[1, 0.5]}
       >
-        <Text style={styles.cardText}>Kazandığın SOL</Text>
+        <Text style={styles.cardText}>Earned SOL</Text>
         <View style={styles.circle}>
           <Text style={styles.btcText}>{totalEarnedBTC.toFixed(6)}</Text>
         </View>
@@ -162,8 +162,8 @@ function Score({navigation, route}) {
 
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={onPlayAgain}><Text style={styles.buttonText}>Tekrar Oyna</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={onProfile}><Text style={styles.buttonText}>Profile Dön</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={onPlayAgain}><Text style={styles.buttonText}>Play Again</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={onProfile}><Text style={styles.buttonText}>Profile</Text></TouchableOpacity>
       </View>
 
     </View>

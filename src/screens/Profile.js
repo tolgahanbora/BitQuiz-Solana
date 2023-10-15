@@ -4,8 +4,10 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimen
 import { LinearGradient } from 'expo-linear-gradient';
 import { supabase } from '../services';
 
+import axios from 'axios';
 
-import { Connection, PublicKey, Transaction, sendAndConfirmTransaction, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
+
+import { SystemProgram, Connection, PublicKey, Transaction, sendAndConfirmTransaction, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import bs58 from "bs58"
 import { Buffer } from "buffer";
 
@@ -183,58 +185,44 @@ function Profile() {
       try {
 
 
+        const response = await axios.post('http://192.168.1.110:3000/sendTransaction', {
+          toWallet: toAddress,
+          amountInLamports: userData?.token
+        });
 
-        const connection = new Connection("https://api.devnet.solana.com");
-        const privateKey = bs58.decode("sample priv key"); // Gizli anahtarı byte dizisine çevir
-  
-        const adminAccount = Keypair.fromSecretKey(privateKey); // Geçerli bir gizli anahtar kullan
-  
-        const userAccount = new PublicKey(toAddress);
-  
-        const amountInLamports = Math.floor(0.1 * web3.LAMPORTS_PER_SOL); // 0.1 SOL'u lamport cinsine çevir
-  
-        console.log("dalar:", adminAccount)
-  
-        const transaction = new Transaction().add(
-          SystemProgram.transfer({
-            fromPubkey: adminAccount.publicKey,
-            toPubkey: userAccount,
-            lamports: amountInLamports,
+        console.log("token:", userData?.token)
+        console.log(response.data); // API'den dönen veriyi kontrol et
+        if(response.data){
+
+          const { data, error } = await supabase.auth.updateUser({
+            data: { token: 0 }
           })
-        );
-  
-        const signature = await sendAndConfirmTransaction(connection, transaction, [adminAccount]);
-        console.log('Transaction Signature:', signature);
-        alert('Solana token transfer işlemi başarılı!');
+          console.log("success", data)
+        }
+
       } catch (error) {
         console.error('Transfer Error:', error);
-        alert('Transfer işlemi sırasında bir hata oluştu.');
+        alert('An error occurred during the transfer process.');
       }
     } else {
 
 
+      const response = await axios.post('http://192.168.1.110:3000/sendTransaction', {
+        toWallet: toAddress,
+        amountInLamports: userData?.token
+      });
 
-      const connection = new Connection("https://api.devnet.solana.com");
-      const privateKey = bs58.decode("28eJQjaKzY9yYAm8cTE3JEiE3Ps6x7UAXr9KP7saRJNdYnEbyAgAi5oM8Hc8oe5BATo6J9s68Uxq1cWCLZmCUAMo"); // Gizli anahtarı byte dizisine çevir
+      console.log("token:", userData?.token)
+      console.log(response.data); // API'den dönen veriyi kontrol et
+      if(response.data){
 
-      const adminAccount = Keypair.fromSecretKey(privateKey); // Geçerli bir gizli anahtar kullan
-
-      const userAccount = new PublicKey(toAddress);
-
-      const amountInLamports = Math.floor(0.1 * LAMPORTS_PER_SOL); // 0.1 SOL'u lamport cinsine çevir
-
-      console.log("dalar:", adminAccount)
-
-      const transaction = new Transaction().add(
-        SystemProgram.transfer({
-          fromPubkey: privateKey,
-          toPubkey: userAccount,
-          lamports: amountInLamports,
+        const { data, error } = await supabase.auth.updateUser({
+          data: { token: 0 }
         })
-      );
+        console.log("success", data)
+      }
 
-      const signature = await sendAndConfirmTransaction(connection, transaction, [adminAccount]);
-      console.log('Transaction Signature:', signature);
+      alert('Solana transfer successful!');
     }
   };
 
@@ -263,15 +251,15 @@ function Profile() {
           <Text style={styles.bitcoin}>Solana: {userData?.token.toFixed(7)}<Image source={solana} /></Text>
 
           <View style={styles.jokerContainer}>
-            <Text style={styles.jokerHealth}>Oyun Hakkı: {userData?.health}</Text>
-            <Text style={styles.jokerTiming}>Zaman Jokeri: {userData?.timingJoker}</Text>
-            <Text style={styles.jokerFiftyLucky}>Yarı Şans Jokeri: {userData?.fiftyPercentJoker}</Text>
+            <Text style={styles.jokerHealth}>Game Ticket: {userData?.health}</Text>
+            <Text style={styles.jokerTiming}>Time Joker: {userData?.timingJoker}</Text>
+            <Text style={styles.jokerFiftyLucky}>Fifty Lucky: {userData?.fiftyPercentJoker}</Text>
           </View>
         </LinearGradient>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.buttonBTC} >
-            <Text style={styles.buttonText} onPress={() => setModalVisible(true)}>Solana Çek</Text>
+            <Text style={styles.buttonText} onPress={() => setModalVisible(true)}>Withdrawal SOL</Text>
           </TouchableOpacity>
         </View>
 
@@ -293,7 +281,7 @@ function Profile() {
             />
             <TextInput
               style={styles.input}
-              placeholder="Gönderilecek Miktar"
+              placeholder="Amount of Solana"
               value={userData?.token.toFixed(7)}
               editable={false}
             />

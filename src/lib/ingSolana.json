@@ -137,10 +137,10 @@
         "secenekler": [
             "Only MetaMask",
             "Trust Wallet",
-            "Sollet Wallet",
+            "Phantom Wallet",
             "Coinbase Wallet"
         ],
-        "dogru_cevap": "Sollet Wallet"
+        "dogru_cevap": "Phantom Wallet"
     },
     {
         "id": 15,

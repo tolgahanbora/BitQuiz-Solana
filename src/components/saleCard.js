@@ -101,10 +101,10 @@ function SaleCard(props) {
     }
   }
 
-  // Function to show rewarded ad when "Satın Al" button is pressed
+  // Function to show rewarded ad when "Buy Now" button is pressed
   function onBuyButtonPressed() {
 
-    if (price === "Ücretsiz") {
+    if (price === "Free") {
       if (title === 'Oyun Hakkı') {
 
         const increaseTicket = async () => {
@@ -145,7 +145,7 @@ function SaleCard(props) {
           unsubscribeEarned();
         };
       }
-      else if (title === 'Zaman Jokeri') {
+      else if (title === 'Time Joker') {
 
         const increaseJoker = async () => {
           const newTimingJokerValue = timingJoker + 1; // Increment timingJoker value
@@ -175,7 +175,7 @@ function SaleCard(props) {
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
           reward => {
-            console.log('Ödülü kazandınız zaman jokeri: ', reward);
+            console.log('You win the prize, Time Joker:', reward);
             increaseJoker()
           },
         );
@@ -187,7 +187,7 @@ function SaleCard(props) {
         };
 
       }
-      else if (title === 'Yarı Şans') {
+      else if (title === 'Fifty Lucky') {
 
 
         const increaseJoker = async () => {
@@ -218,7 +218,7 @@ function SaleCard(props) {
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
           reward => {
-            console.log('Ödülü kazandınız yarı şans: ', reward);
+            console.log('You win the prize, Fifty Lucky: ', reward);
             increaseJoker()
           },
         );
@@ -231,8 +231,8 @@ function SaleCard(props) {
       }
     }
     else {
-      Alert.alert('Satın Alındı', '1 adet hak elde ettiniz. iyi oyunlar.', [
-        { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+      Alert.alert('Buy Now', 'You have acquired 1 right. good games.', [
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
       ]);
       // Implement the logic for in-app purchase for non-free items
       // You can use a payment gateway or other payment method here
@@ -264,15 +264,15 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '1 adet hak elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Buy Now', 'You have acquired 1 Ticket. good games.', [
           {
-            text: 'Tamam', onPress: async () => await addTicket()
+            text: 'OK', onPress: async () => await addTicket()
           },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -298,13 +298,13 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '3 adet hak elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', 'You get 3 Tickets. good games.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -330,13 +330,13 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '5 adet hak elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', 'You have received 5 Tickets. good games.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -364,13 +364,13 @@ function SaleCard(props) {
         }
 
 
-        Alert.alert('Satın Alındı', '10 adet hak elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', 'You get 10 Tickets. good games.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -403,13 +403,13 @@ function SaleCard(props) {
         }
 
 
-        Alert.alert('Satın Alındı', '1 adet Zaman Jokeri elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', 'You get 1 Time Joker. Good game.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -437,12 +437,12 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '3 adet Zaman Jokeri elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '3 adet Time Joker elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -470,12 +470,12 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '5 adet Zaman Jokeri elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', 'You have obtained 5 Time Jokers. good games.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -503,12 +503,12 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '10 adet Zaman Jokeri elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '10 adet Time Joker elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -542,12 +542,12 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '1 adet Yarı Şans elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '1 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -574,13 +574,13 @@ function SaleCard(props) {
             console.error('Error updating user metadata:', error);
           }
         }
-        Alert.alert('Satın Alındı', '3 adet Yarı Şans elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '3 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
       else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -609,12 +609,12 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '5 adet Yarı Şans elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '5 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
-        Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-          { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+        Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
       }
     }
@@ -643,14 +643,14 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Satın Alındı', '10 adet Yarı Şans elde ettiniz. iyi oyunlar.', [
-          { text: 'Tamam', onPress: async () => await addTicket() },
+        Alert.alert('Purchased', '10 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+          { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
     }
     else {
-      Alert.alert('Satın Alınamadı', 'Hesabınızda yeterli miktarda Solana bulunmamaktadır.', [
-        { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+      Alert.alert('Failed to Purchase', 'You do not have enough Solana in your account.', [
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
       ]);
     }
   }
@@ -676,12 +676,12 @@ function SaleCard(props) {
           </View>
 
           <View style={styles.cardButtonContainer}>
-            {price === "Ücretsiz" ? (
+            {price === "Free" ? (
               <TouchableOpacity
                 style={styles.cardButton}
                 onPress={onBuyButtonPressed}
               >
-                <Text style={styles.cardButtonText}>Ücretsiz</Text>
+                <Text style={styles.cardButtonText}>Free</Text>
               </TouchableOpacity>
             ) : (
               <>
@@ -689,14 +689,14 @@ function SaleCard(props) {
                   style={styles.cardButton}
                   onPress={() => onBuyButtonPressed()}
                 >
-                  <Text style={styles.cardButtonText}>Satın Al {price}/TL</Text>
+                  <Text style={styles.cardButtonText}>Buy Now {price}/TL</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                   style={styles.cardButton}
                   onPress={onSolanaButtonPressed}
                 >
-                  <Text style={styles.cardButtonText}>Satın Al {Solana}/SOL</Text>
+                  <Text style={styles.cardButtonText}>Buy Now {Solana}/SOL</Text>
                 </TouchableOpacity>
               </>
             )}

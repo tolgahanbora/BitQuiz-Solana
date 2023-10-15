@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert } fr
 import Toast from 'react-native-toast-message';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import sorular from "../lib/solana.json"
+import sorular from "../lib/ingSolana.json"
 import { supabase } from '../services';
 
 
@@ -125,10 +125,33 @@ function QuizCard({ navigation }) {
 
     const [extendedTimer, setExtendedTimer] = useState(0);
     const [timingJoker, setTimingJoker] = useState()
+    const [questions, setQuestions]  = useState()
 
     const [jokerCount, setJokerCount] = useState(); // Assuming the user starts with 3 jokers
     const [jokerUsed, setJokerUsed] = useState(false);
     const [correctAnswerIndex, setCorrectAnswerIndex] = useState()
+
+    useEffect(() => {
+        const fetchQuestions = async () => {
+            try {
+                let { data: question, error } = await supabase
+                    .from('questions')
+                    .select('*');
+
+                if (error) {
+                    console.error('Error fetching questions:', error);
+                } else {
+                    // Shuffle the questions when fetched
+                    setQuestions(question)
+                    getJoker();
+                }
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+            }
+        };
+
+        fetchQuestions();
+    }, []);
 
 
     useEffect(() => {
@@ -175,8 +198,8 @@ function QuizCard({ navigation }) {
             addTicket()
         }
         else {
-            Alert.alert("Zaman Jokeri", "Zaman jokeriniz yok, reklam izleyerek ya da satın alarak Zaman Jokeri elde edebilirsiniz.", [
-                { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+            Alert.alert("Time Joker", "You don't have a Time Joker, you can get a Time Joker by watching an ad or buying one.", [
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
             ]);
         }
 
@@ -194,6 +217,8 @@ function QuizCard({ navigation }) {
         setShuffledQuestions(shuffledArray);
         setCurrentQuestionIndex(0); // İlk sorudan başlamak üzere geçerli soru dizinini sıfırlayın
     };
+
+
 
     const generateRandomNumber = () => {
         const randomNumber = Math.random() * (0.0009 - 0.00009) + 0.00009;
@@ -231,8 +256,8 @@ function QuizCard({ navigation }) {
         Toast.show({
             type: 'error',
             position: 'top',
-            text1: 'Yanlış Cevap!',
-            text2: `${randomBTC} adet SOL silindi 👋`,
+            text1: 'Wrong Answer!',
+            text2: `${randomBTC} Sol Deleted👋`,
             visibilityTime: 2000,
         });
         setWrongAnswer(true + 1)
@@ -276,8 +301,8 @@ function QuizCard({ navigation }) {
             Toast.show({
                 type: 'success',
                 position: 'top',
-                text1: 'Doğru Cevap!',
-                text2: `${randomBTC} adet SOL eklendi 👋`,
+                text1: 'Correct Answer!',
+                text2: `${randomBTC} SOL Added 👋`,
                 visibilityTime: 2000, // Toast mesajının ekranda kalma süresi (ms cinsinden)
             });
             setTrueAnswer(trueAnswer + 1)
@@ -289,8 +314,8 @@ function QuizCard({ navigation }) {
             Toast.show({
                 type: 'error',
                 position: 'top',
-                text1: 'Yanlış Cevap!',
-                text2: `${randomBTC} adet SOL silindi 👋`,
+                text1: 'Wrong Answer!',
+                text2: `${randomBTC} SOL Deleted 👋`,
                 visibilityTime: 2000,
             });
             setWrongAnswer(true + 1)
@@ -355,7 +380,7 @@ function QuizCard({ navigation }) {
             addTicket()
         }
         else {
-            Alert.alert("%50 Şans Jokeri", "%50 Şans Jokeriniz yok, reklam izleyerek ay da satın alarak %50 Şans Jokeri elde edebilirsiniz.", [
+            Alert.alert("Fifty Lucky", "If you don't have a 50% Chance Joker, you can get a 50% Chance Joker by watching an ad or buying one.", [
                 { text: 'Tamam', onPress: () => console.log('OK Pressed') },
             ]);
         }
@@ -378,7 +403,7 @@ function QuizCard({ navigation }) {
                 </Text>
                 <View>
                     <Text style={styles.quiz}>
-                        {currentQuestion && currentQuestion.soru ? currentQuestion.soru : "Soru yükleniyor..."}
+                        {currentQuestion && currentQuestion.soru ? currentQuestion.soru : "Question Loading..."}
                     </Text>
                     <View style={styles.quizPicsCard}>
                         {  /*   <Image source={{ uri: "https://loremflickr.com/320/240" }} style={styles.quizPics} /> */}
@@ -399,12 +424,12 @@ function QuizCard({ navigation }) {
                 <View style={styles.buttonGroup}>
                     {/* Timer extension button */}
                     <TouchableOpacity onPress={handleExtendTimer} style={styles.jokerButton} >
-                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={13} color="white" /> Zaman Jokeri  {timingJoker} Adet</Text>
+                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={13} color="white" /> Time Joker {timingJoker}</Text>
                     </TouchableOpacity>
 
                     {/* Button to use the 50/50 Joker */}
                     <TouchableOpacity onPress={handleJoker} style={styles.jokerButton}>
-                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={13} color="white" /> %50 Şans  {jokerCount} Adet</Text>
+                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={13} color="white" /> 50% Chance  {jokerCount} </Text>
                     </TouchableOpacity>
                 </View>
             </View>

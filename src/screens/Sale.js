@@ -60,20 +60,20 @@ const saleDataHealth = [
     {
         "id": 0,
         "image": require("../../assets/tickets.png"),
-        "title": "Oyun Hakkı",
-        "price": "Ücretsiz",
+        "title": "Game Ticket",
+        "price": "Free",
     },
     {
         "id": 1,
         "image": require("../../assets/tickets.png"),
-        "title": "Oyun Hakkı",
+        "title": "Game Ticket",
         "price": 4.99,
         "Solana": 0.01,
     },
     {
         "id": 2,
         "image": require("../../assets/tickets.png"),
-        "title": "3 Adet Oyun Hakkı",
+        "title": "3 Game Tickets",
         "price": 11.99,
         "Solana": 0.02,
 
@@ -81,38 +81,38 @@ const saleDataHealth = [
     {
         "id": 3,
         "image": require("../../assets/tickets.png"),
-        "title": "5 Adet Oyun Hakkı",
+        "title": "5 Game Tickets",
         "price": 19.99,
         "Solana": 0.04,
     },
     {
         "id": 4,
         "image": require("../../assets/tickets.png"),
-        "title": "10 Adet Oyun Hakkı",
+        "title": "10 Game Tickets",
         "price": 39.99,
         "Solana": 0.07,
     }
-]
+];
 
 const saleDataTiming = [
     {
         "id": 0,
         "image": require("../../assets/timingjoker.png"),
-        "title": "Zaman Jokeri",
-        "price": "Ücretsiz",
+        "title": "Time Joker",
+        "price": "Free",
 
     },
     {
         "id": 1,
         "image": require("../../assets/timingjoker.png"),
-        "title": "Zaman Jokeri",
+        "title": "Time Joker",
         "price": 1.99,
         "Solana": 0.005,
     },
     {
         "id": 2,
         "image": require("../../assets/timingjoker.png"),
-        "title": "3 Adet Zaman Jokeri",
+        "title": "3 Time Jokers",
         "price": 3.99,
         "Solana": 0.008,
 
@@ -120,55 +120,56 @@ const saleDataTiming = [
     {
         "id": 3,
         "image": require("../../assets/timingjoker.png"),
-        "title": "5 Adet Zaman Jokeri",
+        "title": "5 Time Jokers",
         "price": 4.99,
         "Solana": 0.009,
     },
     {
         "id": 4,
         "image": require("../../assets/timingjoker.png"),
-        "title": "10 Adet Zaman Jokeri",
+        "title": "10 Time Jokers",
         "price": 12.99,
         "Solana": 0.015,
     }
-]
+];
 
 const saleDataFiftyLucky = [
     {
         "id": 0,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "Yarı Şans",
-        "price": "Ücretsiz",
+        "title": "Fifty Lucky",
+        "price": "Free",
     },
     {
         "id": 1,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "Yarı Şans",
+        "title": "Fifty Lucky",
         "price": 2.99,
         "Solana": 0.007,
     },
     {
         "id": 2,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "3 Adet Yarı Şans",
+        "title": "3 Fifty Luckies",
         "price": 6.99,
         "Solana": 0.013,
     },
     {
         "id": 3,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "5 Adet Yarı Şans",
+        "title": "5 Fifty Luckies",
         "price": 12.99,
         "Solana": 0.025,
     },
     {
         "id": 4,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "10 Adet Yarı Şans",
+        "title": "10 Fifty Luckies",
         "price": 22.99,
         "Solana": 0.041,
     }
-]
+];
+
 
 
 function Sale() {
@@ -192,16 +193,16 @@ function Sale() {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.header}>Mağaza</Text>
+                <Text style={styles.header}>Shop</Text>
 
                 <View style={styles.jokerContainer}>
-                    <Text style={styles.jokerHealth}><Entypo name="ticket" size={14} color="white" style={styles.icon} />Oyun Hakkı: {userData?.health}</Text>
-                    <Text style={styles.jokerTiming}><Entypo name="back-in-time" size={14} color="white" />Zaman Jokeri: {userData?.timingJoker}</Text>
-                    <Text style={styles.jokerFiftyLucky}><MaterialCommunityIcons name="clover" size={14} color="white" />Yarı Şans: {userData?.fiftyPercentJoker}</Text>
+                    <Text style={styles.jokerHealth}><Entypo name="ticket" size={14} color="white" style={styles.icon} />Game Ticket: {userData?.health}</Text>
+                    <Text style={styles.jokerTiming}><Entypo name="back-in-time" size={14} color="white" />Time Joker: {userData?.timingJoker}</Text>
+                    <Text style={styles.jokerFiftyLucky}><MaterialCommunityIcons name="clover" size={14} color="white" />Fifty Lucky: {userData?.fiftyPercentJoker}</Text>
                 </View>
                 <View>
                     <Text style={styles.salesText}>
-                        Oyun Hakları
+                        Game Tickets
                     </Text>
                     {/* FlatList for Health Sale Data */}
                     <FlatList
@@ -215,7 +216,7 @@ function Sale() {
 
                 <View>
                     <Text style={styles.salesText}>
-                        Zaman Jokerleri
+                        Time Jokers
                     </Text>
                     {/* FlatList for Timing Sale Data */}
                     <FlatList
@@ -230,7 +231,7 @@ function Sale() {
                 <View >
 
                     <Text style={styles.salesText}>
-                        Yarı Şans Hakları
+                        Fifty Luckies
                     </Text>
                     {/* FlatList for Fifty Lucky Sale Data */}
                     <FlatList
