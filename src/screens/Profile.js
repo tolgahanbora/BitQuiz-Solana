@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput,Linking  } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
+import { FontAwesome } from '@expo/vector-icons';
+
 import { supabase } from '../services';
 
 import axios from 'axios';
@@ -126,8 +128,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
+
   },
   input: {
+    marginTop: 10,
     backgroundColor: 'white',
     padding: 10,
     width: 250,
@@ -192,7 +196,7 @@ function Profile() {
 
         console.log("token:", userData?.token)
         console.log(response.data); // API'den dönen veriyi kontrol et
-        if(response.data){
+        if (response.data) {
 
           const { data, error } = await supabase.auth.updateUser({
             data: { token: 0 }
@@ -207,14 +211,14 @@ function Profile() {
     } else {
 
 
-      const response = await axios.post('http://192.168.1.110:3000/sendTransaction', {
+      const response = await axios.post('https://solana-pay-api.onrender.com/sendTransaction', {
         toWallet: toAddress,
         amountInLamports: userData?.token
       });
 
       console.log("token:", userData?.token)
       console.log(response.data); // API'den dönen veriyi kontrol et
-      if(response.data){
+      if (response.data) {
 
         const { data, error } = await supabase.auth.updateUser({
           data: { token: 0 }
@@ -225,6 +229,11 @@ function Profile() {
       alert('Solana transfer successful!');
     }
   };
+
+  const openPhantomHelp = () => {
+    Linking.openURL('https://help.phantom.app/hc/en-us/articles/4406393831187-How-to-deposit-ETH-MATIC-and-SOL-in-my-Phantom-wallet');
+  }
+
 
   return (
 
@@ -273,17 +282,26 @@ function Profile() {
           }}
         >
           <View style={styles.modalContainer}>
+
+            <TouchableOpacity onPress={() => openPhantomHelp()}>
+              <FontAwesome name="info-circle" size={30} color="white" />
+            </TouchableOpacity>
+
+
             <TextInput
               style={styles.input}
               placeholder="Enter Solana Address"
               value={solanaAddress}
               onChangeText={text => setSolanaAddress(text)}
             />
+
+
             <TextInput
               style={styles.input}
               placeholder="Amount of Solana"
               value={userData?.token.toFixed(7)}
               editable={false}
+
             />
 
 

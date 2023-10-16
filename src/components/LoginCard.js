@@ -243,7 +243,7 @@ function LoginCard({ navigation }) {
           />
 
           <TouchableOpacity style={styles.loginModalButton} onPress={onSubmitLogin} >
-            <Text style={styles.loginModalButtonText}>Giriş</Text>
+            <Text style={styles.loginModalButtonText}>Login</Text>
           </TouchableOpacity>
         </View>
       </Modal>
