@@ -1,8 +1,9 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 import { LinearGradient } from 'expo-linear-gradient';
 import ConfettiCannon from 'react-native-confetti-cannon';
+import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
 import { supabase } from '../services';
 
 const styles = StyleSheet.create({
@@ -76,12 +77,21 @@ const styles = StyleSheet.create({
   }
 })
 
-function Score({navigation, route}) {
+const adUnitId = __DEV__ ? TestIds.APP_OPEN : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+  requestNonPersonalizedAdsOnly: true,
+  keywords: ['fashion', 'clothing'],
+});
+
+
+function Score({ navigation, route }) {
   const [token, setToken] = useState(0);
   const trueAnswer = route.params.trueAnswer;
   const confettiRef = useRef(null);
   const totalEarnedBTC = route.params.totalEarnedBTC || 0;
-
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     getToken();
@@ -90,6 +100,24 @@ function Score({navigation, route}) {
   useEffect(() => {
     updateToken();
   }, [token]);
+
+
+  useEffect(() => {
+    const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+      setLoaded(true);
+    });
+
+    // Start loading the interstitial straight away
+    interstitial.load();
+
+    // Unsubscribe from events on unmount
+    return unsubscribe;
+  }, []);
+
+  // No advert ready to show yet
+  if (!loaded) {
+    return null;
+  }
 
   const getToken = async () => {
     try {
@@ -107,6 +135,7 @@ function Score({navigation, route}) {
         data: { token: newToken },
       });
       console.log(newToken);
+
     } catch (error) {
       console.error('Error updating ticket:', error);
     }
@@ -119,17 +148,21 @@ function Score({navigation, route}) {
       if (confettiRef.current) {
         confettiRef.current.start();
       }
-    }, 1000);
+    }, 800);
+
+
 
     // useEffect temizleme işlemi
     return () => clearTimeout(timer);
   }, []);
 
-  const onPlayAgain = () => {
+  const onPlayAgain = async () => {
+    await interstitial.show();
     navigation.navigate("Home")
   }
 
-  const onProfile = () => {
+  const onProfile = async () => {
+    await interstitial.show();
     navigation.navigate("Profile")
   }
 

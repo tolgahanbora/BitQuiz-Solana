@@ -4,7 +4,7 @@
     "slug": "BitQuiz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/bitquiz-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/bitquiz-splash.png",
@@ -30,7 +30,7 @@
     ],
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/bitquiz-foreground.png",
+        "foregroundImage": "./assets/transparan-bitquiz.png",
         "backgroundColor": "#2A175B"
       },
       "package": "com.tolgahanbora.BitQuiz"

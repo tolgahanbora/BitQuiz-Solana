@@ -185,7 +185,7 @@ function Profile() {
 
   // Solana göndermeyi sorguluyorum
   const sendSolanaTokens = async (toAddress) => {
-    if (userData?.token >= 0.1) {
+    if (userData?.token >= 1) {
       try {
 
 
