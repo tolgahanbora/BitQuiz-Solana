@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert,AppState  } from 'react-native'
 import Toast from 'react-native-toast-message';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -121,7 +121,7 @@ function QuizCard({ navigation }) {
 
     // zaman state
     const [timer, setTimer] = useState(10); // Timer value in seconds
-
+    const [inactiveTime, setInactiveTime] = useState(0);
 
     const [extendedTimer, setExtendedTimer] = useState(0);
     const [timingJoker, setTimingJoker] = useState()
@@ -131,27 +131,40 @@ function QuizCard({ navigation }) {
     const [jokerUsed, setJokerUsed] = useState(false);
     const [correctAnswerIndex, setCorrectAnswerIndex] = useState()
 
-    useEffect(() => {
-        const fetchQuestions = async () => {
-            try {
-                let { data: question, error } = await supabase
-                    .from('questions')
-                    .select('*');
 
-                if (error) {
-                    console.error('Error fetching questions:', error);
-                } else {
-                    // Shuffle the questions when fetched
-                    setQuestions(question)
-                    getJoker();
-                }
-            } catch (error) {
-                console.error('Error fetching questions:', error);
+
+    const fetchQuestions = async () => {
+        try {
+            const response = await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=hard&type=multiple');
+            const data = await response.json();
+    
+            if (response.ok) {
+                const formattedQuestions = data.results.map((questionItem) => {
+                    return {
+                        soru: questionItem.question,
+                        dogru_cevap: questionItem.correct_answer,
+                        secenekler: [...questionItem.incorrect_answers, questionItem.correct_answer],
+                    };
+                });
+    
+                // Shuffle the formatted questions
+                const shuffledArray = formattedQuestions.sort(() => Math.random() - 0.5);
+                setShuffledQuestions(shuffledArray);
+                setCurrentQuestionIndex(0); // Set initial question index
+            } else {
+                console.error('Failed to fetch questions');
             }
-        };
-
+        } catch (error) {
+            console.error('Error fetching questions:', error);
+        }
+    };
+    
+    // Inside useEffect, call fetchQuestions() to retrieve and set the questions
+    useEffect(() => {
         fetchQuestions();
     }, []);
+
+  
 
 
     useEffect(() => {
@@ -225,9 +238,12 @@ function QuizCard({ navigation }) {
         return randomNumber.toFixed(7);
     };
 
+
+    
     useEffect(() => {
         // Start the timer when the component mounts or when the question changes
         const interval = setInterval(() => {
+            if (AppState.currentState === 'active'){
             setTimer((prev) => {
                 if (prev === 0) {
                     // If the timer reaches 0, move to the next question
@@ -236,12 +252,27 @@ function QuizCard({ navigation }) {
                 } else {
                     return prev - 1;
                 }
-            });
+            }); }
         }, 1000);
 
         // Clean up the interval when the component unmounts or when the question changes
         return () => clearInterval(interval);
     }, [currentQuestionIndex]);
+
+    useEffect(() => {
+        const subscription = AppState.addEventListener('change', (nextAppState) => {
+            if (nextAppState === 'inactive' || nextAppState === 'background') {
+                navigation.navigate('Home');
+            }
+        });
+
+        return () => {
+            subscription.remove();
+        };
+    }, []);
+
+
+
 
     useEffect(() => {
         // Reset the timer and mark the current timer as expired when a new question is displayed
