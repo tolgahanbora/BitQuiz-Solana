@@ -77,12 +77,12 @@ const styles = StyleSheet.create({
   }
 })
 
-const adUnitId = __DEV__ ? TestIds.APP_OPEN : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
+const adUnitId = "ca-app-pub-2590549735225636/8301302478";
 
 
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
   requestNonPersonalizedAdsOnly: true,
-  keywords: ['fashion', 'clothing'],
+  keywords: ['fashion', 'clothing', 'crypto', 'web3', 'games', 'dApps', 'borsa', "kripto para", "iddia", "maçkolik", "futbol", "bahis"],
 });
 
 
@@ -114,10 +114,7 @@ function Score({ navigation, route }) {
     return unsubscribe;
   }, []);
 
-  // No advert ready to show yet
-  if (!loaded) {
-    return null;
-  }
+
 
   const getToken = async () => {
     try {

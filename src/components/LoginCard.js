@@ -145,7 +145,7 @@ function LoginCard({ navigation }) {
           options: {
             data: {
               username: username,
-              health: 100,
+              health: 5,
               token: 0,
               timingJoker: 0,
               fiftyPercentJoker: 0

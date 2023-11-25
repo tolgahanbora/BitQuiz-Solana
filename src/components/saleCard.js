@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const adUnitId = __DEV__ ? TestIds.REWARDED : 'ca-app-pub-2590549735225636/2878610166';
+const adUnitId = "ca-app-pub-2590549735225636/2878610166";
 
 
 const rewarded = RewardedAd.createForAdRequest(adUnitId, {
   requestNonPersonalizedAdsOnly: true,
-  keywords: ['fashion', 'clothing', 'crypto', 'web3', 'games', 'dApps', 'borsa'],
+  keywords: ['fashion', 'clothing', 'crypto', 'web3', 'games', 'dApps', 'borsa', "kripto para", "iddia", "maçkolik", "futbol", "bahis"],
 });
 
 function SaleCard(props) {
