@@ -31,7 +31,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/transparan-bitquiz.png",
-        "backgroundColor": "#2A175B"
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.tolgahanbora.BitQuiz"
     },

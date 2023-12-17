@@ -437,7 +437,7 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Purchased', '3 adet Time Joker elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You get 3 Time Jokers. Good Games.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
@@ -503,7 +503,7 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Purchased', '10 adet Time Joker elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You have 10 Time Jokers. Good game.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
@@ -542,7 +542,7 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Purchased', '1 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You have 1 Fifty Lucky. Good game.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
@@ -574,7 +574,7 @@ function SaleCard(props) {
             console.error('Error updating user metadata:', error);
           }
         }
-        Alert.alert('Purchased', '3 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You got 3 Fifty Lucky. Good game.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }
@@ -609,7 +609,7 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Purchased', '5 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You got 5 Fifty Lucky. Good game.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       } else {
@@ -643,7 +643,7 @@ function SaleCard(props) {
           }
         }
 
-        Alert.alert('Purchased', '10 adet Fifty Lucky elde ettiniz. iyi oyunlar.', [
+        Alert.alert('Purchased', 'You got 10 Fifty Lucky. Good game.', [
           { text: 'OK', onPress: async () => await addTicket() },
         ]);
       }

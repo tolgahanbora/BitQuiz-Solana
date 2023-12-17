@@ -145,7 +145,7 @@ function Score({ navigation, route }) {
       if (confettiRef.current) {
         confettiRef.current.start();
       }
-    }, 800);
+    }, 150);
 
 
 
