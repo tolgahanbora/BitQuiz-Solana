@@ -1,14 +1,23 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, Dimensions, Linking,PixelRatio } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
-import { useEffect } from 'react';
 import { useState } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FontAwesome } from '@expo/vector-icons';
 import { supabase } from '../services';
 import solanaImage from "../../assets/mainImage.png"
 
-const windowWidth = Dimensions.get("window").width
-const windowHeight = Dimensions.get("window").height
+import { useUser } from '../context/UserContext';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+// Function to calculate responsive font size
+const responsiveFontSize = (fontSize) => {
+  const standardWidth = 375; // You can adjust this value as needed
+  const widthPercent = (fontSize * 100) / standardWidth;
+  const newSize = (windowWidth * widthPercent) / 100;
+  return PixelRatio.roundToNearestPixel(newSize);
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +37,7 @@ const styles = StyleSheet.create({
   },
   mainText: {
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.07,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold"
   },
   buttonContainer: {
@@ -36,7 +45,6 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 50,
-    height: windowHeight * 0.095,
     width: 300,
     backgroundColor: "#6949FD"
   },
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
   iconText: {
     color: "#fefefe",
     marginTop: 5,
-    fontSize: 12,
+    fontSize:  windowWidth * 0.047,
     fontWeight: "bold"
   },
   iconRow: {
@@ -91,30 +99,16 @@ function HomeCard({ navigation }) {
   const [ticket, setTicket] = useState();
   const [countdown, setCountdown] = useState(0);
 
-  /* const TICKET_INTERVAL = 24 * 60 * 60 * 1000; // 24 saat
-   const COUNTDOWN_INTERVAL = 1000; // 1 saniye
- 
-   useEffect(() => {
-     const setInitialTicketTime = async () => {
-       const lastTicketTime = await AsyncStorage.getItem('lastTicketTime');
-       if (!lastTicketTime) {
-         const currentTime = new Date().getTime();
-         await AsyncStorage.setItem('lastTicketTime', currentTime.toString());
- 
-       }
-     };
-     setInitialTicketTime();
-   }, []); */
+  const { user, loading } = useUser();
 
-  const getTicket = async () => {
-    try {
-      const { data: { user } } = await supabase.auth.getUser();
-      setTicket(user.user_metadata);
-
-    } catch (error) {
-      console.error('Error fetching ticket:', error);
-    }
+  const openYouTubeTutorial = () => {
+    const youtubeUrl = 'https://youtu.be/0VjQ86Ssy-I?si=1y1oETW78MuSL2jw'; // Değiştirilmesi gereken yer: YOUR_VIDEO_ID
+    Linking.openURL(youtubeUrl);
   };
+
+ 
+
+
 
   const updateTicket = async (newTicketValue) => {
     try {
@@ -127,30 +121,11 @@ function HomeCard({ navigation }) {
     }
   };
 
-  /*
-  const grantTicketsEvery24Hours = async () => {
-    await getTicket();
-
-    const lastTicketTime = await AsyncStorage.getItem('lastTicketTime');
-    const currentTime = new Date().getTime();
-    const timeDifference = currentTime - parseInt(lastTicketTime);
-
-    if (timeDifference >= TICKET_INTERVAL) {
-      const newTicketValue = ticket?.health + 2;
-      await updateTicket(newTicketValue);
-
-       // 24 saatlik aralığı güncelle
-       await AsyncStorage.setItem('lastTicketTime', currentTime.toString());
-
-      await getTicket();
-    }
-
-    setCountdown(TICKET_INTERVAL - timeDifference);
-  }; */
+ 
 
   const onHandleClick = async () => {
-    if (ticket?.health > 0) {
-      const newTicketValue = ticket?.health - 1;
+    if (user?.health > 0) {
+      const newTicketValue = user?.health - 1;
       await updateTicket(newTicketValue);
       navigation.navigate('Quiz');
     } else {
@@ -162,33 +137,7 @@ function HomeCard({ navigation }) {
     }
   };
 
-  useEffect(() => {
-    getTicket();
-
-  }, [ticket]);
-
-
-  /*
-    useEffect(() => {
-      grantTicketsEvery24Hours();
   
-      const ticketInterval = setInterval(grantTicketsEvery24Hours, TICKET_INTERVAL);
-  
-      const countdownInterval = setInterval(() => {
-        setCountdown((prevCountdown) => {
-          if (prevCountdown > COUNTDOWN_INTERVAL) {
-            return prevCountdown - COUNTDOWN_INTERVAL;
-          } else {
-            return TICKET_INTERVAL;
-          }
-        });
-      }, COUNTDOWN_INTERVAL);
-  
-      return () => {
-        clearInterval(ticketInterval);
-        clearInterval(countdownInterval);
-      };
-    }, []); */
 
 
   return (
@@ -197,23 +146,14 @@ function HomeCard({ navigation }) {
       <View style={styles.iconContainer}>
         <View style={styles.iconRow}>
           <Entypo name="ticket" size={20} color="white" style={styles.icon} />
-          <Text style={styles.iconText}>{ticket?.health}</Text>
+          <Text style={styles.iconText}>{user?.health}</Text>
+          <TouchableOpacity onPress={openYouTubeTutorial} style={{  marginLeft: 25 }}>
+            {/* How to play? butonu için stil ve içerik */}
+            <FontAwesome name="info-circle" size={30} color="white" />
+          </TouchableOpacity>
         </View>
 
 
-        {/*  <View>
-
-            <View style={styles.iconRow}>
-                    <Entypo name="ticket" size={20} color="white" style={styles.icon} />
-                    <Text style={styles.iconText}>+2</Text>
-    </View> 
-          <View style={styles.countdownContainer}>
-            <Text style={styles.countdownText}>
-              {Math.floor(countdown / 3600000)}h {Math.floor((countdown % 3600000) / 60000)}m{" "}
-              {Math.floor((countdown % 60000) / 1000)}s
-            </Text>
-          </View>
-  </View> */ }
 
       </View>
 

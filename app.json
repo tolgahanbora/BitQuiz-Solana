@@ -2,7 +2,7 @@
   "expo": {
     "name": "BitQuiz",
     "slug": "BitQuiz",
-    "version": "1.0.0",
+    "version": "2.2.0",
     "orientation": "portrait",
     "icon": "./assets/bitquiz-icon.png",
     "userInterfaceStyle": "light",
@@ -22,6 +22,11 @@
       [
         "expo-build-properties",
         {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          },
           "ios": {
             "useFrameworks": "static"
           }
@@ -33,7 +38,12 @@
         "foregroundImage": "./assets/transparan-bitquiz.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tolgahanbora.BitQuiz"
+      "package": "com.tolgahanbora.BitQuiz",
+      "permissions": [
+        "com.android.vending.BILLING",
+        "android.permission.INTERNET"
+      ],
+      "versionCode": 9
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -45,8 +55,6 @@
     }
   },
   "react-native-google-mobile-ads": {
-    "android_app_id": "ca-app-pub-2590549735225636~6253860342",
-    "ios_app_id": "ca-app-pub-2590549735225636~6253860342"
-    
+    "android_app_id": "ca-app-pub-2590549735225636~6253860342"
   }
 }

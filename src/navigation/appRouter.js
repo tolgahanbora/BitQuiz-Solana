@@ -1,5 +1,4 @@
 import React from 'react'
-import { View, Text } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -17,7 +16,8 @@ const Tab = createBottomTabNavigator();
 // Profil, Home ve Satın Alma sayfalarını içeren Tab Navigator
 function TabNavigator() {
   return (
-    <Tab.Navigator screenOptions={({ route }) => ({
+    <Tab.Navigator
+    screenOptions={({ route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
 
@@ -31,9 +31,20 @@ function TabNavigator() {
 
         // You can customize the icon size and color here
         return <Ionicons name={iconName} size={size} color={color} />;
-      }
+      },
+      tabBarStyle: {
+        display: 'flex',
+        borderTopWidth: 0, // Üst çizgiyi kaldırmak için sıfıra ayarlayın
+      },
+      tabBarActiveTintColor: '#FCFCFC', // etkin durumda simge rengi
+      tabBarInactiveTintColor: '#FCFCFC', // etkin olmayan durumda simge rengi
+      tabBarActiveBackgroundColor: '#2E388F', // etkin durumda arka plan rengi
+      tabBarInactiveBackgroundColor: '#32167C', // etkin olmayan durumda arka plan rengi
+      tabBarLabelStyle: {
+        fontSize: 12,
+      },
     })}
-    >
+  >
 
       <Tab.Screen name="Sale" component={Sale} options={{headerShown: false}}/>
       <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />

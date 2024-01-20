@@ -1,10 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-
+import { View, Text, StyleSheet, TouchableOpacity,Dimensions,Vibration } from 'react-native'
+import { useUser } from '../context/UserContext';
 import { LinearGradient } from 'expo-linear-gradient';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import { InterstitialAd, AdEventType, TestIds } from 'react-native-google-mobile-ads';
 import { supabase } from '../services';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -62,7 +65,6 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 150,
-    height: 60,
     margin: 10,
     borderRadius: 13,
     backgroundColor: "#6949FD",
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignItems: "center",
     padding: 16,
-    fontSize: 14,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
   }
 })
@@ -81,25 +83,24 @@ const adUnitId = "ca-app-pub-2590549735225636/8301302478";
 
 
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
-  requestNonPersonalizedAdsOnly: true,
+  requestNonPersonalizedAdsOnly: false,
   keywords: ['fashion', 'clothing', 'crypto', 'web3', 'games', 'dApps', 'borsa', "kripto para", "iddia", "maçkolik", "futbol", "bahis"],
 });
 
 
 function Score({ navigation, route }) {
-  const [token, setToken] = useState(0);
+
   const trueAnswer = route.params.trueAnswer;
   const confettiRef = useRef(null);
   const totalEarnedBTC = route.params.totalEarnedBTC || 0;
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    getToken();
-  }, []);
+  const { user, loading } = useUser();
+
 
   useEffect(() => {
     updateToken();
-  }, [token]);
+  }, []);
 
 
   useEffect(() => {
@@ -116,22 +117,16 @@ function Score({ navigation, route }) {
 
 
 
-  const getToken = async () => {
-    try {
-      const { data: { user } } = await supabase.auth.getUser();
-      setToken(user?.user_metadata.token || 0);
-    } catch (e) {
-      console.error('Error fetching ticket:', e);
-    }
-  };
+ 
 
   const updateToken = async () => {
     try {
-      const newToken = token + totalEarnedBTC;
+      const newToken = user?.token + (totalEarnedBTC);
       await supabase.auth.updateUser({
         data: { token: newToken },
       });
-      console.log(newToken);
+    
+  
 
     } catch (error) {
       console.error('Error updating ticket:', error);
@@ -139,29 +134,48 @@ function Score({ navigation, route }) {
   };
 
 
+  const confettiDelay = 500; // Delay time for confetti effect in milliseconds
+
   useEffect(() => {
-    // Sayfa açıldığında konfeti patlaması için 1.5 saniye sonra ateşleme yapın
     const timer = setTimeout(() => {
-      if (confettiRef.current) {
+      if (confettiRef.current && !confettiRef.current.state.emitting) {
         confettiRef.current.start();
+        Vibration.vibrate([500]);
       }
-    }, 150);
+    }, confettiDelay);
+  
+    return () => {
+     clearTimeout(timer);
+     Vibration.cancel();
+    }
+  }, [confettiRef, confettiDelay]);
 
-
-
-    // useEffect temizleme işlemi
-    return () => clearTimeout(timer);
-  }, []);
 
   const onPlayAgain = async () => {
-    await interstitial.show();
-    navigation.navigate("Home")
-  }
+    try {
+      if (loaded) {
+        await interstitial.show();
+      } else {
+        Alert.alert('Ad not loaded', 'Please wait for the ad to load before trying again.');
+      }
+      navigation.navigate("Home");
+    } catch (error) {
+      navigation.navigate("Home");
+    }
+  };
 
   const onProfile = async () => {
-    await interstitial.show();
-    navigation.navigate("Profile")
-  }
+    try {
+      if (loaded) {
+        await interstitial.show();
+      } else {
+        Alert.alert('Ad not loaded', 'Please wait for the ad to load before trying again.');
+      }
+      navigation.navigate("Profile");
+    } catch (error) {
+      navigation.navigate("Profile");
+    }
+  };
 
   return (
     <View style={styles.container}>

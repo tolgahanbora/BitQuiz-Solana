@@ -105,12 +105,10 @@ const styles = StyleSheet.create({
 function LoginCard({ navigation }) {
 
   const [isModalVisible, setModalVisible] = useState(false);
-
   const [isModalVisibleRegister, setModalVisibleRegister] = useState(false);
-
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setpassword] = useState("")
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -121,72 +119,75 @@ function LoginCard({ navigation }) {
   };
 
   const onHandleChangeUsername = (text) => {
-    setUsername(text)
-  }
+    setUsername(text);
+  };
 
   const onHandleChangeEmail = (text) => {
-    setEmail(text)
-  }
-
+    setEmail(text);
+  };
 
   const onHandleChangePassword = (text) => {
-    setpassword(text)
-  }
+    setPassword(text);
+  };
 
-
-  //Register DB FUNC
   const onSubmitRegister = async () => {
+    if (!username || !email || !password) {
+      Alert.alert('Empty Fields', 'Please fill in all the fields.');
+      return;
+    }
 
     try {
-      const { data, error } = await supabase.auth.signUp(
-        {
-          email: email,
-          password: password,
-          options: {
-            data: {
-              username: username,
-              health: 5,
-              token: 0,
-              timingJoker: 0,
-              fiftyPercentJoker: 0
-            }
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            username: username,
+            health: 5,
+            token: 0,
+            timingJoker: 0,
+            fiftyPercentJoker: 0
           }
         }
-      )
+      });
+
       if (error) {
-        console.error(error)
-      }
-      else if (!error) {
-        Alert.alert('Registration Successful', 'Your account has been created, log in and start earning now!', [
+        console.error(error);
+      } else {
+        Alert.alert('Registration Successful', 'Your account has been created. Log in and start earning now!', [
           { text: 'OK', onPress: () => console.log('OK Pressed') },
         ]);
-        setModalVisibleRegister(false)
-        setUsername("")
-        setEmail("")
-        setpassword("")
+        setModalVisibleRegister(false);
+        setUsername('');
+        setEmail('');
+        setPassword('');
       }
+    } catch (error) {
+      console.error(error);
     }
-    catch (error) {
-      console.error(error)
-    }
-  }
+  };
 
-  //Login DB FUNC
   const onSubmitLogin = async () => {
+    if (!email || !password) {
+      Alert.alert('Empty Fields', 'Please enter your email and password.');
+      return;
+    }
+
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
+
       if (error) {
-        console.error("Error signing", error);
-      } else if (!error) {
-        console.log('Giriş başarılı ');
+        Alert.alert('Login Failed', 'Incorrect email or password. Please try again.');
+        console.error('Error signing', error);
+      } else {
+
         setModalVisible(false);
 
-        // Main stack içindeki Tab Navigator'a yönlendirme yapalım
-        navigation.navigate("Main", {
-          screen: "Profile",
+        navigation.navigate('Main', {
+          screen: 'Profile',
           params: {
             email: email,
             username: username,

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react'
-
-import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput,Linking  } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput, Linking, PixelRatio } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
-
+import { useUser } from '../context/UserContext';
 import { supabase } from '../services';
 
 import axios from 'axios';
 
 
-import { SystemProgram, Connection, PublicKey, Transaction, sendAndConfirmTransaction, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
-import bs58 from "bs58"
+
 import { Buffer } from "buffer";
 
 
@@ -59,33 +57,34 @@ const styles = StyleSheet.create({
     color: "#FEFEFE",
     fontSize: 25,
     margin: 15,
+    justifyContent: "center",
     textAlign: "center"
 
   },
   jokerContainer: {
     flexDirection: "row",
-    textAlign: "center",
-    alignItems: "center",
-
+    justifyContent: "space-around", // Align items horizontally with space around
+    alignItems: "center", // Center items vertically
+    marginTop: 10, // Add any necessary margin or padding here
   },
   jokerHealth: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: 10,
+    fontSize: windowWidth * 0.04,
     margin: 0,
     textAlign: "center"
   },
   jokerTiming: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: 10,
+    fontSize: windowWidth * 0.04,
     margin: 15,
     textAlign: "center"
   },
   jokerFiftyLucky: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: 10,
+    fontSize: windowWidth * 0.04,
     margin: 0,
     textAlign: "center"
   },
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#6949FD",
     borderRadius: 40,
     width: 200,
-    height: windowWidth * 0.15,
+
     margin: 68
   },
   buttonText: {
@@ -158,87 +157,77 @@ const styles = StyleSheet.create({
 })
 
 function Profile() {
-  const [userData, setUserData] = useState()
   const [modalVisible, setModalVisible] = useState(false);
   const [solanaAddress, setSolanaAddress] = useState('');
+  const [showConfetti, setShowConfetti] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   global.Buffer = Buffer;
 
+  const { user } = useUser();
 
-  const getTicket = async () => {
-    try {
-      const { data: { user } } = await supabase.auth.getUser()
-      setUserData(user.user_metadata)
-    }
-    catch (e) {
-      console.error("Error fetching ticket:", e)
-    }
-  }
-
-
-  useEffect(() => {
-    getTicket()
-  }, [userData])
 
 
 
 
   // Solana göndermeyi sorguluyorum
   const sendSolanaTokens = async (toAddress) => {
-    if (userData?.token >= 1) {
+
+    if (!isButtonDisabled && user?.token >= 1) {
+      setIsButtonDisabled(true); // Disable the button
+
       try {
 
 
-        const response = await axios.post('http://192.168.1.110:3000/sendTransaction', {
+        const response = await axios.post('https://solana-pay-api.onrender.com/sendTransaction', {
           toWallet: toAddress,
-          amountInLamports: userData?.token
+          amountInLamports: user?.token
         });
 
-        console.log("token:", userData?.token)
-        console.log(response.data); // API'den dönen veriyi kontrol et
+
         if (response.data) {
 
           const { data, error } = await supabase.auth.updateUser({
             data: { token: 0 }
           })
-          console.log("success", data)
+
+          if (!error) {
+
+
+            alert('Solana transfer successful!');
+            setShowConfetti(true); // Confetti'yi göster
+          }
         }
+
+
 
       } catch (error) {
         console.error('Transfer Error:', error);
         alert('An error occurred during the transfer process.');
+      } finally {
+        setIsButtonDisabled(false); // Re-enable the button after API call completes
       }
     } else {
 
-
-      const response = await axios.post('https://solana-pay-api.onrender.com/sendTransaction', {
-        toWallet: toAddress,
-        amountInLamports: userData?.token
-      });
-
-      console.log("token:", userData?.token)
-      console.log(response.data); // API'den dönen veriyi kontrol et
-      if (response.data) {
-
-        const { data, error } = await supabase.auth.updateUser({
-          data: { token: 0 }
-        })
-        console.log("success", data)
-      }
-
-      alert('Solana transfer successful!');
+      alert('Your Solana balance is insufficient.');
     }
   };
 
   const openPhantomHelp = () => {
-    Linking.openURL('https://help.phantom.app/hc/en-us/articles/4406393831187-How-to-deposit-ETH-MATIC-and-SOL-in-my-Phantom-wallet');
+    Linking.openURL('https://youtu.be/Gyfpdk0F08Q?si=YqyLiopU9HFqztsg');
   }
 
 
   return (
 
     <View style={styles.container}>
+
+
+
       <ImageBackground source={bitquizBackground} resizeMode="stretch" >
+
+
         <View style={styles.avatarContainer}>
           <Text style={styles.header}>
             Profile
@@ -247,22 +236,22 @@ function Profile() {
         </View>
 
         <View style={styles.usernameContainer} >
-          <Text style={styles.username}>{userData?.username}</Text>
+          <Text style={styles.username}>{user?.username}</Text>
 
 
         </View>
         <LinearGradient
           colors={['#32167C', '#6949FD']}
           style={styles.bodyContainer}
-          start={[0, 0.5]}
-          end={[1, 0.5]}
+          start={[0, 0.05]}
+          end={[1, 0.05]}
         >
-          <Text style={styles.bitcoin}>Solana: {userData?.token.toFixed(7)}<Image source={solana} /></Text>
+          <Text style={styles.bitcoin}>Solana: {user?.token.toFixed(7)}<Image source={solana} /></Text>
 
           <View style={styles.jokerContainer}>
-            <Text style={styles.jokerHealth}>Game Ticket: {userData?.health}</Text>
-            <Text style={styles.jokerTiming}>Time Joker: {userData?.timingJoker}</Text>
-            <Text style={styles.jokerFiftyLucky}>Fifty Lucky: {userData?.fiftyPercentJoker}</Text>
+            <Text style={styles.jokerHealth}>Game Ticket: {user?.health}</Text>
+            <Text style={styles.jokerTiming}>Time Joker: {user?.timingJoker}</Text>
+            <Text style={styles.jokerFiftyLucky}>Fifty Lucky: {user?.fiftyPercentJoker}</Text>
           </View>
         </LinearGradient>
 
@@ -292,6 +281,7 @@ function Profile() {
               style={styles.input}
               placeholder="Enter Solana Address"
               value={solanaAddress}
+              required
               onChangeText={text => setSolanaAddress(text)}
             />
 
@@ -299,13 +289,17 @@ function Profile() {
             <TextInput
               style={styles.input}
               placeholder="Amount of Solana"
-              value={userData?.token.toFixed(7)}
+              value={user?.token.toFixed(7)}
               editable={false}
 
             />
 
 
-            <TouchableOpacity style={styles.sendButton} onPress={() => sendSolanaTokens(solanaAddress)}>
+            <TouchableOpacity
+              style={styles.sendButton}
+              onPress={() => sendSolanaTokens(solanaAddress)}
+              disabled={isButtonDisabled} // Disable button using TouchableOpacity's disabled prop
+            >
               <Text style={styles.buttonText}>Send Solana</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.closeButton} onPress={() => setModalVisible(false)}>

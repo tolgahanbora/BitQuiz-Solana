@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert,AppState  } from 'react-native'
+import React, { useState, useEffect ,useMemo } from 'react'
+import { decode } from 'he';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions, Alert,AppState,BackHandler  } from 'react-native'
+import { useNavigation,useFocusEffect } from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
-import sorular from "../lib/ingSolana.json"
-import { supabase } from '../services';
 
+import { supabase } from '../services';
+import { useUser } from '../context/UserContext';
 
 const windowWidth = Dimensions.get("window").height
 const windowHeight = Dimensions.get('window').width;
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
       },
     quiz: {
         color: "#FEFEFE",
-        fontSize: windowHeight * 0.04,
+        fontSize: windowHeight * 0.05,
         marginTop: 7,
         fontWeight: "normal",
         marginBottom: 20
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     answer: {
         padding: 10,
         color: "#FEFEFE",
-        fontSize: windowHeight * 0.03,
+        fontSize: windowHeight * 0.037,
         marginTop: 7,
         fontWeight: "bold",
         letterSpacing: 1, // Harf aralığını değiştirebilirsiniz, piksel cinsinden
@@ -97,17 +99,24 @@ const styles = StyleSheet.create({
         height: 50,
         paddingHorizontal: 20, // Sığması için yatay padding ekleyin
         justifyContent: "center", // Text ve icon içeriğini yatayda merkezle
+        alignContent: "center",
+        alignItems: "center",
+        textAlign: "center",
         borderRadius: 10,
         backgroundColor: "#6949FD",
     },
     buttonText: {
         color: "white",
-        fontSize: 13,
+        fontSize:  windowWidth * 0.027,
         marginLeft: 5, // Icon ve text arasında boşluk bırakmak için
     },
 });
 
 function QuizCard({ navigation }) {
+
+    const { user } = useUser();
+    const { goBack } = useNavigation();
+
     const [totalEarnedBTC, setTotalEarnedBTC] = useState(0); // Toplam BTC tutarını tutacak state
 
     // Soru state
@@ -121,13 +130,13 @@ function QuizCard({ navigation }) {
 
     // zaman state
     const [timer, setTimer] = useState(10); // Timer value in seconds
-    const [inactiveTime, setInactiveTime] = useState(0);
+ 
 
     const [extendedTimer, setExtendedTimer] = useState(0);
-    const [timingJoker, setTimingJoker] = useState()
-    const [questions, setQuestions]  = useState()
+    const [timingJoker, setTimingJoker] = useState(user?.timingJoker)
+  
 
-    const [jokerCount, setJokerCount] = useState(); // Assuming the user starts with 3 jokers
+    const [jokerCount, setJokerCount] = useState(user?.fiftyPercentJoker); // Assuming the user starts with 3 jokers
     const [jokerUsed, setJokerUsed] = useState(false);
     const [correctAnswerIndex, setCorrectAnswerIndex] = useState()
 
@@ -160,18 +169,36 @@ function QuizCard({ navigation }) {
     };
     
     // Inside useEffect, call fetchQuestions() to retrieve and set the questions
-    useEffect(() => {
-        fetchQuestions();
-    }, []);
 
+    const goBackToPreviousScreen = () => {
+        navigation.goBack();
+        navigation.navigate('Score', {
+            trueAnswer: 0,
+            wrongAnswer: 10,
+            totalEarnedBTC: -0.8
+        });
+    };
+
+    useFocusEffect(
+        React.useCallback(() => {
+            const onBackPress = () => {
+                goBackToPreviousScreen();
+                return true; // Event'in sonlanmasını engellemek için true döndürülür
+            };
+
+            // Geri düğmesine basıldığında çalışacak olay
+            const backHandler = BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+            // Component unmount olduğunda event listener'ı kaldırma
+            return () => backHandler.remove();
+        }, [])
+    );
   
 
 
     useEffect(() => {
         // Shuffle the questions when the component mounts
-
-        shuffleQuestions();
-        getJoker()
+        fetchQuestions();
     }, []);
 
     useEffect(() => {
@@ -220,16 +247,7 @@ function QuizCard({ navigation }) {
 
 
 
-    const shuffleQuestions = () => {
-        // Soruları Fisher-Yates (Knuth) Karıştırma algoritması ile karıştırarak yeni bir dizi oluşturun
-        const shuffledArray = [...sorular];
-        for (let i = shuffledArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-        }
-        setShuffledQuestions(shuffledArray);
-        setCurrentQuestionIndex(0); // İlk sorudan başlamak üzere geçerli soru dizinini sıfırlayın
-    };
+  
 
 
 
@@ -238,23 +256,36 @@ function QuizCard({ navigation }) {
         return randomNumber.toFixed(7);
     };
 
-
+   
+    
     
     useEffect(() => {
         // Start the timer when the component mounts or when the question changes
         const interval = setInterval(() => {
-            if (AppState.currentState === 'active'){
-            setTimer((prev) => {
-                if (prev === 0) {
-                    // If the timer reaches 0, move to the next question
-                    handleNextQuestion();
-                    return 10; // Reset the timer to 10 seconds for the next question
-                } else {
-                    return prev - 1;
-                }
-            }); }
+            if (AppState.currentState === 'active') {
+                setTimer((prev) => {
+                    if (prev === 0) {
+                        // If the timer reaches 0, move to the next question or navigate if it's the last question
+                        if (questionCount === 10) {
+                            // Navigate to the score screen
+                            navigation.navigate('Score', {
+                                trueAnswer: trueAnswer,
+                                wrongAnswer: wrongAnswer,
+                                totalEarnedBTC: totalEarnedBTC
+                            });
+                        } else {
+                            setCurrentQuestionIndex(currentQuestionIndex + 1);
+                            setQuestionCount(questionCount + 1);
+                            handleNextQuestion();
+                            return 10; // Reset the timer to 10 seconds for the next question
+                        }
+                    } else {
+                        return prev - 1;
+                    }
+                });
+            }
         }, 1000);
-
+    
         // Clean up the interval when the component unmounts or when the question changes
         return () => clearInterval(interval);
     }, [currentQuestionIndex]);
@@ -262,7 +293,11 @@ function QuizCard({ navigation }) {
     useEffect(() => {
         const subscription = AppState.addEventListener('change', (nextAppState) => {
             if (nextAppState === 'inactive' || nextAppState === 'background') {
-                navigation.navigate('Home');
+                navigation.navigate('Score', {
+                    trueAnswer: 0,
+                    wrongAnswer: 10,
+                    totalEarnedBTC: 0.2
+                });
             }
         });
 
@@ -298,16 +333,7 @@ function QuizCard({ navigation }) {
         setQuestionCount(questionCount + 1);
     };
 
-    const getJoker = async () => {
-        try {
-            const { data: { user } } = await supabase.auth.getUser()
-            setTimingJoker(user.user_metadata.timingJoker)
-            setJokerCount(user.user_metadata.fiftyPercentJoker)
-        }
-        catch (e) {
-            console.error("Error fetching ticket:", e)
-        }
-    }
+
 
 
 
@@ -346,7 +372,7 @@ function QuizCard({ navigation }) {
                 type: 'error',
                 position: 'top',
                 text1: 'Wrong Answer!',
-                text2: `${randomBTC} SOL Deleted 👋`,
+                text2: `${randomBTC} SOL Deleted 😢`,
                 visibilityTime: 2000,
             });
             setWrongAnswer(true + 1)
@@ -412,7 +438,7 @@ function QuizCard({ navigation }) {
         }
         else {
             Alert.alert("Fifty Lucky", "If you don't have a 50% Chance Joker, you can get a 50% Chance Joker by watching an ad or buying one.", [
-                { text: 'Tamam', onPress: () => console.log('OK Pressed') },
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
             ]);
         }
     };
@@ -434,7 +460,7 @@ function QuizCard({ navigation }) {
                 </Text>
                 <View>
                     <Text style={styles.quiz}>
-                        {currentQuestion && currentQuestion.soru ? currentQuestion.soru : "Question Loading..."}
+                    {currentQuestion && currentQuestion.soru ? decode(currentQuestion.soru) : "Question Loading..."}
                     </Text>
                     <View style={styles.quizPicsCard}>
                         {  /*   <Image source={{ uri: "https://loremflickr.com/320/240" }} style={styles.quizPics} /> */}
@@ -446,7 +472,7 @@ function QuizCard({ navigation }) {
                                 style={styles.answerButton}
                                 onPress={() => handleAnswer(index)}
                             >
-                                <Text style={styles.answer}>{secenek}</Text>
+                                <Text style={styles.answer}>{decode(secenek)}</Text>
                             </TouchableOpacity>
                         ))}
                     </View>
@@ -455,12 +481,12 @@ function QuizCard({ navigation }) {
                 <View style={styles.buttonGroup}>
                     {/* Timer extension button */}
                     <TouchableOpacity onPress={handleExtendTimer} style={styles.jokerButton} >
-                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={13} color="white" /> Time Joker {timingJoker}</Text>
+                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={20} color="white" /> {timingJoker}</Text>
                     </TouchableOpacity>
 
                     {/* Button to use the 50/50 Joker */}
                     <TouchableOpacity onPress={handleJoker} style={styles.jokerButton}>
-                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={13} color="white" /> 50% Chance  {jokerCount} </Text>
+                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={20} color="white" /> {jokerCount} </Text>
                     </TouchableOpacity>
                 </View>
             </View>
