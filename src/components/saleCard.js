@@ -25,30 +25,45 @@ function SaleCard(props) {
   const [loaded, setLoaded] = useState(false);
   const { image, title, price, Solana } = props.saleItem; // Assuming you are passing saleItem as props
 
+
   const { user, loading, productIds } = useUser();
 
   const { fiftyPercentJoker, timingJoker, health, token } = user
   
 
+  const gameTicket1 = productIds.find(item => item.identifier === "game_ticket");
+  const gameTicket3 = productIds.find(item => item.identifier === "game_ticket3");
+  const gameTicket5 = productIds.find(item => item.identifier === "game_ticket5");
+  const gameTicket10 = productIds.find(item => item.identifier === "game_ticket10");
 
+  const timeJoker1 = productIds.find(item => item.identifier === "time_joker");
+  const timeJoker3 = productIds.find(item => item.identifier === "time_joker3");
+  const timeJoker5 = productIds.find(item => item.identifier === "time_joker5");
+  const timeJoker10 = productIds.find(item => item.identifier === "time_joker10");
 
-  const updateCustomerInformation = async (customerInfo) => {
-    console.log("customer sold", customerInfo)
-  }
+  const fiftyLucky1 = productIds.find(item => item.identifier === "fifty_lucky");
+  const fiftyLucky3 = productIds.find(item => item.identifier === "fifty_lucky3");
+  const fiftyLucky5 = productIds.find(item => item.identifier === "fifty_lucky5");
+  const fiftyLucky10 = productIds.find(item => item.identifier === "fifty_lucky10");
 
     
-  const fetchOfferings = async () => {
+  const fetchOfferings = async (packageItem) => {
     console.log("click");
     try {
       if (productIds && productIds.length > 0) {
         // Display packages for sale
-        console.log("deneme", productIds[0].product);
+        console.log("deneme", productIds);
         if (productIds[0].identifier) {
-          console.log(productIds[0].identifier);
+          console.log(productIds);
           console.log("product", productIds[0].product.identifier);
           try {
-            const { purchaserInfo } = await Purchases.purchasePackage(productIds[0]);
-            console.log("purchased", purchaserInfo);
+            const { customerInfo, productIdentifier } = await Purchases.purchasePackage(packageItem);
+            if (customerInfo.entitlements) {
+              const purchaseTransactions = customerInfo.nonSubscriptionTransactions.filter(transaction => transaction.productIdentifier === packageItem.product.identifier);
+
+              console.log(`"${packageItem.product.identifier}" ürünü ${purchaseTransactions.length} kez satın alındı.`);
+              return customerInfo
+            }
           } catch (e) {
             console.log("error message", e);
           }
@@ -62,75 +77,6 @@ function SaleCard(props) {
     }
   };
   
-    
-
-
-    
-  
-
-    
-
-  // Satın alma işlemi
-  const purchaseProduct = async (productId, title, newTimingJokerValue) => {
-    try {
-
-      const params = Platform.select({
-        ios: {
-          sku: productId,
-          andDangerouslyFinishTransactionAutomaticallyIOS: false
-        },
-        android: {
-          skus: [productId]
-        }
-      });
-
- 
-
-
-      if (purchase) {
-        if (title === "game_ticket") {
-          const { data, error } = await supabase.auth.updateUser({
-            data: { health: newTimingJokerValue }
-          });
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          } else {
-            console.log('User metadata updated successfully');
-            Alert.alert('Buy Now', 'You have acquired 1 Ticket. good games.');
-          }
-        }
-       if (title === "timing_joker") {
-          const { data, error } = await supabase.auth.updateUser({
-            data: { timingJoker: newTimingJokerValue }
-          });
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          } else {
-            console.log('User metadata updated successfully');
-            Alert.alert('Buy Now', 'You have acquired Time Joker. good games.');
-          }
-
-        }
-        if (title === "fifty_lucky") {
-          const { data, error } = await supabase.auth.updateUser({
-            data: { fiftyPercentJoker: newTimingJokerValue }
-          });
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          } else {
-            console.log('User metadata updated successfully');
-            Alert.alert('Buy Now', 'You have acquired Fifty Joker. good games.');
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Error during purchase:', error);
-      // Hata durumunda kullanıcıya bilgi verme veya geri bildirim gösterme
-    }
-  };
 
   // Function to show rewarded ad when "Buy Now" button is pressed
   function onBuyButtonPressed() {
@@ -692,354 +638,364 @@ function SaleCard(props) {
 
 
 
-  function onCurrencyButtonPressed() {
-    console.log("tık")
-    if (price === 0.99) {
+async  function onCurrencyButtonPressed() {
+
+    if (title === "1 Game Ticket") {
+    await  fetchOfferings(gameTicket1)
+        .then((customerInfo) => {
+          if (customerInfo) {
+            // Check if the purchase was successful
+            const newTimingJokerValue = health + 1; // Increment timingJoker value
+            // Perform your update here
+            const { data, error } = supabase.auth.updateUser({
+              data: { health: newTimingJokerValue }
+            })
+
+            if (error) {
+              console.error('Error updating user metadata:', error);
+            }
+  
+            // Show an alert or perform any additional actions
+            Alert.alert('Buy Now', 'You have acquired 1 Game Ticket. Good games.');
+          } else {
+            // Handle the case where the purchase was not successful
+            console.error('Error during purchase: You do not have enough money in your account.');
+            Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error during purchased:', error);
+        });
+   
 
 
-      const newTimingJokerValue = health + 1; // Increment timingJoker value
-      console.log("tık")
-      const addTicket = async () => {
+    if (title === "3 Game Tickets") {
 
-        try {
-         let productId = "com.tolgahanbora.game_ticket1"
-         let title = "game_ticket"
+      await  fetchOfferings(gameTicket3)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = health + 3; // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { health: newTimingJokerValue }
+          })
 
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-          // Örnek olarak: kullanıcının sağlık değerini güncelleme
-
-        } catch (error) {
-          console.error('Error during purchase:', error);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 3 Game Ticket. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
           Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Buy Now', 'You have acquired 1 Ticket. good games.', [
-        {
-          text: 'OK', onPress: async () => await addTicket()
-        },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
 
-    if (price === 1.24) {
+     if (title === "5 Game Tickets") {
+      await fetchOfferings(gameTicket5)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = health + 5; // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { health: newTimingJokerValue }
+          })
 
-      const newTimingJokerValue = health + 3; // Increment timingJoker value
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-      const addTicket = async () => {
-
-        try {
-          let productId = "com.tolgahanbora.game_ticket3"
-          let title = "game_ticket"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 5 Game Ticket. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Purchased', 'You get 3 Tickets. good games.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
 
-    if (price === 1.99) {
+    if (title === "10 Game Tickets") {
+      await   fetchOfferings(gameTicket10)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = health + 10; // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { health: newTimingJokerValue }
+          })
 
-      const newTimingJokerValue = health + 5; // Increment timingJoker value
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-      const addTicket = async () => {
-
-        try {
-          let  productId = "com.tolgahanbora.game_ticket5"
-          let title = "game_ticket"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 10 Game Ticket. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Purchased', 'You have received 5 Tickets. good games.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
-    }
-
-
-    if (price === 3.79) {
-
-
-      const newTimingJokerValue = health + 10; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let  productId = "com.tolgahanbora.game_ticket10"
-          let  title = "game_ticket"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
-        }
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
       }
 
 
-      Alert.alert('Purchased', 'You get 10 Tickets. good games.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+   
     }
 
 
 
 
+    if (title === "1 Time Joker") {
 
+      await  fetchOfferings(timeJoker1)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 1;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { timingJoker: newTimingJokerValue }
+          })
 
-    if (price === 0.24) {
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-
-
-      const newTimingJokerValue = timingJoker + 1; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          
-          let productId = 'com.tolgahanbora.timing_joker1'
-          let title = "timing_joker"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 1 Time Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-
-      Alert.alert('Purchased', 'You get 1 Time Joker. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
 
 
 
-    if (price === 0.59) {
+    if (title === "3 Time Jokers") {
 
-      const newTimingJokerValue = timingJoker + 3; // Increment timingJoker value
+      await  fetchOfferings(timeJoker3)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 3;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { timingJoker: newTimingJokerValue }
+          })
 
-      const addTicket = async () => {
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-        try {
-          let  productId = "com.tolgahanbora.timing_joker3"
-          let  title = "timing_joker"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 3 Time Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Purchased', 'You get 3 Time Jokers. Good Games.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
-    if (price === 0.79) {
+    if (title === "5 Time Jokers") {
+      await fetchOfferings(timeJoker5)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 5;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { timingJoker: newTimingJokerValue }
+          })
 
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-
-      const newTimingJokerValue = timingJoker + 5; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let  productId = "com.tolgahanbora.timing_joker5"
-          let  title = "timing_joker"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 5 Time Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Purchased', 'You have obtained 5 Time Jokers. good games.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
-    if (price === 1.09) {
+    if (title === "10 Time Jokers") {
+      await  fetchOfferings(timeJoker10)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 10;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { timingJoker: newTimingJokerValue }
+          })
 
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-
-      const newTimingJokerValue = timingJoker + 10; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let productId = "com.tolgahanbora.timing_joker10"
-          let  title = "timing_joker"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 10 Time Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
-
-      Alert.alert('Purchased', 'You have 10 Time Jokers. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
-    }
-
-
-
-
-
-    if (price === 0.58) {
-
-
-
-
-      const newTimingJokerValue = fiftyPercentJoker + 1; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let productId = "com.tolgahanbora.fifty_lucky1"
-          let title = "fifty_lucky"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
-        }
-      }
-
-      Alert.alert('Purchased', 'You have 1 Fifty Lucky. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
-    }
-    if (price === 0.98) {
-
-      const newTimingJokerValue = fiftyPercentJoker + 3; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let productId = "com.tolgahanbora.fifty_lucky3"
-          let title = "fifty_lucky"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
-        }
-      }
-      Alert.alert('Purchased', 'You got 3 Fifty Lucky. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
 
-    if (price === 1.49) {
 
+    
 
+    if (title === "1 Fifty Lucky") {
+      await fetchOfferings(fiftyLucky1)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 1;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { fiftyPercentJoker: newTimingJokerValue }
+          })
 
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-      const newTimingJokerValue = fiftyPercentJoker + 5; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let  productId = "com.tolgahanbora.fifty_lucky5"
-          let  title = "fifty_lucky"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 1 Fifty Chance Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
+    }
+    if (title === "3 Fifty Lucky") {
+      await    fetchOfferings(fiftyLucky3)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 3;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { fiftyPercentJoker: newTimingJokerValue }
+          })
 
-      Alert.alert('Purchased', 'You got 5 Fifty Lucky. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
+
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 3 Fifty Chance Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
     }
 
-    if (price === 2.19) {
 
+    if (title === "5 Fifty Lucky") {
 
+      await  fetchOfferings(fiftyLucky5)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 5;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { fiftyPercentJoker: newTimingJokerValue }
+          })
 
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
 
-      const newTimingJokerValue = fiftyPercentJoker + 10; // Increment timingJoker value
-
-      const addTicket = async () => {
-
-        try {
-          let   productId = "com.tolgahanbora.fifty_lucky10"
-          let  title = "fifty_lucky"
-
-          // Ödeme başarılıysa yapılacak işlemler burada olmalıdır.
-          await purchaseProduct(productId, title, newTimingJokerValue);
-
-        } catch (error) {
-          console.error('Error updating user metadata:', error);
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.', [
-            { text: 'OK', onPress: () => console.log('OK Pressed') },
-          ]);
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 5 Fifty Chance Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
         }
-      }
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
+    }
 
-      Alert.alert('Purchased', 'You got 10 Fifty Lucky. Good game.', [
-        { text: 'OK', onPress: async () => await addTicket() },
-      ]);
+    if (title === "10 Fifty Lucky"){
+
+    await  fetchOfferings(fiftyLucky10)
+      .then((customerInfo) => {
+        if (customerInfo) {
+          // Check if the purchase was successful
+          const newTimingJokerValue = timingJoker + 10;  // Increment timingJoker value
+          // Perform your update here
+          const { data, error } = supabase.auth.updateUser({
+            data: { fiftyPercentJoker: newTimingJokerValue }
+          })
+
+          if (error) {
+            console.error('Error updating user metadata:', error);
+          }
+
+          // Show an alert or perform any additional actions
+          Alert.alert('Buy Now', 'You have acquired 10 Fifty Chance Joker. Good games.');
+        } else {
+          // Handle the case where the purchase was not successful
+          console.error('Error during purchase: You do not have enough money in your account.');
+          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error during purchased:', error);
+      });
 
     }
 
@@ -1071,16 +1027,16 @@ function SaleCard(props) {
               <>
                 <TouchableOpacity
                   style={styles.cardButton}
-                  onPress={fetchOfferings}
+                  onPress={onCurrencyButtonPressed}
                 >
-                  <Text style={styles.cardButtonText}>Buy Now {price}/USD</Text>
+                  <Text style={styles.cardButtonText}>Buy Now {price}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                   style={styles.cardButton}
                   onPress={onSolanaButtonPressed}
                 >
-                  <Text style={styles.cardButtonText}>Buy Now {Solana}/SOL</Text>
+                  <Text style={styles.cardButtonText}>Buy Now {Solana} SOL</Text>
                 </TouchableOpacity>
               </>
             )}
@@ -1138,7 +1094,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderRadius: 20,
     width: windowWidth * 0.35,
-    height: windowWidth * 0.17,
+    height: windowWidth * 0.195,
     backgroundColor: "#6949FD",
     justifyContent: "center",
   },

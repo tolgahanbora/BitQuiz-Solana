@@ -22,15 +22,15 @@ const styles = StyleSheet.create({
   },
   HeaderText: {
     color: "#FEFEFE",
-    fontSize: 16,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
     textAlign: "left"
   },
   cardContainer: {
     borderRadius: 19,
     marginTop: 40,
-    width: 270,
-    height: 270,
+    width: "65%",
+    height: "30%",
     backgroundColor: "#32167C",
     textAlign: "center",
     alignItems: "center",
@@ -38,22 +38,22 @@ const styles = StyleSheet.create({
   },
   cardText: {
     color: "#FEFEFE",
-    fontSize: 25,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 30
   },
   circle: {
-    width: 150,
-    height: 150,
+    width: windowWidth * 0.4,
+    height: windowWidth * 0.4,
     backgroundColor: "#FAB42B",
-    borderRadius: 70,
+    borderRadius: 200,
     alignItems: "center",
     justifyContent: "center", // Metni yatay ve dikey yönde de ortalar
   },
   btcText: {
     color: "#FEFEFE",
-    fontSize: 20,
+    fontSize: windowWidth * 0.08,
     fontWeight: "bold",
     textAlign: "center"
   },
@@ -64,16 +64,20 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
   button: {
-    width: 150,
+    width: windowWidth * 0.4,
+    height: windowHeight * 0.072,
     margin: 10,
     borderRadius: 13,
     backgroundColor: "#6949FD",
+    textAlign: "center",
+    justifyContent: 'center', // Center the content vertically
+    alignItems: 'center', // Center the content horizontally
   },
   buttonText: {
     color: "#FEFEFE",
     textAlign: "center",
     alignItems: "center",
-    padding: 16,
+    padding: windowWidth * 0.03,
     fontSize: windowWidth * 0.05,
     fontWeight: "bold",
   }
@@ -191,7 +195,7 @@ function Score({ navigation, route }) {
         start={[0, 0.5]}
         end={[1, 0.5]}
       >
-        <Text style={styles.cardText}>Earned SOL</Text>
+        <Text style={styles.cardText}>Earned $SOL</Text>
         <View style={styles.circle}>
           <Text style={styles.btcText}>{totalEarnedBTC.toFixed(6)}</Text>
         </View>

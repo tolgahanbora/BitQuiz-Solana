@@ -27,46 +27,71 @@ const styles = StyleSheet.create({
         textAlign: "center",
         color: "#FEFEFE",
         fontWeight: "bold",
-        fontSize: 35,
+        fontSize: windowWidth * 0.08,
         margin: 40
     },
     salesText: {
         marginLeft: 20,
         marginTop: 10,
         color: "#FEFEFE",
-        fontSize: 18,
+        fontSize: windowWidth * 0.06,
         fontWeight: "bold",
     },
     jokerContainer: {
+        flex:1,
         flexDirection: "row",
         textAlign: "center",
         alignItems: "center",
-        marginLeft: 3,
+        justifyContent: "center",
+        width: windowWidth * 1.155,
     },
     jokerHealth: {
-        fontWeight: "bold",
-        color: "#FEFEFE",
-        fontSize: windowWidth * 0.038,
-        margin: 0,
-        textAlign: "center"
-    },
-    jokerTiming: {
-        fontWeight: "bold",
-        color: "#FEFEFE",
-        fontSize: windowWidth * 0.038,
-        margin: 15,
-        textAlign: "center"
-    },
-    jokerFiftyLucky: {
         fontWeight: "bold",
         color: "#FEFEFE",
         fontSize: windowWidth * 0.037,
         margin: 0,
         textAlign: "center"
     },
+    jokerTiming: {
+        fontWeight: "bold",
+        color: "#FEFEFE",
+        fontSize: windowWidth * 0.037,
+        margin: 15,
+        textAlign: "center"
+    },
+    jokerFiftyLucky: {
+        fontWeight: "bold",
+        color: "#FEFEFE",
+        fontSize: windowWidth * 0.035,
+        margin: 0,
+        textAlign: "center"
+    },
 
 })
 
+
+
+
+
+function Sale() {
+    const { user, loading, productIds } = useUser();
+
+    const gameTicket1 = productIds.find(item => item.identifier === "game_ticket");
+    const gameTicket3 = productIds.find(item => item.identifier === "game_ticket3");
+    const gameTicket5 = productIds.find(item => item.identifier === "game_ticket5");
+    const gameTicket10 = productIds.find(item => item.identifier === "game_ticket10");
+
+    const timeJoker1 = productIds.find(item => item.identifier === "time_joker");
+    const timeJoker3 = productIds.find(item => item.identifier === "time_joker3");
+    const timeJoker5 = productIds.find(item => item.identifier === "time_joker5");
+    const timeJoker10 = productIds.find(item => item.identifier === "time_joker10");
+
+    const fiftyLucky1 = productIds.find(item => item.identifier === "fifty_lucky");
+    const fiftyLucky3 = productIds.find(item => item.identifier === "fifty_lucky3");
+    const fiftyLucky5 = productIds.find(item => item.identifier === "fifty_lucky5");
+    const fiftyLucky10 = productIds.find(item => item.identifier === "fifty_lucky10");
+
+  
 
 const saleDataHealth = [
     {
@@ -78,15 +103,15 @@ const saleDataHealth = [
     {
         "id": 1,
         "image": require("../../assets/tickets.png"),
-        "title": "Game Ticket",
-        "price": 0.99,
+        "title": "1 Game Ticket",
+        "price": gameTicket1.product.priceString,
         "Solana": 0.24,
     },
     {
         "id": 2,
         "image": require("../../assets/tickets.png"),
         "title": "3 Game Tickets",
-        "price": 1.24,
+        "price":gameTicket3.product.priceString,
         "Solana": 0.51,
 
     },
@@ -94,14 +119,14 @@ const saleDataHealth = [
         "id": 3,
         "image": require("../../assets/tickets.png"),
         "title": "5 Game Tickets",
-        "price": 1.99,
+        "price": gameTicket5.product.priceString,
         "Solana": 0.8,
     },
     {
         "id": 4,
         "image": require("../../assets/tickets.png"),
         "title": "10 Game Tickets",
-        "price": 3.79,
+        "price": gameTicket10.product.priceString,
         "Solana": 1.2,
     }
 ];
@@ -117,15 +142,15 @@ const saleDataTiming = [
     {
         "id": 1,
         "image": require("../../assets/timingjoker.png"),
-        "title": "Time Joker",
-        "price": 0.24,
+        "title": "1 Time Joker",
+        "price": timeJoker1.product.priceString,
         "Solana": 0.2,
     },
     {
         "id": 2,
         "image": require("../../assets/timingjoker.png"),
         "title": "3 Time Jokers",
-        "price": 0.59,
+        "price": timeJoker3.product.priceString,
         "Solana": 0.05,
 
     },
@@ -133,14 +158,14 @@ const saleDataTiming = [
         "id": 3,
         "image": require("../../assets/timingjoker.png"),
         "title": "5 Time Jokers",
-        "price": 0.79,
+        "price": timeJoker5.product.priceString,
         "Solana": 0.7,
     },
     {
         "id": 4,
         "image": require("../../assets/timingjoker.png"),
         "title": "10 Time Jokers",
-        "price": 1.09,
+        "price": timeJoker10.product.priceString,
         "Solana": 1,
     }
 ];
@@ -155,40 +180,32 @@ const saleDataFiftyLucky = [
     {
         "id": 1,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "Fifty Lucky",
-        "price": 0.58,
+        "title": "1 Fifty Lucky",
+        "price": fiftyLucky1.product.priceString,
         "Solana": 0.23,
     },
     {
         "id": 2,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "3 Fifty Luckies",
-        "price": 0.98,
+        "title": "3 Fifty Lucky",
+        "price": fiftyLucky3.product.priceString,
         "Solana": 0.6,
     },
     {
         "id": 3,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "5 Fifty Luckies",
-        "price": 1.49,
+        "title": "5 Fifty Lucky",
+        "price": fiftyLucky5.product.priceString,
         "Solana": 0.9,
     },
     {
         "id": 4,
         "image": require("../../assets/fiftylucky.png"),
-        "title": "10 Fifty Luckies",
-        "price": 2.19,
+        "title": "10 Fifty Lucky",
+        "price": fiftyLucky10.product.priceString,
         "Solana": 1.1,
     }
 ];
-
-
-
-function Sale() {
-    const { user, loading } = useUser();
-
-   
-    
 
   
 
@@ -198,11 +215,13 @@ function Sale() {
             <View style={styles.container}>
                 <Text style={styles.header}>Shop</Text>
 
-                <View style={styles.jokerContainer}>
-                    <Text style={styles.jokerHealth}><Entypo name="ticket" size={14} color="white" style={styles.icon} />Game Ticket: {user?.health}</Text>
-                    <Text style={styles.jokerTiming}><Entypo name="back-in-time" size={14} color="white" />Time Joker: {user?.timingJoker}</Text>
-                    <Text style={styles.jokerFiftyLucky}><MaterialCommunityIcons name="clover" size={14} color="white" />Fifty Lucky: {user?.fiftyPercentJoker}</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                <View style={styles.jokerContainer} >
+                    <Text style={styles.jokerHealth}><Entypo name="ticket" size={20} color="white" style={styles.icon} /> Game Ticket: {user?.health}</Text>
+                    <Text style={styles.jokerTiming}><Entypo name="back-in-time" size={20} color="white" /> Time Joker: {user?.timingJoker}</Text>
+                    <Text style={styles.jokerFiftyLucky}><MaterialCommunityIcons name="clover" size={20} color="white" /> Fifty Lucky: {user?.fiftyPercentJoker}</Text>
                 </View>
+                </ScrollView>
                 <View>
                     <Text style={styles.salesText}>
                         Game Tickets
@@ -210,7 +229,7 @@ function Sale() {
                     {/* FlatList for Health Sale Data */}
                     <FlatList
                         data={saleDataHealth}
-                        renderItem={({ item }) =>  <SaleCard saleItem={item}  />}
+                        renderItem={({ item }) =>  <SaleCard saleItem={item}   />}
                         keyExtractor={(item) => item.id.toString()}
                         horizontal={true}
                     />
@@ -224,7 +243,7 @@ function Sale() {
                     {/* FlatList for Timing Sale Data */}
                     <FlatList
                         data={saleDataTiming}
-                        renderItem={({ item }) => <SaleCard saleItem={item} />}
+                        renderItem={({ item }) => <SaleCard saleItem={item}  />}
                         keyExtractor={(item) => item.id.toString()}
                         horizontal={true}
                     />

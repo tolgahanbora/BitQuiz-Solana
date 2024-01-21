@@ -81,10 +81,12 @@ const styles = StyleSheet.create({
     margin: windowWidth * 0.045,
     marginBottom: windowHeight * 0.04,
     color: "#FEFEFE",
+    fontSize: windowWidth * 0.05,
   },
   modalText: {
     fontWeight: "bold",
     color: "#FEFEFE",
+    fontSize: windowWidth * 0.05,
   },
   loginModalButton: {
     margin: windowWidth * 0.045,

@@ -64,16 +64,13 @@ export const UserProvider = ({ children }) => {
         useAmazon: false
       });
     }
+    getProductIds();
 
     Purchases.setLogLevel(LOG_LEVEL.DEBUG);
-    Purchases.addCustomerInfoUpdateListener((customerInfo) => {
-      console.log("customer info", customerInfo);
-      // Eğer bir context değeri kullanacaksanız, burada context'i güncelleyebilirsiniz.
-      // Örneğin: setUser(customerInfo);
-    });
+  
 
     // getProductIds fonksiyonunu çağırabilirsiniz.
-     getProductIds();
+
 
     return () => {
       // Component unmount edildiğinde aboneliği kapat

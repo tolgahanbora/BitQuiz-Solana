@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     color: "#FEFEFE",
     padding: 20,
     textAlign: "center",
-    fontSize: 18,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold"
   },
   icon: {
@@ -60,17 +60,15 @@ const styles = StyleSheet.create({
     marginRight: "5%"
   },
   iconContainer: {
-    marginRight: "0%", // Add margin to separate the icon from the image
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
     paddingHorizontal: 20,
-    marginTop: 10,
+    marginTop: 0, // Set marginTop to 0
   },
   iconText: {
     color: "#fefefe",
-    marginTop: 5,
     fontSize:  windowWidth * 0.047,
     fontWeight: "bold"
   },
@@ -145,16 +143,13 @@ function HomeCard({ navigation }) {
     <View style={styles.container}>
       <View style={styles.iconContainer}>
         <View style={styles.iconRow}>
-          <Entypo name="ticket" size={20} color="white" style={styles.icon} />
+          <Entypo name="ticket" size={30} color="white" style={styles.icon} />
           <Text style={styles.iconText}>{user?.health}</Text>
           <TouchableOpacity onPress={openYouTubeTutorial} style={{  marginLeft: 25 }}>
             {/* How to play? butonu için stil ve içerik */}
             <FontAwesome name="info-circle" size={30} color="white" />
           </TouchableOpacity>
         </View>
-
-
-
       </View>
 
       <View style={styles.headerContainer}>

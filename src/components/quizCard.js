@@ -481,12 +481,12 @@ function QuizCard({ navigation }) {
                 <View style={styles.buttonGroup}>
                     {/* Timer extension button */}
                     <TouchableOpacity onPress={handleExtendTimer} style={styles.jokerButton} >
-                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={20} color="white" /> {timingJoker}</Text>
+                        <Text style={styles.buttonText}><Entypo name="back-in-time" size={27} color="white" /> {timingJoker}</Text>
                     </TouchableOpacity>
 
                     {/* Button to use the 50/50 Joker */}
                     <TouchableOpacity onPress={handleJoker} style={styles.jokerButton}>
-                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={20} color="white" /> {jokerCount} </Text>
+                        <Text style={styles.buttonText}><MaterialCommunityIcons name="clover" size={27} color="white" /> {jokerCount} </Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   username: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: 25,
+    fontSize: windowWidth * 0.05,
     margin: 15,
     textAlign: "center",
     marginBottom: 6
@@ -55,36 +55,38 @@ const styles = StyleSheet.create({
   bitcoin: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: 25,
+    fontSize: windowWidth * 0.05,
     margin: 15,
     justifyContent: "center",
-    textAlign: "center"
+    textAlign: "center",
+    alignItems: "center",
+
 
   },
   jokerContainer: {
     flexDirection: "row",
     justifyContent: "space-around", // Align items horizontally with space around
     alignItems: "center", // Center items vertically
-    marginTop: 10, // Add any necessary margin or padding here
+    marginTop: '2%', // Use a relative value
   },
   jokerHealth: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.04,
+    fontSize: windowWidth * 0.036,
     margin: 0,
     textAlign: "center"
   },
   jokerTiming: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.04,
+    fontSize: windowWidth * 0.036,
     margin: 15,
     textAlign: "center"
   },
   jokerFiftyLucky: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.04,
+    fontSize: windowWidth * 0.036,
     margin: 0,
     textAlign: "center"
   },
@@ -94,17 +96,18 @@ const styles = StyleSheet.create({
   buttonBTC: {
     backgroundColor: "#6949FD",
     borderRadius: 40,
-    width: 200,
-
+    width: "50%",
+    padding: windowWidth * 0.04,
     margin: 68
   },
   buttonText: {
     color: "#FEFEFE",
     textAlign: "center",
     alignItems: "center",
-    padding: 15,
-    fontSize: 16,
+    fontSize: windowWidth * 0.05,
     fontWeight: "bold",
+    
+    justifyContent: "center",
   },
   bodyContainer: {
     marginTop: 20,
@@ -116,11 +119,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  solana: {
-    width: 15,
-    height: 15
-  },
+// Update the solanaImage style in the styles object
+solanaImage: {
+  alignSelf: 'center', // Center the image horizontally
 
+  justifyContent: 'center',
+  alignContent: 'center',
+  alignItems: 'center',
+
+},
 
   modalContainer: {
     flex: 1,
@@ -132,27 +139,31 @@ const styles = StyleSheet.create({
   input: {
     marginTop: 10,
     backgroundColor: 'white',
-    padding: 10,
-    width: 250,
+    padding: windowWidth * 0.04,
+    fontSize: windowWidth * 0.05,
+
     marginBottom: 10,
     borderRadius: 5,
   },
   sendButton: {
     backgroundColor: '#6949FD',
     marginTop: 20,
-    width: 170,
-    height: 60,
+    width: windowWidth * 0.5,
+    height: windowHeight * 0.06,
     borderRadius: 30,
-  },
-  sendButtonText: {
-    fontSize: windowWidth * 0.05
+    textAlign: "center",
+    justifyContent: 'center', // Center the content vertically
+    alignItems: 'center', // Center the content horizontally
   },
   closeButton: {
     backgroundColor: '#FF0000',
-    height: 60,
-    width: 130,
+    width: windowWidth * 0.5,
+    height: windowHeight * 0.06,
     borderRadius: 35,
     marginTop: 20,
+    textAlign: "center",
+    justifyContent: 'center', // Center the content vertically
+    alignItems: 'center', // Center the content horizontally
   },
 })
 
@@ -246,7 +257,8 @@ function Profile() {
           start={[0, 0.05]}
           end={[1, 0.05]}
         >
-          <Text style={styles.bitcoin}>Solana: {user?.token.toFixed(7)}<Image source={solana} /></Text>
+          <Image style={styles.solanaImage} source={solana} />
+          <Text style={styles.bitcoin}>Solana: {user?.token.toFixed(7)}</Text>
 
           <View style={styles.jokerContainer}>
             <Text style={styles.jokerHealth}>Game Ticket: {user?.health}</Text>
@@ -273,7 +285,7 @@ function Profile() {
           <View style={styles.modalContainer}>
 
             <TouchableOpacity onPress={() => openPhantomHelp()}>
-              <FontAwesome name="info-circle" size={30} color="white" />
+              <FontAwesome name="info-circle" size={40} color="white" />
             </TouchableOpacity>
 
 
