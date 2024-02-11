@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.tolgahanbora.BitQuiz"
+      "bundleIdentifier": "com.tolgahanbora.BitQuizMobile"
     },
     "plugins": [
       [
@@ -38,12 +38,12 @@
         "foregroundImage": "./assets/transparan-bitquiz.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tolgahanbora.BitQuiz",
+      "package": "com.tolgahanbora.BitQuizMobile",
       "permissions": [
         "com.android.vending.BILLING",
         "android.permission.INTERNET"
       ],
-      "versionCode": 9
+      "versionCode": 11
     },
     "web": {
       "favicon": "./assets/favicon.png"

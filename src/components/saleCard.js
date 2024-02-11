@@ -30,7 +30,6 @@ function SaleCard(props) {
 
   const { fiftyPercentJoker, timingJoker, health, token } = user
   
-
   const gameTicket1 = productIds.find(item => item.identifier === "game_ticket");
   const gameTicket3 = productIds.find(item => item.identifier === "game_ticket3");
   const gameTicket5 = productIds.find(item => item.identifier === "game_ticket5");
@@ -55,13 +54,13 @@ function SaleCard(props) {
         console.log("deneme", productIds);
         if (productIds[0].identifier) {
           console.log(productIds);
-          console.log("product", productIds[0].product.identifier);
+         
           try {
             const { customerInfo, productIdentifier } = await Purchases.purchasePackage(packageItem);
             if (customerInfo.entitlements) {
               const purchaseTransactions = customerInfo.nonSubscriptionTransactions.filter(transaction => transaction.productIdentifier === packageItem.product.identifier);
 
-              console.log(`"${packageItem.product.identifier}" ürünü ${purchaseTransactions.length} kez satın alındı.`);
+             
               return customerInfo
             }
           } catch (e) {
@@ -638,368 +637,278 @@ function SaleCard(props) {
 
 
 
-async  function onCurrencyButtonPressed() {
+  async function onCurrencyButtonPressed() {
+    switch (title) {
+        case "1 Game Ticket":
+            await fetchOfferings(gameTicket1)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = health + 1;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { health: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 1 Game Ticket. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-    if (title === "1 Game Ticket") {
-    await  fetchOfferings(gameTicket1)
-        .then((customerInfo) => {
-          if (customerInfo) {
-            // Check if the purchase was successful
-            const newTimingJokerValue = health + 1; // Increment timingJoker value
-            // Perform your update here
-            const { data, error } = supabase.auth.updateUser({
-              data: { health: newTimingJokerValue }
-            })
+        case "3 Game Tickets":
+            await fetchOfferings(gameTicket3)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = health + 3;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { health: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 3 Game Tickets. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-            if (error) {
-              console.error('Error updating user metadata:', error);
-            }
-  
-            // Show an alert or perform any additional actions
-            Alert.alert('Buy Now', 'You have acquired 1 Game Ticket. Good games.');
-          } else {
-            // Handle the case where the purchase was not successful
-            console.error('Error during purchase: You do not have enough money in your account.');
-            Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-          }
-        })
-        .catch((error) => {
-          console.error('Error during purchased:', error);
-        });
-   
+        case "5 Game Tickets":
+            await fetchOfferings(gameTicket5)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = health + 5;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { health: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 5 Game Tickets. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
+        case "10 Game Tickets":
+            await fetchOfferings(gameTicket10)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = health + 10;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { health: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 10 Game Tickets. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-    if (title === "3 Game Tickets") {
+        case "1 Time Joker":
+            await fetchOfferings(timeJoker1)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = timingJoker + 1;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { timingJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 1 Time Joker. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-      await  fetchOfferings(gameTicket3)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = health + 3; // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { health: newTimingJokerValue }
-          })
+        case "3 Time Jokers":
+            await fetchOfferings(timeJoker3)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = timingJoker + 3;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { timingJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 3 Time Jokers. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
+        case "5 Time Jokers":
+            await fetchOfferings(timeJoker5)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = timingJoker + 5;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { timingJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 5 Time Jokers. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
 
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 3 Game Ticket. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
+        case "10 Time Jokers":
+            await fetchOfferings(timeJoker10)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = timingJoker + 10;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { timingJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 10 Time Jokers. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
+
+        case "1 Fifty Lucky":
+            await fetchOfferings(fiftyLucky1)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = fiftyPercentJoker + 1;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { fiftyPercentJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 1 Fifty Lucky. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
+
+        case "3 Fifty Lucky":
+            await fetchOfferings(fiftyLucky3)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = fiftyPercentJoker + 3;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { fiftyPercentJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 3 Fifty Lucky. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
+
+        case "5 Fifty Lucky":
+            await fetchOfferings(fiftyLucky5)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = fiftyPercentJoker + 5;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { fiftyPercentJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 5 Fifty Lucky. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
+
+        case "10 Fifty Lucky":
+            await fetchOfferings(fiftyLucky10)
+                .then((customerInfo) => {
+                    if (customerInfo) {
+                        const newTimingJokerValue = fiftyPercentJoker + 10;
+                        const { data, error } = supabase.auth.updateUser({
+                            data: { fiftyPercentJoker: newTimingJokerValue }
+                        });
+                        if (error) {
+                            console.error('Error updating user metadata:', error);
+                        }
+                        Alert.alert('Buy Now', 'You have acquired 10 Fifty Lucky. Good games.');
+                    } else {
+                        console.error('Error during purchase: You do not have enough money in your account.');
+                        Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error during purchase:', error);
+                });
+            break;
+
+        default:
+            console.error('Invalid title:', title);
+            break;
     }
+}
 
-
-     if (title === "5 Game Tickets") {
-      await fetchOfferings(gameTicket5)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = health + 5; // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { health: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 5 Game Ticket. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-
-    if (title === "10 Game Tickets") {
-      await   fetchOfferings(gameTicket10)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = health + 10; // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { health: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 10 Game Ticket. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-      }
-
-
-   
-    }
-
-
-
-
-    if (title === "1 Time Joker") {
-
-      await  fetchOfferings(timeJoker1)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 1;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { timingJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 1 Time Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-
-
-
-    if (title === "3 Time Jokers") {
-
-      await  fetchOfferings(timeJoker3)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 3;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { timingJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 3 Time Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-    if (title === "5 Time Jokers") {
-      await fetchOfferings(timeJoker5)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 5;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { timingJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 5 Time Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-    if (title === "10 Time Jokers") {
-      await  fetchOfferings(timeJoker10)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 10;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { timingJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 10 Time Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-
-
-    
-
-    if (title === "1 Fifty Lucky") {
-      await fetchOfferings(fiftyLucky1)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 1;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { fiftyPercentJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 1 Fifty Chance Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-    if (title === "3 Fifty Lucky") {
-      await    fetchOfferings(fiftyLucky3)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 3;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { fiftyPercentJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 3 Fifty Chance Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-
-    if (title === "5 Fifty Lucky") {
-
-      await  fetchOfferings(fiftyLucky5)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 5;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { fiftyPercentJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 5 Fifty Chance Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-    }
-
-    if (title === "10 Fifty Lucky"){
-
-    await  fetchOfferings(fiftyLucky10)
-      .then((customerInfo) => {
-        if (customerInfo) {
-          // Check if the purchase was successful
-          const newTimingJokerValue = timingJoker + 10;  // Increment timingJoker value
-          // Perform your update here
-          const { data, error } = supabase.auth.updateUser({
-            data: { fiftyPercentJoker: newTimingJokerValue }
-          })
-
-          if (error) {
-            console.error('Error updating user metadata:', error);
-          }
-
-          // Show an alert or perform any additional actions
-          Alert.alert('Buy Now', 'You have acquired 10 Fifty Chance Joker. Good games.');
-        } else {
-          // Handle the case where the purchase was not successful
-          console.error('Error during purchase: You do not have enough money in your account.');
-          Alert.alert('Failed to Purchase', 'You do not have enough Money in your account.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error during purchased:', error);
-      });
-
-    }
-
-  }
 
 
 

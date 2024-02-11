@@ -72,21 +72,21 @@ const styles = StyleSheet.create({
   jokerHealth: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.036,
+    fontSize: windowWidth * 0.033,
     margin: 0,
     textAlign: "center"
   },
   jokerTiming: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.036,
+    fontSize: windowWidth * 0.033,
     margin: 15,
     textAlign: "center"
   },
   jokerFiftyLucky: {
     fontWeight: "bold",
     color: "#FEFEFE",
-    fontSize: windowWidth * 0.036,
+    fontSize: windowWidth * 0.033,
     margin: 0,
     textAlign: "center"
   },
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   buttonBTC: {
     backgroundColor: "#6949FD",
     borderRadius: 40,
-    width: "50%",
+    width: "75%",
     padding: windowWidth * 0.04,
     margin: 68
   },

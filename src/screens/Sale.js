@@ -43,19 +43,19 @@ const styles = StyleSheet.create({
         textAlign: "center",
         alignItems: "center",
         justifyContent: "center",
-        width: windowWidth * 1.155,
+        width: windowWidth * 1.33,
     },
     jokerHealth: {
         fontWeight: "bold",
         color: "#FEFEFE",
-        fontSize: windowWidth * 0.037,
+        fontSize: windowWidth * 0.035,
         margin: 0,
         textAlign: "center"
     },
     jokerTiming: {
         fontWeight: "bold",
         color: "#FEFEFE",
-        fontSize: windowWidth * 0.037,
+        fontSize: windowWidth * 0.035,
         margin: 15,
         textAlign: "center"
     },
