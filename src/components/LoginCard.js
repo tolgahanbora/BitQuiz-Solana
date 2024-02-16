@@ -16,6 +16,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
+    width: windowWidth,
+    height: windowHeight,
   },
   textContainer: {
     marginTop: windowHeight * 0.3,

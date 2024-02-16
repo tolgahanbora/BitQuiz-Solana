@@ -211,6 +211,14 @@ function QuizCard({ navigation }) {
     // Function to handle the button press and extend the timer
     const handleExtendTimer = () => {
         if (timingJoker > 0) {
+            Toast.show({
+                type: 'success',
+                position: 'top',
+                text1: 'Joker Used',
+                text2: `extra 10 seconds added 👍`,
+                visibilityTime: 2000,
+            });
+
             setTimer((prev) => prev + 10);
             setExtendedTimer((prev) => prev + 1);
 
@@ -389,6 +397,14 @@ function QuizCard({ navigation }) {
     const handleJoker = () => {
         if (!jokerUsed && jokerCount > 0) {
             // Diğer şıklardan doğru cevabı hariç 2 şıkkı rastgele seç
+            Toast.show({
+                type: 'success',
+                position: 'top',
+                text1: 'Joker Used',
+                text2: `Deleted 2 wrong choices 👍`,
+                visibilityTime: 2000,
+            });
+
             const otherOptions = currentQuestion.secenekler.filter((_, index) => index !== correctAnswerIndex);
             const randomIndices = [];
             while (randomIndices.length < 2) {

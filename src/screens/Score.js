@@ -93,7 +93,7 @@ const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
 
 
 function Score({ navigation, route }) {
-
+ 
   const trueAnswer = route.params.trueAnswer;
   const confettiRef = useRef(null);
   const totalEarnedBTC = route.params.totalEarnedBTC || 0;

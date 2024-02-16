@@ -1,9 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet,ImageBackground } from 'react-native'
+import { View, Text, StyleSheet,ImageBackground,Dimensions } from 'react-native'
 
 import { HomeCard } from '../components'
 
 import bitquizBackground from "../../assets/Bıtquız_background.png"
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +16,8 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: 'center',
+    width: windowWidth,
+    height: windowHeight,
 },
 })
 function Home({navigation}) {

@@ -8,6 +8,7 @@ import Purchases, { LOG_LEVEL } from 'react-native-purchases';
 import { RewardedAd, RewardedAdEventType } from 'react-native-google-mobile-ads';
 import { supabase } from '../services';
 import { useUser } from '../context/UserContext';
+import LottieView from 'lottie-react-native';
 
 const windowWidth = Dimensions.get("window").width
 const windowHeight = Dimensions.get("window").height
@@ -24,6 +25,7 @@ const rewarded = RewardedAd.createForAdRequest(adUnitId, {
 function SaleCard(props) {
   const [loaded, setLoaded] = useState(false);
   const { image, title, price, Solana } = props.saleItem; // Assuming you are passing saleItem as props
+  const [loadingAds, setLoadingAds] = useState(false);
 
 
   const { user, loading, productIds } = useUser();
@@ -81,6 +83,7 @@ function SaleCard(props) {
   function onBuyButtonPressed() {
 
     if (price === "Free") {
+      setLoadingAds(true); // Reklam yüklenene kadar loading ekranını göster
       if (title === 'Game Ticket') {
 
 
@@ -105,6 +108,7 @@ function SaleCard(props) {
 
 
         const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+          setLoadingAds(false);
           setLoaded(true);
           rewarded.show(); // Show the rewarded ad after it's loaded
         });
@@ -130,7 +134,7 @@ function SaleCard(props) {
 
           try {
             const { data, error } = await supabase.auth.updateUser({
-              data: { timingJoker: newTimingJokerValue, token: newToken }
+              data: { timingJoker: newTimingJokerValue }
             })
 
             if (error) {
@@ -147,6 +151,7 @@ function SaleCard(props) {
 
 
         const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+          setLoadingAds(false);
           setLoaded(true);
           rewarded.show(); // Reklam yüklendikten sonra göster
         });
@@ -190,6 +195,7 @@ function SaleCard(props) {
 
 
         const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+          setLoadingAds(false);
           setLoaded(true);
           rewarded.show(); // Reklam yüklendikten sonra göster
         });
@@ -915,16 +921,24 @@ function SaleCard(props) {
 
   return (
 
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={styles.cardBody}>
-          <Image source={image} style={styles.cardImage} />
-          <View style={styles.cardBodyText}>
-            <Text style={styles.cardJokerName}>{title}</Text>
-
-          </View>
-
-          <View style={styles.cardButtonContainer}>
+<View style={styles.container}>
+  <View style={styles.cardContainer}>
+    <View style={styles.cardBody}>
+      <Image source={image} style={styles.cardImage} />
+      <View style={styles.cardBodyText}>
+        <Text style={styles.cardJokerName}>{title}</Text>
+      </View>
+      <View style={styles.cardButtonContainer}>
+        {loadingAds ? (
+          <LottieView
+            source={require('./loading.json')}
+            style={{width: "50%" , height: "50%", backgroundColor: 'transparent',    justifyContent: 'center',
+            alignItems: 'center', marginBottom: "25%"}}
+            autoPlay
+            loop
+          />
+        ) : (
+          <>
             {price === "Free" ? (
               <TouchableOpacity
                 style={styles.cardButton}
@@ -940,7 +954,6 @@ function SaleCard(props) {
                 >
                   <Text style={styles.cardButtonText}>Buy Now {price}</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity
                   style={styles.cardButton}
                   onPress={onSolanaButtonPressed}
@@ -949,10 +962,13 @@ function SaleCard(props) {
                 </TouchableOpacity>
               </>
             )}
-          </View>
-        </View>
+          </>
+        )}
       </View>
     </View>
+  </View>
+</View>
+
 
   )
 }

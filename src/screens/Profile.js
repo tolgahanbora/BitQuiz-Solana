@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#1F1147",
     alignItems: "center",
   },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    width: windowWidth,
+    height: windowHeight,
+},
   avatarContainer: {
     alignItems: "center",
   },
@@ -37,9 +43,9 @@ const styles = StyleSheet.create({
     margin: 40
   },
   avatar: {
-    height: 120,
-    width: 120,
-    borderRadius: 60
+    height: windowWidth * 0.2, // Avatar boyutunu cihazın genişliğine göre ayarlar
+    width: windowWidth * 0.2, // Avatar boyutunu cihazın genişliğine göre ayarlar
+    borderRadius: windowWidth * 0.1, // Avatarın kenar yarıçapını cihazın genişliğine göre ayarlar
   },
   usernameContainer: {
     alignItems: "center",
@@ -121,12 +127,9 @@ const styles = StyleSheet.create({
   },
 // Update the solanaImage style in the styles object
 solanaImage: {
-  alignSelf: 'center', // Center the image horizontally
 
-  justifyContent: 'center',
-  alignContent: 'center',
-  alignItems: 'center',
-
+  alignSelf: 'center', // Logoyu yatayda ortalar
+  marginVertical: windowHeight * 0.02, // Dikey kenar boşluğunu cihaza göre ayarlar
 },
 
   modalContainer: {
@@ -236,7 +239,7 @@ function Profile() {
 
 
 
-      <ImageBackground source={bitquizBackground} resizeMode="stretch" >
+      <ImageBackground source={bitquizBackground} resizeMode="stretch" style={styles.image} >
 
 
         <View style={styles.avatarContainer}>

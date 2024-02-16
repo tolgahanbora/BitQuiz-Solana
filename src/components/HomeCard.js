@@ -31,9 +31,10 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   image: {
-    margin: 50,
-    height: 250,
-    width: 250,
+    marginVertical: windowWidth * 0.1, // Dikey kenar boşluğunu cihaza göre ayarlar
+    width: windowWidth * 0.8, // Genişliği cihazın genişliğine göre ayarlar
+    height: windowHeight * 0.3, // Yüksekliği cihazın yüksekliğine göre ayarlar
+    resizeMode: 'contain', // Görüntüyü sığdırmak için içeriğe sığacak şekilde boyutlandırır
   },
   mainText: {
     color: "#FEFEFE",
