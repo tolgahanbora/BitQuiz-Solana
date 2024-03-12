@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput, Linking, PixelRatio } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageBackground, Dimensions, Modal, TextInput, Linking, SafeAreaView } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome } from '@expo/vector-icons';
 import { useUser } from '../context/UserContext';
@@ -168,6 +168,9 @@ solanaImage: {
     justifyContent: 'center', // Center the content vertically
     alignItems: 'center', // Center the content horizontally
   },
+  containerr: {
+    flex: 2,
+  },
 })
 
 function Profile() {
@@ -234,7 +237,7 @@ function Profile() {
 
 
   return (
-
+    <SafeAreaView style={styles.containerr}> 
     <View style={styles.container}>
 
 
@@ -326,6 +329,7 @@ function Profile() {
 
       </ImageBackground>
     </View>
+    </SafeAreaView   >
   )
 }
 

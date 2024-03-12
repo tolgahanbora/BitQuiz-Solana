@@ -221,11 +221,7 @@ function LoginCard({ navigation }) {
       } else {
         setModalVisible(false);
         navigation.navigate('Main', {
-          screen: 'Profile',
-          params: {
-            email: email,
-            username: username,
-          },
+          screen: 'Home'
         });
       }
     } catch (e) {

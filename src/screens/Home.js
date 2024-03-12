@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet,ImageBackground,Dimensions } from 'react-native'
+import { View, SafeAreaView, StyleSheet,ImageBackground,Dimensions } from 'react-native'
 
 import { HomeCard } from '../components'
 
@@ -19,19 +19,23 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
 },
+containerr: {
+  flex: 2,
+},
 })
 function Home({navigation}) {
 
 
   return (
-
+    <SafeAreaView style={styles.containerr}>
     <View  style={styles.container}>
+          
       <ImageBackground source={bitquizBackground} resizeMode="stretch" style={styles.image}>
       <HomeCard navigation={navigation}  />
       </ImageBackground>
-
+    
     </View>
-
+    </SafeAreaView>
   )
 }
 

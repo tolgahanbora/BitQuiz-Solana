@@ -38,12 +38,12 @@
         "foregroundImage": "./assets/transparan-bitquiz.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tolgahanbora.BitQuizMobile",
+      "package": "com.tolgahanbora.BitQuiz",
       "permissions": [
         "com.android.vending.BILLING",
         "android.permission.INTERNET"
       ],
-      "versionCode": 21
+      "versionCode": 24
     },
     "web": {
       "favicon": "./assets/favicon.png"

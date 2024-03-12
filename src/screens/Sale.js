@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, FlatList, ScrollView,Dimensions,PixelRatio  } from 'react-native'
+import { View, Text, StyleSheet, FlatList, ScrollView,Dimensions,PixelRatio,SafeAreaView  } from 'react-native'
 import { Entypo,MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { useUser } from '../context/UserContext';
@@ -18,6 +18,10 @@ const responsiveFontSize = (fontSize) => {
 
 
 const styles = StyleSheet.create({
+    containerr: {
+        flex: 1,
+        backgroundColor: "yellow"
+      },
     container: {
         flex: 1,
         backgroundColor: "#1F1147",
@@ -211,6 +215,7 @@ const saleDataFiftyLucky = [
 
     
     return (
+        <SafeAreaView style={styles.containerr}> 
         <ScrollView>
             <View style={styles.container}>
                 <Text style={styles.header}>Shop</Text>
@@ -269,7 +274,7 @@ const saleDataFiftyLucky = [
 
             </View>
         </ScrollView>
-
+        </ SafeAreaView > 
     )
 }
 
