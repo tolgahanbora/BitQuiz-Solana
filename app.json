@@ -43,7 +43,7 @@
         "com.android.vending.BILLING",
         "android.permission.INTERNET"
       ],
-      "versionCode": 24
+      "versionCode": 25
     },
     "web": {
       "favicon": "./assets/favicon.png"
